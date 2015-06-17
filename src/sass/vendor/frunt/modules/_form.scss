@@ -1,0 +1,28 @@
+// Forms // --------------------------------------------------
+
+@include component(form-control) {
+    width: 100%;
+    height: auto;
+    @include box-sizing(border-box);
+
+    border-radius: 0;
+    border: 1px solid $g-gray-500;
+    background: #fff;
+
+    $animation: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
+    @include transition($animation);
+
+    &:hover,
+    &:focus {
+        background: $g-gray-50;
+    }
+
+    &:focus {
+        border: 1px solid $brand-primary;
+    }
+
+    @include option(small) {
+        height: 41px;
+    }
+
+}

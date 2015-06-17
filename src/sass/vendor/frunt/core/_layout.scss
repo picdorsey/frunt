@@ -1,0 +1,10 @@
+// Layout // --------------------------------------------------
+
+.valign-wrapper {
+    @include flexbox();
+    @include align-items(center);
+
+    .valign {
+        display: block;
+    }
+}

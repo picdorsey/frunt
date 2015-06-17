@@ -1,0 +1,43 @@
+// Application Name
+// @author
+// @copyright
+
+@import 'core/vars';
+
+// Vendor // --------------------------------------------------
+// Different Libraries Used
+// or CSS related to some JavaScript libraries
+
+@import 'vendor/frunt/frunt';
+
+// Mixins // --------------------------------------------------
+// Misc Mixins used globally.
+
+// Core // --------------------------------------------------
+// Basic elements and scaffolding that apply everywhere.
+
+@import 'core/typography';
+@import 'core/z-index';
+@import 'core/tweaks';
+@import 'core/misc';
+
+// Partials // --------------------------------------------------
+// Specific parts of a webpage.
+// These are usually project specific.
+
+@import 'partials/header';
+@import 'partials/nav';
+@import 'partials/sidebar';
+@import 'partials/main';
+@import 'partials/footer';
+
+// Objects and Modules // --------------------------------------------------
+// Elements of a webpage.
+// These should be written so that they can be extracted and reused.
+// These should be written using the csstyle method.
+// http://www.csstyle.io/
+
+
+// Layouts // --------------------------------------------------
+// Where page layouts go and any page-specific
+// changes to partials and modules

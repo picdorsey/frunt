@@ -1,0 +1,130 @@
+// Variables // --------------------------------------------------
+
+$debug: true!default;
+
+//
+// Grid
+// --------------------------------------------------
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-tablet: $screen-sm-min !default;
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+$screen-desktop: $screen-md-min !default;
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+$grid-float-breakpoint: $screen-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+$container-tablet: ((720px + $grid-gutter-width)) !default;
+$container-sm: $container-tablet !default;
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+$container-md: $container-desktop !default;
+$container-large-desktop: ((1140px + $grid-gutter-width)) !default;
+$container-lg: $container-large-desktop !default;
+
+$gutter: $grid-gutter-width;
+
+//
+// Colors
+// --------------------------------------------------
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         $g-blue !default;
+$brand-success:         $g-green !default;
+$brand-info:            $g-light-blue !default;
+$brand-warning:         $g-orange !default;
+$brand-danger:          $g-red !default;
+$brand-gray:            $gray !default;
+
+//
+// Typography
+// --------------------------------------------------
+$sans-serif:                "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serif:                     Georgia, "Times New Roman", Times, serif !default;
+$monospace:                 Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+// Defaults
+$default-font:              $sans-serif !default;
+$default-font-color:        $g-gray-900 !default;
+
+// Sizes
+$font-size-base:          14px !default;
+
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+// Weights
+$thin:                      100 !default;
+$light:                     300 !default;
+$regular:                   400 !default;
+$medium:                    500 !default;
+$semi-bold:                 600 !default;
+$bold:                      700 !default;
+$extra-bold:                900 !default;
+
+//
+// Links
+// --------------------------------------------------
+$link-color:                $g-blue !default;
+
+//
+// Animations
+// --------------------------------------------------
+
+$animation-xshort: 125ms !default;
+$animation-short: 250ms !default;
+$animation-medium: 500ms !default;
+$animation-long: 1s !default;
+$animation-xl: 2s !default;
+
+//
+// Media Queries
+// --------------------------------------------------
+
+$mq-responsive: true !default;
+
+$mq-breakpoints: (
+    xs: $screen-xs,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+);
+
+// Define the breakpoint from the $mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (i.e. when $mq-responsive is set to 'false').
+$mq-static-breakpoint: lg !default;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+$mq-show-breakpoints: () !default;
+
+@if $debug == true {
+    $mq-show-breakpoints: (xs, sm, md, lg);
+}
+
+@import '../vendor/_mq';           // https://github.com/sass-mq/sass-mq

@@ -1,0 +1,78 @@
+// Variables // --------------------------------------------------
+
+$debug: true;
+
+//
+// Colors
+// --------------------------------------------------
+
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$brand-primary:         darken(#428bca, 6.5%); // #337ab7
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+$brand-gray:            $gray;
+
+//
+// Typography
+// --------------------------------------------------
+
+$sans-serif:                "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:                     Georgia, "Times New Roman", Times, serif;
+$monospace:                 Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Defaults
+$default-font:              $sans-serif;
+$default-font-color:        $gray-dark;
+
+// Sizes
+$font-size-base:          14px;
+
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)); // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)); // ~18px
+$font-size-h5:            $font-size-base;
+$font-size-h6:            ceil(($font-size-base * 0.85)); // ~12px
+
+// Weights
+$thin:                      100;
+$light:                     300;
+$regular:                   400;
+$medium:                    500;
+$semi-bold:                 600;
+$bold:                      700;
+$extra-bold:                900;
+
+//
+// Links
+// --------------------------------------------------
+
+$link-color:                $brand-primary;
+
+//
+// Buttons
+// --------------------------------------------------
+
+$button-text-color: #333;
+$button-color: $brand-gray;
+
+//
+// Animations
+// --------------------------------------------------
+
+$animation-xshort: 125ms;
+$animation-short: 250ms;
+$animation-medium: 500ms;
+$animation-long: 1s;
+$animation-xl: 2s;

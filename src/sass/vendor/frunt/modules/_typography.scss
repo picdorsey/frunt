@@ -1,0 +1,23 @@
+// Typography // --------------------------------------------------
+
+@include component(text-color) {
+    @include option(primary) {
+        color: $brand-primary;
+    }
+
+    @include option(success) {
+        color: $brand-success;
+    }
+
+    @include option(info) {
+        color: $brand-info;
+    }
+
+    @include option(warning) {
+        color: $brand-warning;
+    }
+
+    @include option(danger) {
+        color: $brand-danger;
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "esnext": true,
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "immed": true,
+    "newcap": true,
+    "noarg": true,
+    "strict": true,
+    "globals": {
+        "$" : false,
+        "console" : false,
+        "alert" : false,
+        "require" : false
+    }
+}
