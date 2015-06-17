@@ -1,22 +1,32 @@
-// Application Name
-// @author
-// @copyright
-
-@import 'core/vars';
+// @app
+// @author Piccirilli Dorsey
+// @copyright 2015
 
 // Vendor // --------------------------------------------------
 // Different Libraries Used
 // or CSS related to some JavaScript libraries
 
-@import 'vendor/frunt/frunt';
+@import 'vendor/normalize';
+@import 'vendor/flexbox';
+@import '../../node_modules/font-awesome/scss/font-awesome';
 
 // Mixins // --------------------------------------------------
 // Misc Mixins used globally.
 
+@import 'mixins/animation';
+@import 'mixins/box-sizing';
+@import 'mixins/clearfix';
+@import 'mixins/button';
+
 // Core // --------------------------------------------------
 // Basic elements and scaffolding that apply everywhere.
 
+@import 'core/vars';
+@import 'core/csstyle';
+@import 'core/scaffolding';
 @import 'core/typography';
+@import 'core/bs-grid';
+@import 'core/layout';
 @import 'core/z-index';
 @import 'core/tweaks';
 @import 'core/misc';
@@ -26,18 +36,23 @@
 // These are usually project specific.
 
 @import 'partials/header';
-@import 'partials/nav';
-@import 'partials/sidebar';
 @import 'partials/main';
+@import 'partials/sidebar';
 @import 'partials/footer';
 
-// Objects and Modules // --------------------------------------------------
+// Components // --------------------------------------------------
 // Elements of a webpage.
 // These should be written so that they can be extracted and reused.
 // These should be written using the csstyle method.
 // http://www.csstyle.io/
 
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/images';
+@import 'components/lists';
+@import 'components/section';
+@import 'components/typography';
 
 // Layouts // --------------------------------------------------
-// Where page layouts go and any page-specific
-// changes to partials and modules
+//
+//

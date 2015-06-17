@@ -6,7 +6,7 @@
     @include box-sizing(border-box);
 
     border-radius: 0;
-    border: 1px solid $g-gray-500;
+    border: 1px solid $gray;
     background: #fff;
 
     $animation: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
@@ -14,7 +14,7 @@
 
     &:hover,
     &:focus {
-        background: $g-gray-50;
+        background: $gray-dark;
     }
 
     &:focus {
