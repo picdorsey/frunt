@@ -119,6 +119,35 @@ $animation-medium: 500ms;
 $animation-long: 1s;
 $animation-xl: 2s;
 
+
+//
+// Media Queries
+// --------------------------------------------------
+
+$mq-responsive: true !default;
+
+$mq-breakpoints: (
+    xs: $screen-xs,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+);
+
+// Define the breakpoint from the $mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (i.e. when $mq-responsive is set to 'false').
+$mq-static-breakpoint: lg !default;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+$mq-show-breakpoints: () !default;
+
+@if $debug == true {
+    $mq-show-breakpoints: (xs, sm, md, lg);
+}
+
+@import '../vendor/_mq';           // https://github.com/sass-mq/sass-mq
+
 //
 // Component Prefix
 // --------------------------------------------------
