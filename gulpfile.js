@@ -78,8 +78,8 @@ gulp.task('browserify', function () {
 });
 
 gulp.task('js', function() {
-    return gulp.src(path.src.js + 'external/*.js')
-        .pipe(concat('external.js'))
+    return gulp.src(path.src.js + 'vendor/*.js')
+        .pipe(concat('vendor.js'))
         .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
         .pipe(gulpif(argv.beautify, beautify(), uglify()))
         .pipe(gulp.dest(path.dist.js))
