@@ -1,5 +1,5 @@
 # Frunt
-[![Dependency Status](https://david-dm.org/picdorsey/frunt.svg)](https://david-dm.org/picdorsey/frunt-web-app)  [![devDependency Status](https://david-dm.org/picdorsey/frunt/dev-status.svg)](https://david-dm.org/picdorsey/frunt-web-app#info=devDependencies)
+[![Dependency Status](https://david-dm.org/picdorsey/frunt.svg)](https://david-dm.org/picdorsey/frunt)  [![devDependency Status](https://david-dm.org/picdorsey/frunt/dev-status.svg)](https://david-dm.org/picdorsey/frunt#info=devDependencies)
 
 Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
@@ -31,20 +31,11 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 `gulp dev` to watch BrowserSync and to watch for changes.
 
+(`gulp dev --livereload` to use livereload to watch for changes instead of browsersync.)
+
+`gulp watch` to watch for changes (no server)
+
 #### Options
-`--livereload` to use livereload to watch for changes instead of browsersync. (Useful for PHP/Vagrant).
+`--livereload` to use livereload to watch for changes instead of browsersync.
 
-`--beautify` do not minify build files.
-
-### Sass
-
-### Javascript
-
-Using [Browserify](http://browserify.org/)
-
-`/src/js/app.js` builds to `/public/assets/js/app.js` 
-
-Anything inside the `/src/js/external` directory builds to `/public/assets/js/external.js` 
-
-***Notes***
-It is recommended to download external javascript files using NPM if available. If you need to add a third party javascript, add the file to the `/src/js/external` folder.
+`--beautify` do not minify any build files.
