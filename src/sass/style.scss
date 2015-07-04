@@ -1,58 +1,58 @@
-// @app
+// @app 
 // @author Piccirilli Dorsey
 // @copyright 2015
 
-// Vendor // --------------------------------------------------
-// Different Libraries Used
-// or CSS related to some JavaScript libraries
+// Global Configuration // --------------------------------------------------
 
-@import 'vendor/normalize';
-@import 'vendor/flexbox';
-@import '../../node_modules/font-awesome/scss/font-awesome';
+@import 'config';
 
-// Mixins // --------------------------------------------------
-// Misc Mixins used globally.
 
-@import 'mixins/animation';
-@import 'mixins/box-sizing';
-@import 'mixins/clearfix';
-@import 'mixins/button';
+// Core Mixins // --------------------------------------------------
+// Mixins used in the frunt ui core.
+
+@import '_mixins/animation';
+@import '_mixins/button';
+@import '_mixins/clearfix';
+@import '_mixins/valign';
+
 
 // Core // --------------------------------------------------
-// Basic elements and scaffolding that apply everywhere.
+// The core frunt ui.
 
-@import 'core/vars';
-@import 'core/csstyle';
-@import 'core/scaffolding';
-@import 'core/typography';
-@import 'core/bs-grid';
-@import 'core/layout';
-@import 'core/z-index';
-@import 'core/tweaks';
-@import 'core/misc';
+@import '_core/reset';
+@import '_core/z-index';
+@import '_core/typography';
+@import '_core/grid';
+@import '_core/misc';
 
-// Partials // --------------------------------------------------
-// Specific parts of a webpage.
-// These are usually project specific.
 
-@import 'partials/header';
-@import 'partials/main';
-@import 'partials/sidebar';
-@import 'partials/footer';
+// Helpers // --------------------------------------------------
+// Easy style tweaks and helpers.
 
-// Components // --------------------------------------------------
-// Elements of a webpage.
-// These should be written so that they can be extracted and reused.
-// These should be written using the csstyle method.
-// http://www.csstyle.io/
+@import 'mixins'; // User defined mixins, not related to a component
+@import 'tweaks'; // Tweaks, becuase you can't help it
 
-@import 'components/buttons';
-@import 'components/form';
-@import 'components/images';
-@import 'components/lists';
-@import 'components/section';
-@import 'components/typography';
+
+// Third-Party Assets // --------------------------------------------------
+// Things like fonts, icons, etc.
+
+@import '../../node_modules/font-awesome/scss/font-awesome';
 
 // Layouts // --------------------------------------------------
-//
-//
+// Layouts should be entire page structures.
+// Layouts are made up of partials and components.
+
+@import 'layouts/*';
+
+
+// Partials // --------------------------------------------------
+// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
+
+@import 'partials/*';
+
+
+// Components // --------------------------------------------------
+// Reusable components that make up a webpage.
+// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+
+@import 'components/*';

@@ -1,7 +1,13 @@
-// Scaffolding // --------------------------------------------------
+// Reset // --------------------------------------------------
+
+@import '../_vendor/normalize'; // Defacto reset
+
+/**
+ * Box sizing
+ */
 
 :root {
-    @include box-sizing();
+    box-sizing: border-box;
 }
 
 *,
@@ -96,7 +102,7 @@ textarea {
 input:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid $brand-primary;
+    border: 1px solid $ui-primary;
     outline: 0;
 }
 label,

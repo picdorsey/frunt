@@ -1,0 +1,163 @@
+// Config // --------------------------------------------------
+
+$debug: true !default;
+$mq-responsive: true !default; // Set to false for static sites
+
+//
+// Colors
+// --------------------------------------------------
+
+$blue:                   #337ab7;
+$green:                  #5cb85c;
+$light-blue:             #5bc0de;
+$yellow:                 #f0ad4e;
+$red:                    #d9534f;
+
+$gray-darker:            #222;
+$gray-dark:              #333;
+$gray:                   #555;
+$gray-light:             #ccc;
+$gray-lighter:           #eee;
+
+$ui-primary:             $blue;
+$ui-success:             $green;
+$ui-info:                $light-blue;
+$ui-warning:             $yellow;
+$ui-danger:              $red;
+$ui-gray:                $gray;
+
+
+//
+// Typography
+// --------------------------------------------------
+
+$sans-serif:             "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:                  Georgia, "Times New Roman", Times, serif;
+$monospace:              Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-url:               'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
+
+// Defaults
+$default-font:           $sans-serif;
+$default-font-color:     $gray-dark;
+
+// Sizes
+$font-size-base:         14px;
+
+$font-size-large:        18px;
+$font-size-small:        12px;
+
+$font-size-h1:           36px;
+$font-size-h2:           30px;
+$font-size-h3:           24px;
+$font-size-h4:           18px;
+$font-size-h5:           16px;
+$font-size-h6:           14px;
+
+// Weights
+$thin:                   100;
+$light:                  300;
+$regular:                400;
+$medium:                 500;
+$semi-bold:              600;
+$bold:                   700;
+$extra-bold:             900;
+
+
+//
+// Links
+// --------------------------------------------------
+
+$link-color:             $ui-primary;
+$link-hover:             darken($ui-primary, 15%);
+
+
+//
+// Buttons
+// --------------------------------------------------
+
+$button-text-color:      $gray-darker;
+$button-color:           $ui-gray;
+
+
+//
+// Animations
+// --------------------------------------------------
+
+$animation-xshort:       125ms;
+$animation-short:        250ms;
+$animation-medium:       500ms;
+$animation-long:         1s;
+$animation-xl:           2s;
+
+
+//
+// Grid
+// --------------------------------------------------
+
+$screen-xs: 480px !default;
+$screen-xs-min: $screen-xs !default;
+$screen-phone: $screen-xs-min !default;
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+$screen-tablet: $screen-sm-min !default;
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+$screen-desktop: $screen-md-min !default;
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+$screen-lg-desktop: $screen-lg-min !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+$grid-float-breakpoint: $screen-sm-min !default;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+$container-tablet: ((720px + $grid-gutter-width)) !default;
+$container-sm: $container-tablet !default;
+$container-desktop: ((940px + $grid-gutter-width)) !default;
+$container-md: $container-desktop !default;
+$container-large-desktop: ((1140px + $grid-gutter-width)) !default;
+$container-lg: $container-large-desktop !default;
+
+$gutter: $grid-gutter-width;
+
+
+//
+// Media Queries
+// --------------------------------------------------
+
+$mq-breakpoints: (
+    xs: $screen-xs,
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+);
+
+// Define the breakpoint from the $mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (i.e. when $mq-responsive is set to 'false').
+$mq-static-breakpoint: lg !default;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+$mq-show-breakpoints: () !default;
+
+@if $debug == true {
+    $mq-show-breakpoints: (xs, sm, md, lg);
+}
+
+@import '_vendor/mq'; // https://github.com/sass-mq/sass-mq
+
+
+//
+// CSStyle Config
+// --------------------------------------------------
+
+@import '_vendor/csstyle'; // http://www.csstyle.io
+
+$csstyle-root-id: 'frunt';
+$csstyle-component-symbol: 'c-';

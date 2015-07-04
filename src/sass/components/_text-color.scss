@@ -2,22 +2,22 @@
 
 @include component(text-color) {
     @include option(primary) {
-        color: $brand-primary;
+        color: $ui-primary;
     }
 
     @include option(success) {
-        color: $brand-success;
+        color: $ui-success;
     }
 
     @include option(info) {
-        color: $brand-info;
+        color: $ui-info;
     }
 
     @include option(warning) {
-        color: $brand-warning;
+        color: $ui-warning;
     }
 
     @include option(danger) {
-        color: $brand-danger;
+        color: $ui-danger;
     }
 }

@@ -1,0 +1,25 @@
+// Button // --------------------------------------------------
+
+@include component(button) {
+    @include button(#fff, $default-font-color);
+
+    @include option(primary) {
+        @include button($ui-primary, #fff);
+    }
+
+    @include option(success) {
+        @include button($ui-success, #fff);
+    }
+
+    @include option(info) {
+        @include button($ui-info, #fff);
+    }
+
+    @include option(warning) {
+        @include button($ui-warning, #fff);
+    }
+
+    @include option(danger) {
+        @include button($ui-danger, #fff);
+    }
+}
