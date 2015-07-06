@@ -1,5 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
 body:before {
   background-color: #FCF8E3;
   border-bottom: 1px solid #FBEED5;
@@ -473,11 +481,8 @@ html {
 }
 
 body {
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -638,41 +643,27 @@ caption {
   text-align: left;
 }
 
-h1,
-.h1 {
+h1 {
   font-size: 36px;
 }
 
-h2,
-.h2 {
+h2 {
   font-size: 30px;
 }
 
-h3,
-.h3 {
+h3 {
   font-size: 24px;
 }
 
-h4,
-.h4 {
+h4 {
   font-size: 18px;
 }
 
-h5,
-.h5 {
+h5 {
   font-size: 16px;
 }
 
-h6,
-.h6 {
-  font-size: 14px;
-}
-
-p,
-span,
-a,
-li,
-input {
+h6 {
   font-size: 14px;
 }
 
@@ -692,7 +683,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: #22527b;
 }
 
 .container {
@@ -4172,14 +4163,14 @@ hr {
 .c-button:hover {
   background: transparent;
   border-color: #eee;
-  color: #eee;
+  color: #333;
 }
 
 .c-button:active,
 .c-button:focus {
   background: transparent;
   border-color: #eee;
-  color: #eee;
+  color: #333;
 }
 
 .c-button.\--primary {
@@ -4575,6 +4566,23 @@ hr {
   color: #d9534f;
 }
 
+#guide-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #4100a8;
+  color: #555;
+  z-index: 900;
+}
+
+#guide-header .logo {
+  color: #fff;
+  line-height: 80px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
 #guide-main #guide-content {
   position: relative;
   min-height: 1px;
@@ -4625,6 +4633,24 @@ hr {
   }
 }
 
+#guide-footer {
+  background-color: #eee;
+  padding: 30px 0;
+  margin: 60px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+#frunt .\@guide {
+  padding-top: 100px;
+}
+
 #frunt .\@guide .c-section__heading {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-bottom: 10px;
   border-bottom: 5px solid #eee;
+  margin-bottom: 30px;
 }

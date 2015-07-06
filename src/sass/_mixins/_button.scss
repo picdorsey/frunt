@@ -1,6 +1,5 @@
 // Button // --------------------------------------------------
 
-
 @mixin button($background-color, $font-color, $hover-text-color: $background-color) {
     display: inline-block;
     padding: 10px 20px;

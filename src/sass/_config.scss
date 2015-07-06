@@ -42,7 +42,7 @@ $default-font:           $sans-serif;
 $default-font-color:     $gray-dark;
 
 // Sizes
-$font-size-base:         14px;
+$font-size-base:         16px;
 
 $font-size-large:        18px;
 $font-size-small:        12px;
@@ -65,6 +65,19 @@ $extra-bold:             900;
 
 // Line Heights
 $line-height-base:       1.25;
+
+
+//
+// Body
+// --------------------------------------------------
+
+body {
+    font-size: $font-size-base;
+    line-height: 1.6;
+    font-weight: $regular;
+    font-family: $default-font;
+    color: $default-font-color;
+}
 
 
 //

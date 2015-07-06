@@ -48,11 +48,8 @@ html {
 }
 
 body {
-    font-size: $font-size-base;
-    line-height: 1.6;
-    font-weight: $regular;
-    font-family: $default-font;
-    color: $default-font-color;
+    margin: 0;
+    padding: 0;
 }
 
 /**
