@@ -63,6 +63,9 @@ $semi-bold:              600;
 $bold:                   700;
 $extra-bold:             900;
 
+// Line Heights
+$line-height-base:       1.25;
+
 
 //
 // Links
@@ -151,13 +154,3 @@ $mq-show-breakpoints: () !default;
 }
 
 @import '_vendor/mq'; // https://github.com/sass-mq/sass-mq
-
-
-//
-// CSStyle Config
-// --------------------------------------------------
-
-@import '_vendor/csstyle'; // http://www.csstyle.io
-
-$csstyle-root-id: 'frunt';
-$csstyle-component-symbol: 'c-';

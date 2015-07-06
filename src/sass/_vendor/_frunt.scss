@@ -1,17 +1,20 @@
-// frunt
+// Frunt
 // Clean, reusable component architecture.
 // Inspired by http://www.csstyle.io
-// Copyright (c) 2014 Dave Geddes
 
+// Config
 $csstyle-component-symbol: 'c-' !default;
-$csstyle-option-symbol: '\\-' !default;
-$csstyle-part-symbol: '_' !default;
+$csstyle-part-symbol: '__' !default;
+$csstyle-option-symbol: '\\--' !default;
 $csstyle-tweak-symbol: '\\+' !default;
 $csstyle-layout-symbol: '\\@' !default;
 $csstyle-root-id: 'frunt' !default;
 
-// build selectors
-@function _build_selector($prefix, $names){
+
+//
+// Build
+// --------------------------------------------------
+@function _build($prefix, $names){
     $selector: "";
 
     @for $i from 1 through length($names){
@@ -27,7 +30,7 @@ $csstyle-root-id: 'frunt' !default;
 
 // components
 @mixin component($names...){
-  #{_build_selector("." + $csstyle-component-symbol, $names)}{
+  #{_build("." + $csstyle-component-symbol, $names)}{
     @content
   }
 }
@@ -35,7 +38,7 @@ $csstyle-root-id: 'frunt' !default;
 // options
 // override components
 @mixin option($names...){
-  #{_build_selector("&." + $csstyle-option-symbol, $names)}{
+  #{_build("&." + $csstyle-option-symbol, $names)}{
     @content;
   }
 }
@@ -60,35 +63,42 @@ $csstyle-root-id: 'frunt' !default;
     @if $optionIndex > 0 {
       // part is also nested in another part
       @if ($partIndex > 0){
-        #{_build_selector("&" + $csstyle-part-symbol, $names)}{
+        #{_build("&" + $csstyle-part-symbol, $names)}{
           @content;
         }
       }
       @else{
-        #{_build_selector("& " + $component + $csstyle-part-symbol, $names)}{
+        #{_build("& " + $component + $csstyle-part-symbol, $names)}{
           @content;
         }
       }
     }
     @else {
-      #{_build_selector("&" + $csstyle-part-symbol, $names)}{
+      #{_build("&" + $csstyle-part-symbol, $names)}{
         @content;
       }
+    }
+}
+
+// partials
+@mixin partial($names...){
+    #{_build("#", $names)}{
+        @content
     }
 }
 
 // tweaks
 // override components, options, and modifiers
 @mixin tweak($names...){
-  #{_build_selector("#" + $csstyle-root-id + " ." + $csstyle-tweak-symbol, $names)}{
+  #{_build("#" + $csstyle-root-id + " ." + $csstyle-tweak-symbol, $names)}{
     @content;
   }
 }
 
-// layouts
-// override components, parts, options, and tweaks
+// Layouts
+// Override components, parts, options, and tweaks
 @mixin layout($names...){
-  #{_build_selector("#" + $csstyle-root-id + " ." + $csstyle-layout-symbol, $names)}{
+  #{_build("." + $csstyle-root-id + " ." + $csstyle-layout-symbol, $names)}{
     @content;
   }
 }
