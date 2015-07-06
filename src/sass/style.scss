@@ -1,13 +1,23 @@
-// @app 
+// @app // --------------------------------------------------
 // @author Piccirilli Dorsey
 // @copyright 2015
 
-// Global Configuration // --------------------------------------------------
+//
+// Import Frunt Generator
+// --------------------------------------------------
+
+@import '_vendor/frunt';
+
+//
+// Frunt Global Configuration
+// --------------------------------------------------
 
 @import 'config';
 
 
-// Core Mixins // --------------------------------------------------
+//
+// Frunt Core Mixins
+// --------------------------------------------------
 // Mixins used in the frunt ui core.
 
 @import '_mixins/animation';
@@ -16,7 +26,9 @@
 @import '_mixins/valign';
 
 
-// Core // --------------------------------------------------
+//
+// Frunt Core
+// --------------------------------------------------
 // The core frunt ui.
 
 @import '_core/reset';
@@ -26,33 +38,37 @@
 @import '_core/misc';
 
 
-// Helpers // --------------------------------------------------
+// Helpers
+// --------------------------------------------------
 // Easy style tweaks and helpers.
 
 @import 'mixins'; // User defined mixins, not related to a component
 @import 'tweaks'; // Tweaks, becuase you can't help it
 
 
-// Third-Party Assets // --------------------------------------------------
+// Third-Party Assets
+// --------------------------------------------------
 // Things like fonts, icons, etc.
 
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
-// Layouts // --------------------------------------------------
-// Layouts should be entire page structures.
-// Layouts are made up of partials and components.
 
-@import 'layouts/*';
-
-
-// Partials // --------------------------------------------------
+// Partials
+// --------------------------------------------------
 // Reusable once per page partials, reference an id (e.g. #header, #sidebar)
 
-@import 'partials/*';
+@import "partials/*";
 
-
-// Components // --------------------------------------------------
+// Components
+// --------------------------------------------------
 // Reusable components that make up a webpage.
 // Referenced in html with a 'c-' prefix (e.g. class="c-button")
 
 @import 'components/*';
+
+// Layouts
+// --------------------------------------------------
+// Layouts are specific to section and override any components, parts or tweaks.
+// Layouts are used is scss: @include layout(home) and in html: class="@home"
+
+@import 'layouts/*';

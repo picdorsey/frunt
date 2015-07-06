@@ -1,7 +1,7 @@
 // Button // --------------------------------------------------
 
 @include component(button) {
-    @include button(#fff, $default-font-color);
+    @include button($gray-lighter, $default-font-color);
 
     @include option(primary) {
         @include button($ui-primary, #fff);
