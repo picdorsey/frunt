@@ -27,6 +27,7 @@
     "gulp-beautify": "^1.1.2",
     "gulp-concat": "^2.5.2",
     "gulp-css-globbing": "^0.1.8",
+    "gulp-debug": "^2.0.1",
     "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.9.2",
     "gulp-livereload": "^3.8.0",
@@ -43,6 +44,8 @@
     "yargs": "^3.5.4"
   },
   "dependencies": {
-    "font-awesome": "^4.3.0"
+    "font-awesome": "^4.3.0",
+    "jquery": "<2.0.0",
+    "underscore": "^1.8.3"
   }
 }
