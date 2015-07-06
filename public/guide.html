@@ -1,116 +1,136 @@
 <!doctype html>
-<html id="csstyle" lang="en">
+<html id="frunt" lang="en">
 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <title>Website Style Guide</title>
+        <meta name="description" content="This is your websites style guide for quick reference and prototyping new components.">
 
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="/assets/css/style.css">
 
         <!--[if lt IE 9]>
-            <script src="/assets/vendor/js/html5shiv.js"></script>
-            <script src="/assets/vendor/js/respond.min.js"></script>
+        <script src="/assets/vendor/js/html5shiv.min.js"></script>
+        <script src="/assets/vendor/js/respond.min.js"></script>
         <![endif]-->
     </head>
 
-    <body>
+    <body class="@guide">
 
-    <body>
-        <div class="container">
+        <header id="guide-header">
+            <div class="container">
+                <a class="logo" href="guide.html">Website Style Guide</a>
+            </div>
+        </header>
 
-            <h1>Frunt Style Guide</h1>
+        <main id="guide-main" role="main">
+            <div class="container">
+                <div id="guide-content">
 
-            <section>
-                <h2>Typography</h2>
-                <h1>h1</h1>
-                <h2>h2</h2>
-                <h3>h3</h3>
-                <h4>h4</h4>
-                <h5>h5</h5>
-                <h6>h6</h6>
-                <p>This is a paragraph.</p>
-                <a href="#">Link</a>
-            </section>
+                    <section class="section">
+                        <h1 class="section__heading">Typography</h1>
 
-            <section>
-                <h2>Button</h2>
-                <a class="c-button" href="#">Default</a>
-                <a class="c-button --primary" href="#">Primary</a>
-                <a class="c-button --success" href="#">Success</a>
-                <a class="c-button --info" href="#">Info</a>
-                <a class="c-button --warning" href="#">Warning</a>
-                <a class="c-button --danger" href="#">Danger</a>
-            </section>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <h6>Heading 6</h6>
+                        <p>This is a paragraph with an <a href="#">inline link</a>.</p>
+                    </section>
 
-            <section class="grid-demo">
-                <h2>Grid</h2>
-                <div class="row">
-                    <div class="col-md-12">12</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-1">1</div>
-                    <div class="col-md-11">11</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">2</div>
-                    <div class="col-md-10">10</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">3</div>
-                    <div class="col-md-9">9</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">4</div>
-                    <div class="col-md-8">8</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5">5</div>
-                    <div class="col-md-7">7</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">6</div>
-                    <div class="col-md-6">6</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-7">7</div>
-                    <div class="col-md-5">5</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8">8</div>
-                    <div class="col-md-4">4</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-9">9</div>
-                    <div class="col-md-3">3</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">10</div>
-                    <div class="col-md-2">2</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-11">11</div>
-                    <div class="col-md-1">1</div>
-                </div>
-            </section>
+                    <section class="section">
+                        <h1 class="section__heading">Button</h1>
 
-            <section>
-                <h2>Form</h2>
-                <form action="#">
-                    <input type="text" placeholder="placeholder">
-                </form>
-            </section>
-        </div>
+                        <a class="c-button" href="#">Default</a>
+                        <a class="c-button --primary" href="#">Primary</a>
+                        <a class="c-button --success" href="#">Success</a>
+                        <a class="c-button --info" href="#">Info</a>
+                        <a class="c-button --warning" href="#">Warning</a>
+                        <a class="c-button --danger" href="#">Danger</a>
+                    </section>
 
+                    <section class="section +grid">
+                        <h1 class="section__heading">Grid</h1>
+
+                        <div class="row">
+                            <div class="col-md-12">12</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">1</div>
+                            <div class="col-md-11">11</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">2</div>
+                            <div class="col-md-10">10</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">3</div>
+                            <div class="col-md-9">9</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">4</div>
+                            <div class="col-md-8">8</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">5</div>
+                            <div class="col-md-7">7</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">6</div>
+                            <div class="col-md-6">6</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">7</div>
+                            <div class="col-md-5">5</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">8</div>
+                            <div class="col-md-4">4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">9</div>
+                            <div class="col-md-3">3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">10</div>
+                            <div class="col-md-2">2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">11</div>
+                            <div class="col-md-1">1</div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h1 class="section__heading">Form</h1>
+
+                        <form>
+                            <input class="form-control" type="text" placeholder="placeholder">
+                        </form>
+                    </section>
+                </div>
+                <aside id="guide-sidebar">
+                    Sidebar...
+                </aside>
+            </div>
+        </main>
+
+        <footer id="guide-footer">
+            <div class="container">
+                Footer...
+            </div>
+        </footer>
 
         <!-- Javascripts -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="/assets/js/vendor.js"></script>
         <script src="/assets/js/bundle.js"></script>
+
     </body>
 
 </html>
