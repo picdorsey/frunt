@@ -19,6 +19,7 @@ var phpcs = require('gulp-phpcs');
 var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
+var sassGlobbing = require('gulp-css-globbing');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var streamify = require('gulp-streamify');
@@ -42,6 +43,14 @@ var path = {
 
 gulp.task('styles', function () {
     return gulp.src(path.src.sass + '*.scss')
+        .pipe(sassGlobbing({
+            extensions: ['.scss'],
+            ignoreFolders: ['_core', '_mixins', '_vendor'],
+            scssImportPath: {
+                leading_underscore: false,
+                filename_extension: false
+            }
+        }))
         .pipe(sass({
             errLogToConsole: true,
             sourceComments : 'normal'

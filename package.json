@@ -26,6 +26,7 @@
     "gulp-autoprefixer": "^2.1.0",
     "gulp-beautify": "^1.1.2",
     "gulp-concat": "^2.5.2",
+    "gulp-css-globbing": "^0.1.8",
     "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.9.2",
     "gulp-livereload": "^3.8.0",
