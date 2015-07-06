@@ -1,16 +1,14 @@
-// csstyle for sass
-// Clean, Simple Styling for the Web
-// http://www.csstyle.io
+// frunt
+// Clean, reusable component architecture.
+// Inspired by http://www.csstyle.io
 // Copyright (c) 2014 Dave Geddes
-// https://twitter.com/geddski
-// https://github.com/geddski
 
-$csstyle-component-symbol: '' !default;
-$csstyle-option-symbol: '\\--' !default;
-$csstyle-part-symbol: '__' !default;
+$csstyle-component-symbol: 'c-' !default;
+$csstyle-option-symbol: '\\-' !default;
+$csstyle-part-symbol: '_' !default;
 $csstyle-tweak-symbol: '\\+' !default;
-$csstyle-location-symbol: '\\@' !default;
-$csstyle-root-id: 'csstyle' !default;
+$csstyle-layout-symbol: '\\@' !default;
+$csstyle-root-id: 'frunt' !default;
 
 // build selectors
 @function _build_selector($prefix, $names){
@@ -87,10 +85,10 @@ $csstyle-root-id: 'csstyle' !default;
   }
 }
 
-// locations
+// layouts
 // override components, parts, options, and tweaks
-@mixin location($names...){
-  #{_build_selector("#" + $csstyle-root-id + " ." + $csstyle-location-symbol, $names)}{
+@mixin layout($names...){
+  #{_build_selector("#" + $csstyle-root-id + " ." + $csstyle-layout-symbol, $names)}{
     @content;
   }
 }
