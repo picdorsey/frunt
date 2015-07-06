@@ -1,0 +1,68 @@
+// Hamburger Menu Icon // --------------------------------------------------
+// (---) top    -> &:before
+// [---] middle -> &
+// (---) bottom -> &:after
+
+// Config
+$width: 30px;
+$height: 5px;
+$gutter: 3px;
+$color: $gray-dark;
+$border-radius: 0;
+$transition-duration: .3s;
+
+// Burger
+@include component(burger) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    user-select: none;
+    text-indent: -999px;
+
+    &, &:before, &:after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+
+        @include mq($from: sm) {
+            background-color: #fff;
+        }
+
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+        transition-property: background-color, transform;
+        transition-duration: $transition-duration;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: "";
+    }
+
+    &:before {
+        top: -($height + $gutter);
+    }
+
+    &:after {
+        top: $height + $gutter;
+    }
+
+    .fs-navigation-open &,
+    .active & {
+        & {
+            background-color: transparent;
+        }
+        &:before {
+            transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        }
+        &:after {
+            transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        }
+    }
+}
