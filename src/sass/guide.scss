@@ -44,12 +44,11 @@
 }
 
 // Overrides
-// Overrides for the website style guide that conform to csstyle.
-
+// for the website style guide that conform to csstyle.
 @include layout(guide) {
     @include component(section) {
         @include part(heading) {
-
+            border-bottom: 5px solid $gray-lighter;
         }
     }
 }

@@ -98,7 +98,7 @@ $csstyle-root-id: 'frunt' !default;
 // Layouts
 // Override components, parts, options, and tweaks
 @mixin layout($names...){
-  #{_build("." + $csstyle-root-id + " ." + $csstyle-layout-symbol, $names)}{
+  #{_build("#" + $csstyle-root-id + " ." + $csstyle-layout-symbol, $names)}{
     @content;
   }
 }

@@ -65,14 +65,9 @@ gulp.task('guide', function () {
             extensions: ['.scss']
         }))
         .pipe(sass({
-            errLogToConsole: true,
-            sourceComments: 'normal'
+            outputStyle: 'expanded'
         }))
-        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulpif(argv.beautify, beautify(), minifycss({processImport: false})))
         .pipe(gulp.dest(path.dist.css))
-        .pipe(gulpif(argv.livereload, livereload(), reload({stream: true})))
         .pipe(notify({message: 'Style Guide Complete'}));
 });
 
@@ -173,7 +168,7 @@ gulp.task('watch', function () {
     });
 
     watch(path.src.scss + '**/*.scss', function () {
-        gulp.start('styles');
+        gulp.start('styles', 'guide');
     });
 
     watch(dist + '/**/*.html', function () {
@@ -202,5 +197,5 @@ gulp.task('test', function () {
 });
 
 gulp.task('default', function () {
-    gulp.start('styles', 'browserify', 'js');
+    gulp.start('styles', 'guide', 'browserify', 'js');
 });
