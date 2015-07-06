@@ -1,25 +1,68 @@
 // Button // --------------------------------------------------
 
+
+// Config
+$button-default:    $gray-lighter;
+$button-primary:    $ui-primary;
+$button-success:    $ui-success;
+$button-info:       $ui-info;
+$button-warning:    $ui-warning;
+$button-danger:     $ui-danger;
+
+// Mixins
+@mixin button($background-color, $font-color, $hover-text-color: $background-color) {
+    display: inline-block;
+    padding: 10px 20px;
+
+    color: $font-color;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    background-color: $background-color;
+    border: 1px solid transparent;
+    border-radius: 2px;
+
+    $transition: background-color 0.15s linear, color 0.15s linear;
+
+    @include transition($transition);
+
+    &:hover {
+        background: transparent;
+        border-color: $background-color;
+        color: $hover-text-color;
+    }
+
+    &:active,
+    &:focus {
+        background: transparent;
+        border-color: $background-color;
+        color: $hover-text-color;
+    }
+}
+
+
+// Component
 @include component(button) {
-    @include button($gray-lighter, $default-font-color, $default-font-color);
+    @include button($button-default, darken($button-default, 60%), darken($button-default, 75%));
 
     @include option(primary) {
-        @include button($ui-primary, #fff);
+        @include button($button-primary, #fff, darken($button-primary, 15%));
     }
 
     @include option(success) {
-        @include button($ui-success, #fff);
+        @include button($button-success, #fff, darken($button-success, 15%));
     }
 
     @include option(info) {
-        @include button($ui-info, #fff);
+        @include button($button-info, #fff, darken($button-info, 15%));
     }
 
     @include option(warning) {
-        @include button($ui-warning, #fff);
+        @include button($button-warning, #fff, darken($button-warning, 15%));
     }
 
     @include option(danger) {
-        @include button($ui-danger, #fff);
+        @include button($button-danger, #fff, darken($button-danger, 15%));
     }
 }

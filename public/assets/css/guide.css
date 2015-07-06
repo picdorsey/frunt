@@ -4140,8 +4140,7 @@ hr {
 .c-button {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
-  color: #333;
+  color: #555555;
   font-size: 14px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -4163,20 +4162,19 @@ hr {
 .c-button:hover {
   background: transparent;
   border-color: #eee;
-  color: #333;
+  color: #2f2f2f;
 }
 
 .c-button:active,
 .c-button:focus {
   background: transparent;
   border-color: #eee;
-  color: #333;
+  color: #2f2f2f;
 }
 
 .c-button.\--primary {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -4199,20 +4197,19 @@ hr {
 .c-button.\--primary:hover {
   background: transparent;
   border-color: #337ab7;
-  color: #337ab7;
+  color: #22527b;
 }
 
 .c-button.\--primary:active,
 .c-button.\--primary:focus {
   background: transparent;
   border-color: #337ab7;
-  color: #337ab7;
+  color: #22527b;
 }
 
 .c-button.\--success {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -4235,20 +4232,19 @@ hr {
 .c-button.\--success:hover {
   background: transparent;
   border-color: #5cb85c;
-  color: #5cb85c;
+  color: #3d8b3d;
 }
 
 .c-button.\--success:active,
 .c-button.\--success:focus {
   background: transparent;
   border-color: #5cb85c;
-  color: #5cb85c;
+  color: #3d8b3d;
 }
 
 .c-button.\--info {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -4271,20 +4267,19 @@ hr {
 .c-button.\--info:hover {
   background: transparent;
   border-color: #5bc0de;
-  color: #5bc0de;
+  color: #28a1c5;
 }
 
 .c-button.\--info:active,
 .c-button.\--info:focus {
   background: transparent;
   border-color: #5bc0de;
-  color: #5bc0de;
+  color: #28a1c5;
 }
 
 .c-button.\--warning {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -4307,20 +4302,19 @@ hr {
 .c-button.\--warning:hover {
   background: transparent;
   border-color: #f0ad4e;
-  color: #f0ad4e;
+  color: #df8a13;
 }
 
 .c-button.\--warning:active,
 .c-button.\--warning:focus {
   background: transparent;
   border-color: #f0ad4e;
-  color: #f0ad4e;
+  color: #df8a13;
 }
 
 .c-button.\--danger {
   display: inline-block;
   padding: 10px 20px;
-  margin: 0 5px 5px;
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.05em;
@@ -4343,14 +4337,14 @@ hr {
 .c-button.\--danger:hover {
   background: transparent;
   border-color: #d9534f;
-  color: #d9534f;
+  color: #b52b27;
 }
 
 .c-button.\--danger:active,
 .c-button.\--danger:focus {
   background: transparent;
   border-color: #d9534f;
-  color: #d9534f;
+  color: #b52b27;
 }
 
 .c-form-control {
