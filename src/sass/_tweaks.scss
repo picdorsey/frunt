@@ -3,50 +3,25 @@
 // Tweaks are applied using a + sign followed by the tweak name.
 // Tweaks automatically override the styling of components, options, and parts.
 
-@include tweak(text-center) {
+//
+// Alignment
+// --------------------------------------------------
+
+@include tweak(left) {
+    text-align: left;
+}
+
+@include tweak(center) {
     text-align: center;
 }
 
-@include tweak(full-screen) {
-    height: 100vh;
+@include tweak(right) {
+    text-align: center;
 }
 
-@include tweak(bordered) {
-    border-bottom: 5px solid $gray;
-}
-
-@include tweak(full) {
-    display: block;
-    width: 100%;
-}
-
-@include tweak(italic) {
-    font-style: italic;
-}
-
-@include tweak(no-margin) {
-    margin: 0;
-}
-
-@include tweak(no-margin-top) {
-    margin-top: 0;
-}
-
-@include tweak(no-margin-bottom) {
-    margin-bottom: 0;
-}
-
-@include tweak(no-padding) {
-    padding: 0;
-}
-
-@include tweak(no-padding-top) {
-    padding-top: 0;
-}
-
-@include tweak(no-padding-bottom) {
-    padding-bottom: 0;
-}
+//
+// Float Alignment
+// --------------------------------------------------
 
 @include tweak(pull-left) {
     float: left;
@@ -54,4 +29,20 @@
 
 @include tweak(pull-right) {
     float: right;
+}
+
+//
+// Clearing
+// --------------------------------------------------
+
+@include tweak(clearing) {
+    @include clearfix();
+}
+
+//
+// Typography
+// --------------------------------------------------
+
+@include tweak(italic) {
+    font-style: italic;
 }
