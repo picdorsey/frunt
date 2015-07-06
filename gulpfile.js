@@ -43,6 +43,7 @@ var path = {
 
 gulp.task('styles', function () {
     return gulp.src(path.src.sass + '*.scss')
+        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
         .pipe(sassGlobbing({
             extensions: ['.scss'],
             ignoreFolders: ['_core', '_mixins', '_vendor'],
@@ -55,7 +56,6 @@ gulp.task('styles', function () {
             errLogToConsole: true,
             sourceComments : 'normal'
         }))
-        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulpif(argv.beautify, beautify(), minifycss({processImport: false})))
         .pipe(gulp.dest(path.dist.css))
