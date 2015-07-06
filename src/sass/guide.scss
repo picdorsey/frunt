@@ -1,0 +1,39 @@
+// Website Style Guide // --------------------------------------------------
+
+// Import Style Base
+@import "style";
+
+// Header
+@include partial(guide-header) {
+
+}
+
+// Main
+@include partial(guide-main) {
+    // Content
+    #guide-content {
+        @include make-sm-column(8);
+        @include make-md-column(9);
+    }
+    // Sidebar
+    #guide-sidebar {
+        @include make-sm-column(4);
+        @include make-md-column(3);
+    }
+}
+
+// Footer
+@include partial(guide-footer) {
+
+}
+
+// Overrides
+// Overrides for the website style guide that conform to csstyle.
+
+@include layout(guide) {
+    @include component(section) {
+        @include part(heading) {
+
+        }
+    }
+}
