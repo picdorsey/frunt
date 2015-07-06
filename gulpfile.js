@@ -10,6 +10,8 @@ var browserify = require('browserify');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var del = require('del');
+var debug = require('gulp-debug');
+var globbing = require('gulp-css-globbing');
 var gulpif = require('gulp-if');
 var jshint = require('gulp-jshint');
 var livereload = require('gulp-livereload');
@@ -19,7 +21,6 @@ var phpcs = require('gulp-phpcs');
 var plumber = require('gulp-plumber');
 var reload = browserSync.reload;
 var sass = require('gulp-sass');
-var sassGlobbing = require('gulp-css-globbing');
 var source = require('vinyl-source-stream');
 var sourcemaps = require('gulp-sourcemaps');
 var streamify = require('gulp-streamify');
@@ -30,8 +31,8 @@ var dist = './public/';
 
 var path = {
     src: {
-        sass: './src/sass/',
-        js: './src/js/',
+        scss: './src/sass/',
+        js: './src/js/'
     },
     dist: {
         css: dist + 'assets/css/',
@@ -42,25 +43,37 @@ var path = {
 // Sass // --------------------------------------------------
 
 gulp.task('styles', function () {
-    return gulp.src(path.src.sass + '*.scss')
-        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
-        .pipe(sassGlobbing({
-            extensions: ['.scss'],
-            ignoreFolders: ['_core', '_mixins', '_vendor'],
-            scssImportPath: {
-                leading_underscore: false,
-                filename_extension: false
-            }
+    return gulp.src(path.src.scss + 'style.scss')
+        .pipe(globbing({
+            extensions: ['.scss']
         }))
         .pipe(sass({
             errLogToConsole: true,
-            sourceComments : 'normal'
+            sourceComments: 'normal'
         }))
+        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulpif(argv.beautify, beautify(), minifycss({processImport: false})))
         .pipe(gulp.dest(path.dist.css))
         .pipe(gulpif(argv.livereload, livereload(), reload({stream: true})))
         .pipe(notify({message: 'Styles Complete'}));
+});
+
+gulp.task('guide', function () {
+    return gulp.src(path.src.scss + 'guide.scss')
+        .pipe(globbing({
+            extensions: ['.scss']
+        }))
+        .pipe(sass({
+            errLogToConsole: true,
+            sourceComments: 'normal'
+        }))
+        .pipe(plumber({ errorHandler: function (err) { console.log(err); } }))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(gulpif(argv.beautify, beautify(), minifycss({processImport: false})))
+        .pipe(gulp.dest(path.dist.css))
+        .pipe(gulpif(argv.livereload, livereload(), reload({stream: true})))
+        .pipe(notify({message: 'Style Guide Complete'}));
 });
 
 // Scripts // --------------------------------------------------
@@ -159,7 +172,7 @@ gulp.task('watch', function () {
         gulp.start(['lint', 'js', 'browserify']);
     });
 
-    watch(path.src.sass + '**/*.scss', function () {
+    watch(path.src.scss + '**/*.scss', function () {
         gulp.start('styles');
     });
 

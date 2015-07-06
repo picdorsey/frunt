@@ -1,7 +1,23 @@
 // Website Style Guide // --------------------------------------------------
 
 // Import Style Base
-@import "style";
+@import '_vendor/frunt';
+@import 'config';
+@import '_mixins/animation';
+@import '_mixins/button';
+@import '_mixins/clearfix';
+@import '_mixins/valign';
+@import '_core/reset';
+@import '_core/z-index';
+@import '_core/typography';
+@import '_core/grid';
+@import '_core/misc';
+@import 'mixins';
+@import 'tweaks';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+@import "partials/*";
+@import 'components/*';
+@import 'layouts/*';
 
 // Header
 @include partial(guide-header) {
