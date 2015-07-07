@@ -5,7 +5,7 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 ### Installation
 * Make sure gulp is installed on your system `sudo npm install -g gulp`
-* Then run `npm install` to install the dependencies.
+* Then run `npm run build` to install the dependencies and to run gulp.
 
 ### Features
 

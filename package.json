@@ -6,7 +6,8 @@
   "author": "Piccirilli Dorsey, inc",
   "repository": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "build": "npm install && gulp"
   },
   "browserify": {},
   "browserify-shim": {
@@ -28,6 +29,7 @@
     "gulp-beautify": "^1.1.2",
     "gulp-concat": "^2.5.2",
     "gulp-css-globbing": "^0.1.8",
+    "gulp-debug": "^2.0.1",
     "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.9.2",
     "gulp-livereload": "^3.8.0",
