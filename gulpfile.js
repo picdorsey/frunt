@@ -43,7 +43,7 @@ var config = {
 // Sass // --------------------------------------------------
 
 gulp.task('styles', function () {
-    return gulp.src([config.src.scss + '*.scss', '!' + config.src.scss + 'guide.scss'])
+    gulp.src([config.src.scss + '*.scss', '!' + config.src.scss + 'guide.scss'])
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.cssGlobbing({
@@ -53,7 +53,7 @@ gulp.task('styles', function () {
             outputStyle: 'expanded',
             errLogToConsole: true,
             sourceComments: false
-        }))
+        }).on('error', plugins.sass.logError))
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
         .pipe(plugins.if(config.production, plugins.minifyCss({processImport: false})))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
@@ -63,14 +63,15 @@ gulp.task('styles', function () {
 });
 
 gulp.task('guide', function () {
-    return gulp.src(config.src.scss + 'guide.scss')
+    gulp.src(config.src.scss + 'guide.scss')
         .pipe(plugins.cssGlobbing({
             extensions: ['.scss']
         }))
         .pipe(plugins.sass({
+            outputStyle: 'expanded',
             errLogToConsole: true,
             sourceComments: false
-        }))
+        }).on('error', plugins.sass.logError))
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
         .pipe(gulp.dest(config.dist.css))
         .pipe(plugins.notify({message: 'Style Guide Complete'}));
@@ -179,7 +180,7 @@ gulp.task('watch', function () {
     });
 
     plugins.watch(config.src.scss + '**/*.scss', function () {
-        gulp.start('styles', 'guide');
+        gulp.start('styles');
     });
 
     plugins.watch(dist + '/**/*.html', function () {
