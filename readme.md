@@ -31,14 +31,15 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 `gulp dev` to watch BrowserSync and to watch for changes.
 
-(`gulp dev --livereload` to use livereload to watch for changes instead of browsersync.)
-
 `gulp watch` to watch for changes (no server)
 
 #### Options
 `--livereload` to use livereload to watch for changes instead of browsersync.
 
 `--production` for production ready code (minify, no source maps)
+
+#### Config
+Make the `config.production` variable `true` to always minify the files.
 
 ## Readings
 http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm
