@@ -27,6 +27,7 @@ _site
 .project
 .settings
 .tmproj
+.vagrant
 *.esproj
 *.sublime-project
 *.sublime-workspace
