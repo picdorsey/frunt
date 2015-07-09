@@ -50,8 +50,7 @@ gulp.task('styles', function () {
         .pipe(plugins.sass({
             outputStyle: 'expanded',
             errLogToConsole: true,
-            sourceComments: false,
-            indentedSyntax: true
+            sourceComments: false
         }))
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
