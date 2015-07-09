@@ -5,6 +5,8 @@
 @import 'config';
 @import '_mixins/animation';
 @import '_mixins/clearfix';
+@import '_mixins/reset';
+@import '_mixins/spacing';
 @import '_mixins/valign';
 @import '_core/reset';
 @import '_core/z-index';
@@ -38,15 +40,39 @@
 
 // Main
 @include partial(guide-main) {
+    padding: 60px 0;
+
     // Content
     #guide-content {
         @include make-sm-column(8);
         @include make-md-column(9);
+        @include spacing(right, 60px);
     }
     // Sidebar
     #guide-sidebar {
         @include make-sm-column(4);
         @include make-md-column(3);
+
+        // Sidebar nav groups
+        .guide-sidebar-nav {
+            margin-bottom: 30px;
+            overflow: hidden;
+
+            .guide-sidebar-nav-heading {
+                @include reset-heading;
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            ul {
+                @include reset-list;
+
+                li {
+                    a {
+                        display: block;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -66,6 +92,8 @@
     padding-top: 100px;
 
     @include component(section) {
+        margin: 0 0 30px 0;
+
         @include part(heading) {
             font-size: 20px;
             font-weight: $light;

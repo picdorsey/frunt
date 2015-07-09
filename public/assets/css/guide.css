@@ -3430,41 +3430,58 @@ hr {
     font-size: 30px;
     font-weight: 300; }
 
-#guide-main #guide-content {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px; }
-  @media (min-width: 768px) {
-    #guide-main #guide-content {
-      float: left;
-      width: 66.66667%; } }
-  @media (min-width: 992px) {
-    #guide-main #guide-content {
-      float: left;
-      width: 75%; } }
-
-#guide-main #guide-sidebar {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px; }
-  @media (min-width: 768px) {
-    #guide-main #guide-sidebar {
-      float: left;
-      width: 33.33333%; } }
-  @media (min-width: 992px) {
-    #guide-main #guide-sidebar {
-      float: left;
-      width: 25%; } }
+#guide-main {
+  padding: 60px 0; }
+  #guide-main #guide-content {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-right: 60px; }
+    @media (min-width: 768px) {
+      #guide-main #guide-content {
+        float: left;
+        width: 66.66667%; } }
+    @media (min-width: 992px) {
+      #guide-main #guide-content {
+        float: left;
+        width: 75%; } }
+  #guide-main #guide-sidebar {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 768px) {
+      #guide-main #guide-sidebar {
+        float: left;
+        width: 33.33333%; } }
+    @media (min-width: 992px) {
+      #guide-main #guide-sidebar {
+        float: left;
+        width: 25%; } }
+    #guide-main #guide-sidebar .guide-sidebar-nav {
+      margin-bottom: 30px;
+      overflow: hidden; }
+      #guide-main #guide-sidebar .guide-sidebar-nav .guide-sidebar-nav-heading {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 22px;
+        margin-bottom: 10px; }
+      #guide-main #guide-sidebar .guide-sidebar-nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        #guide-main #guide-sidebar .guide-sidebar-nav ul li a {
+          display: block; }
 
 #guide-footer {
   background-color: #eee;
@@ -3476,10 +3493,12 @@ hr {
 
 #frunt .\@guide {
   padding-top: 100px; }
-  #frunt .\@guide .c-section__heading {
-    font-size: 20px;
-    font-weight: 300;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-    border-bottom: 5px solid #eee;
-    margin-bottom: 30px; }
+  #frunt .\@guide .c-section {
+    margin: 0 0 30px 0; }
+    #frunt .\@guide .c-section__heading {
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 5px solid #eee;
+      margin-bottom: 30px; }
