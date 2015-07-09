@@ -182,9 +182,18 @@ img[height] {
 $table-cell-padding: 10px !default;
 
 table {
-    background-color: #fff;
+    background: transparent;
+
+    thead {
+        font-size: 16px;
+        border-bottom: 3px solid #eee;
+    }
+    tbody {
+        font-size: 14px;
+    }
     td,
     th {
+        padding: $table-cell-padding;
         &[class*="col-"] {
             position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
             float: none;
@@ -198,11 +207,5 @@ table col[class*="col-"] {
     display: table-column;
 }
 th {
-    text-align: left;
-}
-caption {
-    padding-top: $table-cell-padding;
-    padding-bottom: $table-cell-padding;
-    color: #999;
     text-align: left;
 }

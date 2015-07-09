@@ -613,7 +613,21 @@ img[height] {
  *  Table defaults
  */
 table {
-  background-color: #fff;
+  background: transparent;
+}
+
+table thead {
+  font-size: 16px;
+  border-bottom: 3px solid #eee;
+}
+
+table tbody {
+  font-size: 14px;
+}
+
+table td,
+table th {
+  padding: 10px;
 }
 
 table td[class*="col-"],
@@ -630,13 +644,6 @@ table col[class*="col-"] {
 }
 
 th {
-  text-align: left;
-}
-
-caption {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #999;
   text-align: left;
 }
 
@@ -4095,7 +4102,7 @@ hr {
 
 @media (min-width: 48em) {
   .c-burger, .c-burger:before, .c-burger:after {
-    background-color: #fff;
+    background-color: #333;
   }
 }
 
@@ -4112,18 +4119,15 @@ hr {
   top: 8px;
 }
 
-.fs-navigation-open .c-burger,
 .active .c-burger {
   background-color: transparent;
 }
 
-.fs-navigation-open .c-burger:before,
 .active .c-burger:before {
   -webkit-transform: translateY(8px) rotate(45deg);
   transform: translateY(8px) rotate(45deg);
 }
 
-.fs-navigation-open .c-burger:after,
 .active .c-burger:after {
   -webkit-transform: translateY(-8px) rotate(-45deg);
   transform: translateY(-8px) rotate(-45deg);
@@ -4322,6 +4326,7 @@ hr {
   width: 100%;
   max-width: 100%;
   margin-bottom: 30px;
+  border-radius: 3px;
 }
 
 .c-table > thead > tr > th,
@@ -4358,12 +4363,12 @@ hr {
   background-color: #fff;
 }
 
-.c-table.\--condensed > thead > tr > th,
-.c-table.\--condensed > thead > tr > td,
-.c-table.\--condensed > tbody > tr > th,
-.c-table.\--condensed > tbody > tr > td,
-.c-table.\--condensed > tfoot > tr > th,
-.c-table.\--condensed > tfoot > tr > td {
+.c-table.\--compact > thead > tr > th,
+.c-table.\--compact > thead > tr > td,
+.c-table.\--compact > tbody > tr > th,
+.c-table.\--compact > tbody > tr > td,
+.c-table.\--compact > tfoot > tr > th,
+.c-table.\--compact > tfoot > tr > td {
   padding: 5px;
 }
 

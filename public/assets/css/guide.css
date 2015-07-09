@@ -32,6 +32,34 @@ body:before {
     body:before {
       content: "lg ≥ 1200px (75em)"; } }
 
+/**
+ * A mixin which helps you to add depth to elements according to the Google Material Design spec:
+ * http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
+ *
+ * Please note that the values given in the specification cannot be used as is. To create the same visual experience
+ * the blur parameter has to be doubled.
+ *
+ * Author: Florian Kutschera (@gefangenimnetz), Conceptboard GmbH (@conceptboardapp)
+ *
+ * Example usage:
+ *
+ * .card {
+ *     width: 95px;
+ *     height: 95px;
+ *     background: #f4f4f4;
+ *     -webkit-transition: all 250ms;
+ *     -moz-transition: all 250ms;
+ *     transition: all 250ms;
+ *     .shadow(1);
+ *     &:hover {
+ *         .shadow(3);
+ *         -webkit-transform: translateY(-5px);
+ *         -moz-transform: translateY(-5px);
+ *         transform: translateY(-5px);
+ *     }
+ * }
+ *
+ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -536,12 +564,20 @@ img[height] {
  *  Table defaults
  */
 table {
-  background-color: #fff; }
-  table td[class*="col-"],
-  table th[class*="col-"] {
-    position: static;
-    float: none;
-    display: table-cell; }
+  background: transparent; }
+  table thead {
+    font-size: 16px;
+    border-bottom: 3px solid #eee; }
+  table tbody {
+    font-size: 14px; }
+  table td,
+  table th {
+    padding: 10px; }
+    table td[class*="col-"],
+    table th[class*="col-"] {
+      position: static;
+      float: none;
+      display: table-cell; }
 
 table col[class*="col-"] {
   position: static;
@@ -549,12 +585,6 @@ table col[class*="col-"] {
   display: table-column; }
 
 th {
-  text-align: left; }
-
-caption {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #999;
   text-align: left; }
 
 h1 {
@@ -3120,7 +3150,7 @@ hr {
     transition-duration: 0.3s; }
     @media (min-width: 48em) {
       .c-burger, .c-burger:before, .c-burger:after {
-        background-color: #fff; } }
+        background-color: #333; } }
   .c-burger:before, .c-burger:after {
     position: absolute;
     content: ""; }
@@ -3128,14 +3158,11 @@ hr {
     top: -8px; }
   .c-burger:after {
     top: 8px; }
-  .fs-navigation-open .c-burger,
   .active .c-burger {
     background-color: transparent; }
-  .fs-navigation-open .c-burger:before,
   .active .c-burger:before {
     -webkit-transform: translateY(8px) rotate(45deg);
     transform: translateY(8px) rotate(45deg); }
-  .fs-navigation-open .c-burger:after,
   .active .c-burger:after {
     -webkit-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg); }
@@ -3289,7 +3316,8 @@ hr {
 .c-table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  border-radius: 3px; }
   .c-table > thead > tr > th,
   .c-table > thead > tr > td,
   .c-table > tbody > tr > th,
@@ -3314,12 +3342,12 @@ hr {
     border-top: 2px solid #ccc; }
   .c-table .table {
     background-color: #fff; }
-  .c-table.\--condensed > thead > tr > th,
-  .c-table.\--condensed > thead > tr > td,
-  .c-table.\--condensed > tbody > tr > th,
-  .c-table.\--condensed > tbody > tr > td,
-  .c-table.\--condensed > tfoot > tr > th,
-  .c-table.\--condensed > tfoot > tr > td {
+  .c-table.\--compact > thead > tr > th,
+  .c-table.\--compact > thead > tr > td,
+  .c-table.\--compact > tbody > tr > th,
+  .c-table.\--compact > tbody > tr > td,
+  .c-table.\--compact > tfoot > tr > th,
+  .c-table.\--compact > tfoot > tr > td {
     padding: 5px; }
   .c-table.\--bordered {
     border: 1px solid #ccc; }
@@ -3429,6 +3457,16 @@ hr {
     line-height: 80px;
     font-size: 30px;
     font-weight: 300; }
+  #guide-header #menu-button {
+    float: right;
+    margin-top: 30px; }
+    #guide-header #menu-button:hover {
+      opacity: .9; }
+    #guide-header #menu-button .c-burger, #guide-header #menu-button .c-burger:before, #guide-header #menu-button .c-burger:after {
+      background-color: #fff; }
+    @media (min-width: 62em) {
+      #guide-header #menu-button {
+        display: none; } }
 
 #guide-main {
   padding: 60px 0; }
@@ -3445,28 +3483,24 @@ hr {
     @media (min-width: 768px) {
       #guide-main #guide-content {
         float: left;
-        width: 66.66667%; } }
+        width: 100%; } }
     @media (min-width: 992px) {
       #guide-main #guide-content {
         float: left;
         width: 75%; } }
   #guide-main #guide-sidebar {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+    display: none;
     position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px; }
-    @media (min-width: 768px) {
-      #guide-main #guide-sidebar {
-        float: left;
-        width: 33.33333%; } }
     @media (min-width: 992px) {
       #guide-main #guide-sidebar {
         float: left;
         width: 25%; } }
+    @media (min-width: 62em) {
+      #guide-main #guide-sidebar {
+        display: block; } }
     #guide-main #guide-sidebar .guide-sidebar-nav {
       margin-bottom: 30px;
       overflow: hidden; }
@@ -3481,7 +3515,11 @@ hr {
         padding: 0;
         list-style: none; }
         #guide-main #guide-sidebar .guide-sidebar-nav ul li a {
-          display: block; }
+          display: block;
+          padding: 3px 10px; }
+          #guide-main #guide-sidebar .guide-sidebar-nav ul li a:hover {
+            color: #222;
+            background-color: #eee; }
 
 #guide-footer {
   background-color: #eee;
@@ -3502,3 +3540,6 @@ hr {
       padding-bottom: 10px;
       border-bottom: 5px solid #eee;
       margin-bottom: 30px; }
+
+#menu-button:hover {
+  opacity: .9; }

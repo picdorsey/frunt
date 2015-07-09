@@ -6,6 +6,7 @@
 @import '_mixins/animation';
 @import '_mixins/clearfix';
 @import '_mixins/reset';
+@import '_mixins/shadow';
 @import '_mixins/spacing';
 @import '_mixins/valign';
 @import '_core/reset';
@@ -36,6 +37,25 @@
         font-size: 30px;
         font-weight: $light;
     }
+
+    #menu-button {
+        float: right;
+        margin-top: 30px;
+
+        &:hover {
+            opacity: .9;
+        }
+
+        .c-burger {
+            &, &:before, &:after {
+                background-color: #fff;
+            }
+        }
+
+        @include mq($from: md) {
+            display: none;
+        }
+    }
 }
 
 // Main
@@ -44,14 +64,19 @@
 
     // Content
     #guide-content {
-        @include make-sm-column(8);
+        @include make-sm-column(12);
         @include make-md-column(9);
         @include spacing(right, 60px);
     }
     // Sidebar
     #guide-sidebar {
-        @include make-sm-column(4);
+        display: none;
+
         @include make-md-column(3);
+
+        @include mq($from: md) {
+            display: block;
+        }
 
         // Sidebar nav groups
         .guide-sidebar-nav {
@@ -69,6 +94,12 @@
                 li {
                     a {
                         display: block;
+                        padding: 3px 10px;
+
+                        &:hover {
+                            color: $gray-darker;
+                            background-color: $gray-lighter;
+                        }
                     }
                 }
             }
@@ -102,5 +133,14 @@
             border-bottom: 5px solid $gray-lighter;
             margin-bottom: 30px;
         }
+    }
+}
+
+// Randomness
+
+// Menu button
+#menu-button {
+    &:hover {
+        opacity: .9;
     }
 }
