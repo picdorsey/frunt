@@ -44,6 +44,7 @@ var config = {
 
 gulp.task('styles', function () {
     return gulp.src([config.src.scss + '*.scss', '!' + config.src.scss + 'guide.scss'])
+        .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.cssGlobbing({
             extensions: ['.scss']
@@ -53,7 +54,6 @@ gulp.task('styles', function () {
             errLogToConsole: true,
             sourceComments: false
         }))
-        .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
         .pipe(plugins.if(config.production, plugins.minifyCss({processImport: false})))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
