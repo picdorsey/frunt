@@ -38,4 +38,7 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 #### Options
 `--livereload` to use livereload to watch for changes instead of browsersync.
 
-`--beautify` do not minify any build files.
+`--production` for production ready code (minify, no source maps)
+
+## Readings
+http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm
