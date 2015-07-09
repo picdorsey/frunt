@@ -12,6 +12,8 @@ $table-bg-hover: #eee;
     width: 100%;
     max-width: 100%;
     margin-bottom: 30px;
+    border-radius: $br-table;
+
     // Cells
     > thead,
     > tbody,
@@ -52,7 +54,7 @@ $table-bg-hover: #eee;
         background-color: #fff;
     }
 
-    @include option(condensed) {
+    @include option(compact) {
         > thead,
         > tbody,
         > tfoot {
