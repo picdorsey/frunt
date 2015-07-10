@@ -32,7 +32,7 @@
                 <div class="row">
                     <div id="guide-content">
 
-                        <section class="c-section">
+                        <section id="core-typography" class="c-section">
                             <h1 class="c-section__heading">Typography</h1>
 
                             <h1>Heading 1</h1>
@@ -44,7 +44,7 @@
                             <p>This is a paragraph with an <a href="#">inline link</a>.</p>
                         </section>
 
-                        <section class="c-section">
+                        <section id="core-table" class="c-section">
                             <h1 class="c-section__heading">Table</h1>
 
                             <table class="c-table">
@@ -75,7 +75,13 @@
                             </table>
                         </section>
 
-                        <section class="c-section">
+                        <section id="core-grid" class="c-section">
+                            <h1 class="c-section__heading">Grid</h1>
+
+                            <p>Frunt uses the popular <a href="http://getbootstrap.com/css/#grid">bootstrap grid</a>, for now.</p>
+                        </section>
+
+                        <section id="component-burger" class="c-section">
                             <h1 class="c-section__heading">Burger</h1>
 
                             <table class="table">
@@ -94,7 +100,7 @@
                             </table>
                         </section>
 
-                        <section class="c-section">
+                        <section id="component-button" class="c-section">
                             <h1 class="c-section__heading">Button</h1>
 
                             <a class="c-button" href="#">Default</a>
@@ -105,13 +111,7 @@
                             <a class="c-button --danger" href="#">Danger</a>
                         </section>
 
-                        <section class="c-section">
-                            <h1 class="c-section__heading">Grid</h1>
-
-                            <p>Frunt uses the popular <a href="http://getbootstrap.com/css/#grid">bootstrap grid</a>, for now.</p>
-                        </section>
-
-                        <section class="c-section">
+                        <section id="component-form" class="c-section">
                             <h1 class="c-section__heading">Form</h1>
 
                             <form>
@@ -122,10 +122,11 @@
                     <aside id="guide-sidebar">
 
                         <nav class="guide-sidebar-nav">
-                            <h3 class="guide-sidebar-nav-heading">Default styling</h3>
+                            <h3 class="guide-sidebar-nav-heading">Core</h3>
                             <ul>
-                                <li><a href="#default-typography">Typography</a></li>
-                                <li><a href="#default-tables">Tables</a></li>
+                                <li><a href="#core-typography">Typography</a></li>
+                                <li><a href="#core-table">Table</a></li>
+                                <li><a href="#core-grid">Grid</a></li>
                             </ul>
                         </nav>
 
@@ -133,6 +134,8 @@
                             <h3 class="guide-sidebar-nav-heading">Components</h3>
                             <ul>
                                 <li><a href="#component-button">Button</a></li>
+                                <li><a href="#component-burger">Burger</a></li>
+                                <li><a href="#component-form">Form</a></li>
                             </ul>
                         </nav>
 
