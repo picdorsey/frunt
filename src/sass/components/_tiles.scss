@@ -4,8 +4,22 @@
 @import '../_mixins/reset';
 
 // Mixin
-@mixin build($columns) {
+@mixin build($columns, $padding: false) {
+    li {
+        width: percentage(1 / $columns);
 
+        @if($padding) {
+            padding: 0 ($padding / 2) $padding ($padding / 2);
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:nth-child(#{$columns}) {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 // Component
@@ -22,46 +36,43 @@
     }
 
     @include option(halves) {
-        li {
-            width: 50%;
-        }
+        @include build(2);
     }
 
     @include option(thirds) {
-        li {
-            width: 33.33333333333333%;
-        }
+        @include build(3);
     }
 
     @include option(quarters) {
-        li {
-            width: 25%;
-        }
+        @include build(4);
     }
 
     @include option(fifths) {
-        li {
-            width: 20%;
-        }
+        @include build(5);
     }
 
     @include option(sixths) {
-        li {
-            width: 16.66666666666667%;
-        }
+        @include build(6);
     }
 
-    @include option(padded) {
-        li {
-            padding: 0 5px 10px 5px;
+    // Padded
+    @include option(halves-padded) {
+        @include build(2, 10px);
+    }
 
-            &:first-child {
-                padding-left: 0;
-            }
+    @include option(thirds-padded) {
+        @include build(3, 10px);
+    }
 
-            &:nth-child(4) {
-                padding-right: 0;
-            }
-        }
+    @include option(quarters-padded) {
+        @include build(4, 10px);
+    }
+
+    @include option(fifths-padded) {
+        @include build(5, 10px);
+    }
+
+    @include option(sixths-padded) {
+        @include build(6, 10px);
     }
 }

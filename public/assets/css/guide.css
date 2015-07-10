@@ -2227,7 +2227,7 @@ hr {
 }
 
 .\~tiles.\--thirds li {
-  width: 33.33333333333333%;
+  width: 33.33333%;
 }
 
 .\~tiles.\--quarters li {
@@ -2239,18 +2239,71 @@ hr {
 }
 
 .\~tiles.\--sixths li {
-  width: 16.66666666666667%;
+  width: 16.66667%;
 }
 
-.\~tiles.\--padded li {
+.\~tiles.\--halves-padded li {
+  width: 50%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--padded li:first-child {
+.\~tiles.\--halves-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--padded li:nth-child(4) {
+.\~tiles.\--halves-padded li:nth-child(2) {
+  padding-right: 0;
+}
+
+.\~tiles.\--thirds-padded li {
+  width: 33.33333%;
+  padding: 0 5px 10px 5px;
+}
+
+.\~tiles.\--thirds-padded li:first-child {
+  padding-left: 0;
+}
+
+.\~tiles.\--thirds-padded li:nth-child(3) {
+  padding-right: 0;
+}
+
+.\~tiles.\--quarters-padded li {
+  width: 25%;
+  padding: 0 5px 10px 5px;
+}
+
+.\~tiles.\--quarters-padded li:first-child {
+  padding-left: 0;
+}
+
+.\~tiles.\--quarters-padded li:nth-child(4) {
+  padding-right: 0;
+}
+
+.\~tiles.\--fifths-padded li {
+  width: 20%;
+  padding: 0 5px 10px 5px;
+}
+
+.\~tiles.\--fifths-padded li:first-child {
+  padding-left: 0;
+}
+
+.\~tiles.\--fifths-padded li:nth-child(5) {
+  padding-right: 0;
+}
+
+.\~tiles.\--sixths-padded li {
+  width: 16.66667%;
+  padding: 0 5px 10px 5px;
+}
+
+.\~tiles.\--sixths-padded li:first-child {
+  padding-left: 0;
+}
+
+.\~tiles.\--sixths-padded li:nth-child(6) {
   padding-right: 0;
 }
 
