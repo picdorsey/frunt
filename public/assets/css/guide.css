@@ -2032,7 +2032,10 @@ hr {
   width: 100%;
   max-width: 100%;
   margin-bottom: 30px;
-  border-radius: 3px;
+}
+
+.\~table thead {
+  border-bottom: 3px solid #ccc;
 }
 
 .\~table > thead > tr > th,
@@ -2102,37 +2105,6 @@ hr {
 
 .\~table.\--hover > tbody > tr:hover {
   background-color: #eee;
-}
-
-.\~table.\--themed {
-  display: block;
-  width: 100%;
-  margin-top: 3px;
-  table-layout: fixed;
-}
-
-.\~table.\--themed td,
-.\~table.\--themed th {
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
-}
-
-.\~table.\--themed td:last-child,
-.\~table.\--themed th:last-child {
-  border-right: 0;
-}
-
-.\~table.\--themed thead td,
-.\~table.\--themed thead th {
-  padding: 10px;
-  font-weight: 600;
-  text-align: center;
-  background: #dbd8d3;
-}
-
-.\~table.\--themed tbody td {
-  padding: 1.5px;
-  background: #efece7;
 }
 
 .responsive-table {
