@@ -1,5 +1,7 @@
 @import url($font-url);
 
+// Headings
+
 h1 {
     font-size: $font-size-h1;
 }
@@ -24,6 +26,8 @@ h6 {
     font-size: $font-size-h6;
 }
 
+// Links
+
 a {
     color: $link-color;
     text-decoration: none;
@@ -32,5 +36,33 @@ a {
 
     &:hover {
         color: darken($link-color, 15%);
+    }
+}
+
+// Blockquote
+
+blockquote {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 30px 0;
+    padding: 30px;
+    text-align: center;
+
+    p {
+        font-size: 22px;
+        color: $gray;
+        font-style: italic;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.by {
+            font-size: 14px;
+        }
     }
 }

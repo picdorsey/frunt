@@ -682,6 +682,32 @@ a:hover {
   color: #22527b;
 }
 
+blockquote {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0;
+  padding: 30px;
+  text-align: center;
+}
+
+blockquote p {
+  font-size: 22px;
+  color: #555;
+  font-style: italic;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote p.by {
+  font-size: 14px;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;

@@ -43,7 +43,7 @@ var config = {
 // Sass // --------------------------------------------------
 
 gulp.task('styles', function () {
-    gulp.src([config.src.scss + '*.scss', '!' + config.src.scss + 'guide.scss'])
+    gulp.src(config.src.scss + '*.scss')
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.cssGlobbing({
@@ -60,21 +60,6 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(config.dist.css))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(plugins.notify({message: 'Styles Complete'}));
-});
-
-gulp.task('guide', function () {
-    gulp.src(config.src.scss + 'guide.scss')
-        .pipe(plugins.cssGlobbing({
-            extensions: ['.scss']
-        }))
-        .pipe(plugins.sass({
-            outputStyle: 'expanded',
-            errLogToConsole: true,
-            sourceComments: false
-        }).on('error', plugins.sass.logError))
-        .pipe(plugins.autoprefixer(config.autoprefixerOptions))
-        .pipe(gulp.dest(config.dist.css))
-        .pipe(plugins.notify({message: 'Style Guide Complete'}));
 });
 
 // Scripts // --------------------------------------------------

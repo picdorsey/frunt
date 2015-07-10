@@ -67,6 +67,11 @@
         @include make-sm-column(12);
         @include make-md-column(9);
         @include spacing(right, 60px);
+
+        // Guide Heading
+        .guide-heading {
+            margin: -10px 0 30px 0;
+        }
     }
     // Sidebar
     #guide-sidebar {
