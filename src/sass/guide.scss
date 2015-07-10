@@ -70,11 +70,6 @@
         @include mq($from: md) {
             @include spacing(right, 60px);
         }
-
-        // Guide Heading
-        .guide-heading {
-            margin: -10px 0 30px 0;
-        }
     }
     // Sidebar
     #guide-sidebar {
@@ -127,6 +122,17 @@
     color: $gray;
 }
 
+// Guide Heading
+.guide-heading {
+    margin: -10px 0 30px 0;
+}
+
+// Code Blocks
+
+.guide-gist {
+    margin-top: 30px;
+}
+
 // Overrides
 // for the website style guide that conform to csstyle.
 @include layout(guide) {
@@ -143,14 +149,5 @@
             border-bottom: 5px solid $gray-lighter;
             margin-bottom: 30px;
         }
-    }
-}
-
-// Randomness
-
-// Menu button
-#menu-button {
-    &:hover {
-        opacity: .9;
     }
 }
