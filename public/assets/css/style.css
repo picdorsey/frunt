@@ -4138,11 +4138,11 @@ hr {
 }
 
 .\~burger:before {
-  top: -8px;
+  margin-top: -8px;
 }
 
 .\~burger:after {
-  top: 8px;
+  margin-top: 8px;
 }
 
 .active .\~burger {
@@ -4525,6 +4525,53 @@ hr {
 
 .\~text-color.\--danger {
   color: #d9534f;
+}
+
+.\~tiles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.\~tiles li {
+  float: left;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.\~tiles.\--halves li {
+  width: 50%;
+}
+
+.\~tiles.\--thirds li {
+  width: 33.33333333333333%;
+}
+
+.\~tiles.\--quarters li {
+  width: 25%;
+}
+
+.\~tiles.\--fifths li {
+  width: 20%;
+}
+
+.\~tiles.\--sixths li {
+  width: 16.66666666666667%;
+}
+
+.\~tiles.\--padded li {
+  padding: 0 5px 10px 5px;
+}
+
+.\~tiles.\--padded li:first-child {
+  padding-left: 0;
+}
+
+.\~tiles.\--padded li:nth-child(4) {
+  padding-right: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

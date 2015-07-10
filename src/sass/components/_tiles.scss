@@ -1,0 +1,67 @@
+// Tiles // --------------------------------------------------
+
+// Imports (TODO: breaks without this even though it is being imported in the main file?)
+@import '../_mixins/reset';
+
+// Mixin
+@mixin build($columns) {
+
+}
+
+// Component
+@include component(tiles) {
+    @include reset-list;
+    overflow: hidden;
+
+    li {
+        float: left;
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+
+    @include option(halves) {
+        li {
+            width: 50%;
+        }
+    }
+
+    @include option(thirds) {
+        li {
+            width: 33.33333333333333%;
+        }
+    }
+
+    @include option(quarters) {
+        li {
+            width: 25%;
+        }
+    }
+
+    @include option(fifths) {
+        li {
+            width: 20%;
+        }
+    }
+
+    @include option(sixths) {
+        li {
+            width: 16.66666666666667%;
+        }
+    }
+
+    @include option(padded) {
+        li {
+            padding: 0 5px 10px 5px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:nth-child(4) {
+                padding-right: 0;
+            }
+        }
+    }
+}

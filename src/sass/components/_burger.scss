@@ -47,11 +47,11 @@ $transition-duration: .3s;
     }
 
     &:before {
-        top: -($height + $gutter);
+        margin-top: -($height + $gutter);
     }
 
     &:after {
-        top: $height + $gutter;
+        margin-top: $height + $gutter;
     }
 
     .active & {

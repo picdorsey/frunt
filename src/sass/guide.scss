@@ -16,7 +16,6 @@
 @import '_core/misc';
 @import 'mixins';
 @import 'tweaks';
-@import '../../node_modules/font-awesome/scss/font-awesome';
 @import "partials/*";
 @import 'components/*';
 @import 'layouts/*';
@@ -46,7 +45,7 @@
             opacity: .9;
         }
 
-        .c-burger {
+        .\~burger {
             &, &:before, &:after {
                 background-color: #fff;
             }
@@ -128,7 +127,6 @@
 }
 
 // Code Blocks
-
 .guide-gist {
     margin-top: 30px;
 }
