@@ -4105,7 +4105,7 @@ hr {
   content: "";
 }
 
-.c-burger {
+.\~burger {
   position: relative;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -4116,7 +4116,7 @@ hr {
   text-indent: -999px;
 }
 
-.c-burger, .c-burger:before, .c-burger:after {
+.\~burger, .\~burger:before, .\~burger:after {
   display: block;
   width: 30px;
   height: 5px;
@@ -4127,39 +4127,39 @@ hr {
 }
 
 @media (min-width: 48em) {
-  .c-burger, .c-burger:before, .c-burger:after {
+  .\~burger, .\~burger:before, .\~burger:after {
     background-color: #333;
   }
 }
 
-.c-burger:before, .c-burger:after {
+.\~burger:before, .\~burger:after {
   position: absolute;
   content: "";
 }
 
-.c-burger:before {
+.\~burger:before {
   top: -8px;
 }
 
-.c-burger:after {
+.\~burger:after {
   top: 8px;
 }
 
-.active .c-burger {
+.active .\~burger {
   background-color: transparent;
 }
 
-.active .c-burger:before {
+.active .\~burger:before {
   -webkit-transform: translateY(8px) rotate(45deg);
   transform: translateY(8px) rotate(45deg);
 }
 
-.active .c-burger:after {
+.active .\~burger:after {
   -webkit-transform: translateY(-8px) rotate(-45deg);
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.c-button {
+.\~button {
   display: inline-block;
   padding: 10px 20px;
   color: #555555;
@@ -4173,20 +4173,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button:hover {
+.\~button:hover {
   background: transparent;
   border-color: #eee;
   color: #2f2f2f;
 }
 
-.c-button:active,
-.c-button:focus {
+.\~button:active,
+.\~button:focus {
   background: transparent;
   border-color: #eee;
   color: #2f2f2f;
 }
 
-.c-button.\--primary {
+.\~button.\--primary {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -4200,20 +4200,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button.\--primary:hover {
+.\~button.\--primary:hover {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.c-button.\--primary:active,
-.c-button.\--primary:focus {
+.\~button.\--primary:active,
+.\~button.\--primary:focus {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.c-button.\--success {
+.\~button.\--success {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -4227,20 +4227,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button.\--success:hover {
+.\~button.\--success:hover {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.c-button.\--success:active,
-.c-button.\--success:focus {
+.\~button.\--success:active,
+.\~button.\--success:focus {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.c-button.\--info {
+.\~button.\--info {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -4254,20 +4254,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button.\--info:hover {
+.\~button.\--info:hover {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.c-button.\--info:active,
-.c-button.\--info:focus {
+.\~button.\--info:active,
+.\~button.\--info:focus {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.c-button.\--warning {
+.\~button.\--warning {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -4281,20 +4281,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button.\--warning:hover {
+.\~button.\--warning:hover {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.c-button.\--warning:active,
-.c-button.\--warning:focus {
+.\~button.\--warning:active,
+.\~button.\--warning:focus {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.c-button.\--danger {
+.\~button.\--danger {
   display: inline-block;
   padding: 10px 20px;
   color: #fff;
@@ -4308,20 +4308,20 @@ hr {
   transition-delay: 0;
 }
 
-.c-button.\--danger:hover {
+.\~button.\--danger:hover {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.c-button.\--danger:active,
-.c-button.\--danger:focus {
+.\~button.\--danger:active,
+.\~button.\--danger:focus {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.c-form-control {
+.\~form-control {
   width: 100%;
   height: auto;
   border-radius: 0;
@@ -4331,126 +4331,126 @@ hr {
   transition-delay: 0;
 }
 
-.c-form-control:hover,
-.c-form-control:focus {
+.\~form-control:hover,
+.\~form-control:focus {
   background: #333;
 }
 
-.c-form-control:focus {
+.\~form-control:focus {
   border: 1px solid #337ab7;
 }
 
-.c-form-control.\--small {
+.\~form-control.\--small {
   height: 41px;
 }
 
-.c-section {
+.\~section {
   padding: 3px 0;
 }
 
-.c-table {
+.\~table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 30px;
   border-radius: 3px;
 }
 
-.c-table > thead > tr > th,
-.c-table > thead > tr > td,
-.c-table > tbody > tr > th,
-.c-table > tbody > tr > td,
-.c-table > tfoot > tr > th,
-.c-table > tfoot > tr > td {
+.\~table > thead > tr > th,
+.\~table > thead > tr > td,
+.\~table > tbody > tr > th,
+.\~table > tbody > tr > td,
+.\~table > tfoot > tr > th,
+.\~table > tfoot > tr > td {
   padding: 10px;
   line-height: 1.25;
   vertical-align: top;
   border-top: 1px solid #ccc;
 }
 
-.c-table > thead > tr > th {
+.\~table > thead > tr > th {
   vertical-align: bottom;
   border-bottom: 2px solid #ccc;
 }
 
-.c-table > caption + thead > tr:first-child > th,
-.c-table > caption + thead > tr:first-child > td,
-.c-table > colgroup + thead > tr:first-child > th,
-.c-table > colgroup + thead > tr:first-child > td,
-.c-table > thead:first-child > tr:first-child > th,
-.c-table > thead:first-child > tr:first-child > td {
+.\~table > caption + thead > tr:first-child > th,
+.\~table > caption + thead > tr:first-child > td,
+.\~table > colgroup + thead > tr:first-child > th,
+.\~table > colgroup + thead > tr:first-child > td,
+.\~table > thead:first-child > tr:first-child > th,
+.\~table > thead:first-child > tr:first-child > td {
   border-top: 0;
 }
 
-.c-table > tbody + tbody {
+.\~table > tbody + tbody {
   border-top: 2px solid #ccc;
 }
 
-.c-table .table {
+.\~table .table {
   background-color: #fff;
 }
 
-.c-table.\--compact > thead > tr > th,
-.c-table.\--compact > thead > tr > td,
-.c-table.\--compact > tbody > tr > th,
-.c-table.\--compact > tbody > tr > td,
-.c-table.\--compact > tfoot > tr > th,
-.c-table.\--compact > tfoot > tr > td {
+.\~table.\--compact > thead > tr > th,
+.\~table.\--compact > thead > tr > td,
+.\~table.\--compact > tbody > tr > th,
+.\~table.\--compact > tbody > tr > td,
+.\~table.\--compact > tfoot > tr > th,
+.\~table.\--compact > tfoot > tr > td {
   padding: 5px;
 }
 
-.c-table.\--bordered {
+.\~table.\--bordered {
   border: 1px solid #ccc;
 }
 
-.c-table.\--bordered > thead > tr > th,
-.c-table.\--bordered > thead > tr > td,
-.c-table.\--bordered > tbody > tr > th,
-.c-table.\--bordered > tbody > tr > td,
-.c-table.\--bordered > tfoot > tr > th,
-.c-table.\--bordered > tfoot > tr > td {
+.\~table.\--bordered > thead > tr > th,
+.\~table.\--bordered > thead > tr > td,
+.\~table.\--bordered > tbody > tr > th,
+.\~table.\--bordered > tbody > tr > td,
+.\~table.\--bordered > tfoot > tr > th,
+.\~table.\--bordered > tfoot > tr > td {
   border: 1px solid #ccc;
 }
 
-.c-table.\--bordered > thead > tr > th,
-.c-table.\--bordered > thead > tr > td {
+.\~table.\--bordered > thead > tr > th,
+.\~table.\--bordered > thead > tr > td {
   border-bottom-width: 2px;
 }
 
-.c-table.\--striped > tbody > tr:nth-of-type(odd) {
+.\~table.\--striped > tbody > tr:nth-of-type(odd) {
   background-color: #f4f4f4;
 }
 
-.c-table.\--hover > tbody > tr:hover {
+.\~table.\--hover > tbody > tr:hover {
   background-color: #eee;
 }
 
-.c-table.\--themed {
+.\~table.\--themed {
   display: block;
   width: 100%;
   margin-top: 3px;
   table-layout: fixed;
 }
 
-.c-table.\--themed td,
-.c-table.\--themed th {
+.\~table.\--themed td,
+.\~table.\--themed th {
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
 }
 
-.c-table.\--themed td:last-child,
-.c-table.\--themed th:last-child {
+.\~table.\--themed td:last-child,
+.\~table.\--themed th:last-child {
   border-right: 0;
 }
 
-.c-table.\--themed thead td,
-.c-table.\--themed thead th {
+.\~table.\--themed thead td,
+.\~table.\--themed thead th {
   padding: 10px;
   font-weight: 600;
   text-align: center;
   background: #dbd8d3;
 }
 
-.c-table.\--themed tbody td {
+.\~table.\--themed tbody td {
   padding: 1.5px;
   background: #efece7;
 }
@@ -4507,23 +4507,23 @@ hr {
   }
 }
 
-.c-text-color.\--primary {
+.\~text-color.\--primary {
   color: #337ab7;
 }
 
-.c-text-color.\--success {
+.\~text-color.\--success {
   color: #5cb85c;
 }
 
-.c-text-color.\--info {
+.\~text-color.\--info {
   color: #5bc0de;
 }
 
-.c-text-color.\--warning {
+.\~text-color.\--warning {
   color: #f0ad4e;
 }
 
-.c-text-color.\--danger {
+.\~text-color.\--danger {
   color: #d9534f;
 }
 
