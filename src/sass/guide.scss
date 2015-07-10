@@ -66,7 +66,10 @@
     #guide-content {
         @include make-sm-column(12);
         @include make-md-column(9);
-        @include spacing(right, 60px);
+
+        @include mq($from: md) {
+            @include spacing(right, 60px);
+        }
 
         // Guide Heading
         .guide-heading {
@@ -97,6 +100,8 @@
                 @include reset-list;
 
                 li {
+                    margin-bottom: 0;
+
                     a {
                         display: block;
                         padding: 3px 10px;

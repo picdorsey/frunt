@@ -4604,7 +4604,6 @@ hr {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-right: 60px;
 }
 
 @media (min-width: 768px) {
@@ -4618,6 +4617,12 @@ hr {
   #guide-main #guide-content {
     float: left;
     width: 75%;
+  }
+}
+
+@media (min-width: 62em) {
+  #guide-main #guide-content {
+    padding-right: 60px;
   }
 }
 
@@ -4663,6 +4668,10 @@ hr {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+#guide-main #guide-sidebar .guide-sidebar-nav ul li {
+  margin-bottom: 0;
 }
 
 #guide-main #guide-sidebar .guide-sidebar-nav ul li a {
