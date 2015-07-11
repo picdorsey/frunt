@@ -23,7 +23,6 @@
 @import '_mixins/clearfix';
 @import '_mixins/valign';
 
-
 //
 // Frunt Core
 // --------------------------------------------------
@@ -35,21 +34,12 @@
 @import '_core/grid';
 @import '_core/misc';
 
-
 // Helpers
 // --------------------------------------------------
 // Easy style tweaks and helpers.
 
 @import 'mixins'; // User defined mixins, not related to a component
 @import 'tweaks'; // Tweaks, becuase you can't help it
-
-
-// Third-Party Assets
-// --------------------------------------------------
-// Things like fonts, icons, etc.
-
-@import '../../node_modules/font-awesome/scss/font-awesome';
-
 
 // Partials
 // --------------------------------------------------
