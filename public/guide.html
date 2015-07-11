@@ -66,6 +66,25 @@
                         <!-- Components -->
                         <h1 class="guide-heading">Components</h1>
 
+                        <!-- Button -->
+                        <section id="component-button" class="~section">
+                            <h2 class="~section__heading">Button</h2>
+
+                            <p>This class can be used on anchors, buttons and inputs.</p>
+
+                            <button class="~button">Default</button>
+                            <button type="button" class="~button --primary">Primary</button>
+                            <button type="button" class="~button --success">Success</button>
+                            <button type="button" class="~button --info">Info</button>
+                            <button type="button" class="~button --warning">Warning</button>
+                            <button type="button" class="~button --danger">Danger</button>
+
+                            <div class="guide-gist">
+                                <script src="https://gist.github.com/adamthebig/22c73e992a11f885f559.js"></script>
+                            </div>
+
+                        </section>
+
                         <!-- Burger -->
                         <section id="component-burger" class="~section">
                             <h1 class="~section__heading">Burger</h1>
@@ -86,25 +105,6 @@
                             </table>
                         </section>
 
-                        <!-- Button -->
-                        <section id="component-button" class="~section">
-                            <h2 class="~section__heading">Button</h2>
-
-                            <p>This class can be used on anchors, buttons and inputs.</p>
-
-                            <button class="~button">Default</button>
-                            <button type="button" class="~button --primary">Primary</button>
-                            <button type="button" class="~button --success">Success</button>
-                            <button type="button" class="~button --info">Info</button>
-                            <button type="button" class="~button --warning">Warning</button>
-                            <button type="button" class="~button --danger">Danger</button>
-
-                            <div class="guide-gist">
-                                <script src="https://gist.github.com/adamthebig/22c73e992a11f885f559.js"></script>
-                            </div>
-
-                        </section>
-
                         <!-- Form -->
                         <section id="component-form" class="~section">
                             <h2 class="~section__heading">Form</h2>
@@ -112,6 +112,43 @@
                             <form>
                                 <input class="form-control" type="text" placeholder="placeholder">
                             </form>
+                        </section>
+
+                        <!-- Table -->
+                        <section id="component-table" class="~section">
+                            <h2 class="~section__heading">Table</h2>
+
+                            <table class="~table --bordered --striped --hover --compact">
+                                <thead>
+                                <tr>
+                                    <th>Hero</th>
+                                    <th>Power</th>
+                                    <th>First Appearance</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Atomic Man</td>
+                                    <td>Super strength</td>
+                                    <td>1946</td>
+                                </tr>
+                                <tr>
+                                    <td>Inferno</td>
+                                    <td>Breathing flames</td>
+                                    <td>1941</td>
+                                </tr>
+                                <tr>
+                                    <td>Crimson Rider</td>
+                                    <td>Badass cowgirl</td>
+                                    <td>1939</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="guide-gist">
+                                <script src="https://gist.github.com/adamthebig/ba86e3789487847c303c.js"></script>
+                            </div>
+
                         </section>
 
                         <!-- Tiles -->
@@ -217,48 +254,41 @@
 
                         </section>
 
-                        <!-- Table -->
-                        <section id="component-table" class="~section">
-                            <h2 class="~section__heading">Table</h2>
-
-                            <table class="~table --bordered --striped --hover --compact">
-                                <thead>
-                                <tr>
-                                    <th>Hero</th>
-                                    <th>Power</th>
-                                    <th>First Appearance</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Atomic Man</td>
-                                    <td>Super strength</td>
-                                    <td>1946</td>
-                                </tr>
-                                <tr>
-                                    <td>Inferno</td>
-                                    <td>Breathing flames</td>
-                                    <td>1941</td>
-                                </tr>
-                                <tr>
-                                    <td>Crimson Rider</td>
-                                    <td>Badass cowgirl</td>
-                                    <td>1939</td>
-                                </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="guide-gist">
-                                <script src="https://gist.github.com/adamthebig/ba86e3789487847c303c.js"></script>
-                            </div>
-
-                        </section>
-
                         <!-- Mixins -->
                         <h1 class="guide-heading">Mixins</h1>
 
-                        <section id="mixins-animation" class="~section">
+                        <section id="mixin-animation" class="~section">
                             <h2 class="~section__heading">Animation</h2>
+
+                            ...
+                        </section>
+
+                        <section id="mixin-clearfix" class="~section">
+                            <h2 class="~section__heading">Clearfix</h2>
+
+                            ...
+                        </section>
+
+                        <section id="mixin-reset" class="~section">
+                            <h2 class="~section__heading">Reset</h2>
+
+                            ...
+                        </section>
+
+                        <section id="mixin-shadow" class="~section">
+                            <h2 class="~section__heading">Shadow</h2>
+
+                            ...
+                        </section>
+
+                        <section id="mixin-spacing" class="~section">
+                            <h2 class="~section__heading">Spacing</h2>
+
+                            ...
+                        </section>
+
+                        <section id="mixin-valign" class="~section">
+                            <h2 class="~section__heading">Vertically Align</h2>
 
                             ...
                         </section>
@@ -282,6 +312,7 @@
                                     <li><a href="#component-burger">Burger</a></li>
                                     <li><a href="#component-form">Form</a></li>
                                     <li><a href="#component-table">Table</a></li>
+                                    <li><a href="#component-tiles">Tiles</a></li>
                                 </ul>
                             </nav>
 
@@ -290,7 +321,7 @@
                                 <ul>
                                     <li><a href="#mixin-animation">Animation</a></li>
                                     <li><a href="#mixin-clearfix">Clearfix</a></li>
-                                    <li><a href="#mixin-reser">Reset</a></li>
+                                    <li><a href="#mixin-reset">Reset</a></li>
                                     <li><a href="#mixin-shadow">Shadow</a></li>
                                     <li><a href="#mixin-spacing">Spacing</a></li>
                                     <li><a href="#mixin-valign">Vertically Align</a></li>
@@ -318,11 +349,26 @@
         <script src="/assets/js/bundle.js"></script>
 
         <!-- Guide JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.1/jquery.scrollTo.min.js"></script>
         <script>
             $(function(){
+                // Sticky Nav
                 $('.sidebar-nav').sticky({
                     context: '#guide-content',
                     offset: 110,
+                });
+                // Nav click
+                $('.sidebar-nav a').on('click', function(e){
+                    e.preventDefault();
+                    var loc = $(this).attr('href');
+                    $(window).scrollTo(
+                        $(loc),
+                        300,
+                        {
+                            offset: {
+                                top: -100
+                        }
+                    });
                 });
             });
         </script>
