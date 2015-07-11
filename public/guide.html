@@ -266,35 +266,37 @@
                     </div>
                     <aside id="guide-sidebar">
 
-                        <nav class="guide-sidebar-nav">
-                            <h3 class="guide-sidebar-nav-heading">Core</h3>
-                            <ul>
-                                <li><a href="#core-typography">Typography</a></li>
-                                <li><a href="#core-grid">Grid</a></li>
-                            </ul>
-                        </nav>
+                        <div class="sticky sidebar-nav">
+                            <nav class="guide-sidebar-nav">
+                                <h3 class="guide-sidebar-nav-heading">Core</h3>
+                                <ul>
+                                    <li><a href="#core-typography">Typography</a></li>
+                                    <li><a href="#core-grid">Grid</a></li>
+                                </ul>
+                            </nav>
 
-                        <nav class="guide-sidebar-nav">
-                            <h3 class="guide-sidebar-nav-heading">Components</h3>
-                            <ul>
-                                <li><a href="#component-button">Button</a></li>
-                                <li><a href="#component-burger">Burger</a></li>
-                                <li><a href="#component-form">Form</a></li>
-                                <li><a href="#component-table">Table</a></li>
-                            </ul>
-                        </nav>
+                            <nav class="guide-sidebar-nav">
+                                <h3 class="guide-sidebar-nav-heading">Components</h3>
+                                <ul>
+                                    <li><a href="#component-button">Button</a></li>
+                                    <li><a href="#component-burger">Burger</a></li>
+                                    <li><a href="#component-form">Form</a></li>
+                                    <li><a href="#component-table">Table</a></li>
+                                </ul>
+                            </nav>
 
-                        <nav class="guide-sidebar-nav">
-                            <h3 class="guide-sidebar-nav-heading">Mixins</h3>
-                            <ul>
-                                <li><a href="#mixin-animation">Animation</a></li>
-                                <li><a href="#mixin-clearfix">Clearfix</a></li>
-                                <li><a href="#mixin-reser">Reset</a></li>
-                                <li><a href="#mixin-shadow">Shadow</a></li>
-                                <li><a href="#mixin-spacing">Spacing</a></li>
-                                <li><a href="#mixin-valign">Vertically Align</a></li>
-                            </ul>
-                        </nav>
+                            <nav class="guide-sidebar-nav">
+                                <h3 class="guide-sidebar-nav-heading">Mixins</h3>
+                                <ul>
+                                    <li><a href="#mixin-animation">Animation</a></li>
+                                    <li><a href="#mixin-clearfix">Clearfix</a></li>
+                                    <li><a href="#mixin-reser">Reset</a></li>
+                                    <li><a href="#mixin-shadow">Shadow</a></li>
+                                    <li><a href="#mixin-spacing">Spacing</a></li>
+                                    <li><a href="#mixin-valign">Vertically Align</a></li>
+                                </ul>
+                            </nav>
+                        </div>
 
                     </aside>
                 </div>
@@ -314,6 +316,16 @@
         <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="/assets/js/vendor.js"></script>
         <script src="/assets/js/bundle.js"></script>
+
+        <!-- Guide JS -->
+        <script>
+            $(function(){
+                $('.sidebar-nav').sticky({
+                    context: '#guide-content',
+                    offset: 110,
+                });
+            });
+        </script>
 
     </body>
 

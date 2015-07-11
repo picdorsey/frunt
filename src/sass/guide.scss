@@ -149,3 +149,37 @@
         }
     }
 }
+
+// Sticky
+.sticky {
+    position: static;
+    -webkit-transition: none;
+    transition: none;
+    z-index: 800;
+}
+
+/* Bound */
+.sticky.bound {
+    position: absolute;
+    left: auto;
+    right: auto;
+}
+
+/* Fixed */
+.sticky.fixed {
+    position: fixed;
+    left: auto;
+    right: auto;
+}
+
+/* Bound/Fixed Position */
+.sticky.bound.top,
+.sticky.fixed.top {
+    top: 0px;
+    bottom: auto;
+}
+.sticky.bound.bottom,
+.sticky.fixed.bottom {
+    top: auto;
+    bottom: 0px;
+}
