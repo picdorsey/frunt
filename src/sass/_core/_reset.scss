@@ -3,35 +3,23 @@
 @import '../_vendor/normalize'; // Defacto reset
 
 /**
- * Box sizing
+ * 1. Box sizing
+ * 2. Force scrollbar to prevent content jump
+ * 3. Font Smoothing
  */
 
 :root {
     box-sizing: border-box;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
-}
-
-/**
- * Force scrollbar to prevent content jump
- */
-
-:root {
-    overflow-y: scroll;
-}
-
-/**
- * Better font rendering
- */
-
-:root {
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
 }
 
 @media
