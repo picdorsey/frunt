@@ -46,3 +46,59 @@
 @include tweak(italic) {
     font-style: italic;
 }
+
+@include tweak(text-center) {
+    text-align: center;
+}
+
+//
+// Spacing
+// --------------------------------------------------
+
+@include tweak(no-margin) {
+    margin: 0;
+}
+
+@include tweak(no-margin-top) {
+    margin-top: 0;
+}
+
+@include tweak(no-margin-bottom) {
+    margin-bottom: 0;
+}
+
+@include tweak(no-margin-left) {
+    margin-left: 0;
+}
+
+@include tweak(no-margin-right) {
+    margin-right: 0;
+}
+
+@include tweak(no-padding) {
+    padding: 0;
+}
+
+@include tweak(no-padding-top) {
+    padding-top: 0;
+}
+
+@include tweak(no-padding-bottom) {
+    padding-bottom: 0;
+}
+
+@include tweak(no-padding-left) {
+    padding-left: 0;
+}
+
+@include tweak(no-padding-right) {
+    padding-right: 0;
+}
+
+//
+// Layout
+// --------------------------------------------------
+
+@include tweak(wrapper) {
+    position: relative;
+}

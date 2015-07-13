@@ -1910,6 +1910,54 @@ hr {
   font-style: italic;
 }
 
+#frunt .\+text-center {
+  text-align: center;
+}
+
+#frunt .\+no-margin {
+  margin: 0;
+}
+
+#frunt .\+no-margin-top {
+  margin-top: 0;
+}
+
+#frunt .\+no-margin-bottom {
+  margin-bottom: 0;
+}
+
+#frunt .\+no-margin-left {
+  margin-left: 0;
+}
+
+#frunt .\+no-margin-right {
+  margin-right: 0;
+}
+
+#frunt .\+no-padding {
+  padding: 0;
+}
+
+#frunt .\+no-padding-top {
+  padding-top: 0;
+}
+
+#frunt .\+no-padding-bottom {
+  padding-bottom: 0;
+}
+
+#frunt .\+no-padding-left {
+  padding-left: 0;
+}
+
+#frunt .\+no-padding-right {
+  padding-right: 0;
+}
+
+#frunt .\+wrapper {
+  position: relative;
+}
+
 .\~burger {
   position: relative;
   margin-top: 8px;
