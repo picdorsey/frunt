@@ -3,29 +3,15 @@
  * @author Piccirilli Dorsey
  */
 
-(function () {
+global._ = require('underscore');
 
-    'use strict';
+var app = {
 
-    var $ = require('jquery');
-    var _ = require('underscore');
+    init: function () {
+        // Begin!
+    }
 
-    var app = {
+};
 
-        init: function() {
-            // Begin!
-        }
-
-    };
-
-    // Call the initialize function
-    $(function () {
-        app.init();
-    });
-
-    // Exists?
-    $.fn.exists = function () {
-        return this.length > 0;
-    };
-
-}());
+// Call the initialize function
+$(app.init);
