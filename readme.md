@@ -31,7 +31,9 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 `gulp dev` to watch BrowserSync and to watch for changes.
 
-`gulp watch` to watch for changes (no server)
+`gulp watch` to watch for changes (no server).
+
+`gulp clean` to remove build and guide files.
 
 #### Options
 `--livereload` to use livereload to watch for changes instead of browsersync.

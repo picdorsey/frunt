@@ -141,6 +141,22 @@ var format = function (config) {
         .pipe(plugins.phpcs.reporter('log'));
 };
 
+// Clean // --------------------------------------------------
+
+gulp.task('clean', function() {
+    del([
+        // Build Files
+        './public/assets/css/*.css',
+        './public/assets/css/*.map',
+        './public/assets/js/*.js',
+        './public/assets/js/*.map',
+        // Guide
+        './public/guide.html',
+        './src/sass/guide.scss',
+        './src/js/vendor/jquery.sticky.js',
+    ]);
+});
+
 // Server // --------------------------------------------------
 
 gulp.task('browser-sync', function () {
