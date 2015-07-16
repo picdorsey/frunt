@@ -1549,7 +1549,6 @@
 }.call(this));
 
 },{}],2:[function(require,module,exports){
-(function (global){
 /*
  * @app
  * @author Piccirilli Dorsey
@@ -1557,7 +1556,7 @@
 
 'use strict';
 
-global._ = require('underscore');
+var _ = require('underscore');
 
 var app = {
 
@@ -1570,7 +1569,6 @@ $(app.init);
 
 // Begin!
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"underscore":1}]},{},[2]);
 
 //# sourceMappingURL=bundle.js.map

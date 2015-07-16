@@ -4,41 +4,41 @@
 // (---) bottom -> &:after
 
 // Config
-$width: 30px;
-$height: 5px;
-$gutter: 3px;
-$bg-color: $gray-dark;
-$bg-color-mobile: $gray-dark;
-$border-radius: 0;
-$transition-duration: .3s;
+$burger-width: 30px;
+$burger-height: 5px;
+$burger-gutter: 3px;
+$burger-bg-color: $gray-dark;
+$burger-bg-color-mobile: $gray-dark;
+$burger-border-radius: 0;
+$burger-transition-duration: .3s;
 
 // Burger
 @include component(burger) {
-    $burger-height: $height !global;
-    $burger-gutter: $gutter !global;
+    $burger-height: $burger-height !global;
+    $burger-gutter: $burger-gutter !global;
 
     position: relative;
-    margin-top: $height + $gutter;
-    margin-bottom: $height + $gutter;
+    margin-top: $burger-height + $burger-gutter;
+    margin-bottom: $burger-height + $burger-gutter;
 
     user-select: none;
     text-indent: -999px;
 
     &, &:before, &:after {
         display: block;
-        width: $width;
-        height: $height;
-        background-color: $bg-color;
+        width: $burger-width;
+        height: $burger-height;
+        background-color: $burger-bg-color;
 
         @include mq($from: sm) {
-            background-color: $bg-color-mobile;
+            background-color: $burger-bg-color-mobile;
         }
 
-        @if $border-radius != 0 {
-            border-radius: $border-radius;
+        @if $burger-border-radius != 0 {
+            border-radius: $burger-border-radius;
         }
         transition-property: background-color, transform;
-        transition-duration: $transition-duration;
+        transition-duration: $burger-transition-duration;
     }
 
     &:before, &:after {
@@ -47,11 +47,11 @@ $transition-duration: .3s;
     }
 
     &:before {
-        margin-top: -($height + $gutter);
+        margin-top: -($burger-height + $burger-gutter);
     }
 
     &:after {
-        margin-top: $height + $gutter;
+        margin-top: $burger-height + $burger-gutter;
     }
 
     .active & {
