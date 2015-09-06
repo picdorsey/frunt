@@ -1,174 +1,53 @@
-// Table // -----------------------------------------------
+//
+// Basic Bootstrap table
+//
 
-// Config
-$table-cell-padding: 10px;
-$table-condensed-cell-padding: 5px;
-$table-border-color: #ccc;
-$table-bg-accent: #f4f4f4;
-$table-bg-hover: #eee;
-
-// Component
 @include component(table) {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: $spacer;
 
-    thead {
-        border-bottom: 3px solid $table-border-color;
+    th,
+    td {
+        padding: $table-cell-padding;
+        line-height: $line-height;
+        vertical-align: top;
+        border-top: 1px solid $table-border-color;
     }
 
-    // Cells
-    > thead,
-    > tbody,
-    > tfoot {
-        > tr {
-            > th,
-            > td {
-                padding: $table-cell-padding;
-                line-height: $line-height-base;
-                vertical-align: top;
-                border-top: 1px solid $table-border-color;
-            }
-        }
-    }
-    // Bottom align for column headings
-    > thead > tr > th {
+    thead th {
         vertical-align: bottom;
         border-bottom: 2px solid $table-border-color;
     }
-    // Remove top border from thead by default
-    > caption + thead,
-    > colgroup + thead,
-    > thead:first-child {
-        > tr:first-child {
-            > th,
-            > td {
-                border-top: 0;
-            }
-        }
-    }
-    // Account for multiple tbody instances
-    > tbody + tbody {
+
+    tbody + tbody {
         border-top: 2px solid $table-border-color;
     }
 
-    // Nesting
     .table {
-        background-color: #fff;
+        background-color: $body-bg;
     }
 
-    @include option(compact) {
-        > thead,
-        > tbody,
-        > tfoot {
-            > tr {
-                > th,
-                > td {
-                    padding: $table-condensed-cell-padding;
-                }
-            }
+    @include option(small) {
+        th,
+        td {
+          padding: $table-sm-cell-padding;
         }
     }
 
-    // Bordered
     @include option(bordered) {
         border: 1px solid $table-border-color;
-        > thead,
-        > tbody,
-        > tfoot {
-            > tr {
-                > th,
-                > td {
-                    border: 1px solid $table-border-color;
-                }
-            }
-        }
-        > thead > tr {
-            > th,
-            > td {
-                border-bottom-width: 2px;
-            }
-        }
-    }
 
-    // Zebra striping
-    @include option(striped) {
-        > tbody > tr:nth-of-type(odd) {
-            background-color: $table-bg-accent;
-        }
-    }
-
-    // Row hovering
-    @include option(hover) {
-        > tbody > tr:hover {
-            background-color: $table-bg-hover;
-        }
-    }
-}
-
-// Responsive Tables
-.responsive-table {
-    overflow-x: auto;
-    min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
-    margin-bottom: 30px;
-
-    @include mq($until: xs) {
-        width: 100%;
-        margin-bottom: ($line-height-base * 0.75);
-        overflow-y: hidden;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        border: 1px solid $table-border-color;
-
-        // Tighten up spacing
-        > .table {
-            margin-bottom: 0;
-
-            // Ensure the content doesn't wrap
-            > thead,
-            > tbody,
-            > tfoot {
-                > tr {
-                    > th,
-                    > td {
-                        white-space: nowrap;
-                    }
-                }
-            }
+        th,
+        td {
+            border: 1px solid $table-border-color;
         }
 
-        // Special overrides for the bordered tables
-        > .table-bordered {
-            border: 0;
-
-            // Nuke the appropriate borders so that the parent can handle them
-            > thead,
-            > tbody,
-            > tfoot {
-                > tr {
-                    > th:first-child,
-                    > td:first-child {
-                        border-left: 0;
-                    }
-                    > th:last-child,
-                    > td:last-child {
-                        border-right: 0;
-                    }
-                }
-            }
-
-            // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
-            // chances are there will be only one `tr` in a `thead` and that would
-            // remove the border altogether.
-            > tbody,
-            > tfoot {
-                > tr:last-child {
-                    > th,
-                    > td {
-                        border-bottom: 0;
-                    }
-                }
-            }
-
+        thead {
+          th,
+          td {
+            border-bottom-width: 2px;
+          }
         }
     }
 }

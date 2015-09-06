@@ -1,24 +1,45 @@
 // Website Style Guide // --------------------------------------------------
 
-// Import Style Base
-@import '_vendor/frunt';
-@import 'config';
-@import '_mixins/animation';
-@import '_mixins/clearfix';
-@import '_mixins/reset';
-@import '_mixins/shadow';
-@import '_mixins/spacing';
-@import '_mixins/valign';
-@import '_core/reset';
+// Mixins
+
+@import '_mixins/*';
+
+// Core variables
+
+@import '_core/config';
+@import '_core/reboot';
 @import '_core/z-index';
 @import '_core/typography';
 @import '_core/grid';
 @import '_core/print';
 @import '_core/misc';
-@import 'mixins';
-@import 'tweaks';
+
+// Vendor
+
+@import '_vendor/frunt';
+
+// Helpers
+
+@import 'tweaks'; // Tweaks, becuase you can't help it
+
+// Partials
+// --------------------------------------------------
+// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
+
 @import "partials/*";
+
+// Components
+// --------------------------------------------------
+// Reusable components that make up a webpage.
+// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+
 @import 'components/*';
+
+// Layouts
+// --------------------------------------------------
+// Layouts are specific to section and override any components, parts or tweaks.
+// Layouts are used is scss: @include layout(home) and in html: class="@home"
+
 @import 'layouts/*';
 
 // Header
@@ -35,7 +56,7 @@
         color: #fff;
         line-height: 80px;
         font-size: 30px;
-        font-weight: $light;
+        font-weight: 300;
     }
 
     #menu-button {
@@ -52,7 +73,7 @@
             }
         }
 
-        @include mq($from: md) {
+       @include media-breakpoint-up(md) {
             display: none;
         }
     }
@@ -64,22 +85,23 @@
 
     // Content
     #guide-content {
-        @include make-sm-column(12);
-        @include make-md-column(9);
+        @include make-col();
+        @include make-col-span(12);
 
-        @include mq($from: md) {
+        @include media-breakpoint-up(md) {
+            @include make-col-span(9);
             @include spacing(right, 60px);
         }
     }
     // Sidebar
     #guide-sidebar {
-        display: none;
+        // display: none;
+        @include make-col();
 
-        @include make-md-column(3);
-
-        @include mq($from: md) {
-            display: block;
+        @include media-breakpoint-up(sm) {
+            @include make-col-span(3);
         }
+
 
         // Sidebar nav groups
         .guide-sidebar-nav {
@@ -142,7 +164,7 @@
 
         @include part(heading) {
             font-size: 20px;
-            font-weight: $light;
+            font-weight: 300;
             text-transform: uppercase;
             padding-bottom: 10px;
             border-bottom: 5px solid $gray-lighter;

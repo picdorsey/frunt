@@ -3,10 +3,3 @@
 .clearfix {
     @include clearfix();
 }
-
-hr {
-    margin-top: 1.4rem;
-    margin-bottom: 3.4rem;
-    border-width: 0;
-    border-top: 1px solid $gray-light;
-}

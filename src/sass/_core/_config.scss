@@ -1,0 +1,246 @@
+// Config // --------------------------------------------------
+
+$enable-flex:               false !default;
+
+//
+// Colors
+// --------------------------------------------------
+
+$blue:                   #337ab7;
+$green:                  #5cb85c;
+$light-blue:             #5bc0de;
+$yellow:                 #f0ad4e;
+$red:                    #d9534f;
+
+$gray-darker:            #222;
+$gray-dark:              #333;
+$gray:                   #555;
+$gray-light:             #ccc;
+$gray-lighter:           #eee;
+
+$ui-primary:             $blue;
+$ui-success:             $green;
+$ui-info:                $light-blue;
+$ui-warning:             $yellow;
+$ui-danger:              $red;
+$ui-gray:                $gray;
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+$blue:                   #337ab7;
+$green:                  #5cb85c;
+$light-blue:             #5bc0de;
+$yellow:                 #f0ad4e;
+$red:                    #d9534f;
+
+
+$brand-primary:             $blue !default;
+$brand-success:             $green !default;
+$brand-info:                $light-blue !default;
+$brand-warning:             $yellow !default;
+$brand-danger:              $red !default;
+$brand-gray:                $gray !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+
+$spacer:                     1rem !default;
+$spacer-x:                   $spacer !default;
+$spacer-y:                   $spacer !default;
+$border-width:               .0625rem !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg:                    #fff !default;
+$body-color:                 $gray-dark !default;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                 $brand-primary !default;
+$link-decoration:            none !default;
+$link-hover-color:           darken($link-color, 15%) !default;
+$link-hover-decoration:      underline !default;
+
+
+
+//
+// Typography
+// --------------------------------------------------
+
+$font-family-sans-serif:     "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:           $font-family-sans-serif !default;
+
+$font-url:               'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-size-root:             16px !default;
+
+$font-size-base:             1rem !default;
+$font-size-lg:               1.25rem !default;
+$font-size-sm:               .85rem !default;
+$font-size-xs:               .75rem !default;
+
+$font-size-h1:               2.5rem !default;
+$font-size-h2:               2rem !default;
+$font-size-h3:               1.75rem !default;
+$font-size-h4:               1.5rem !default;
+$font-size-h5:               1.25rem !default;
+$font-size-h6:               1rem !default;
+
+$display1-size:               6rem !default;
+$display2-size:               5.5rem !default;
+$display3-size:               4.5rem !default;
+$display4-size:               3.5rem !default;
+
+$display1-weight:             300 !default;
+$display2-weight:             300 !default;
+$display3-weight:             300 !default;
+$display4-weight:             300 !default;
+
+$line-height:                1.5 !default;
+
+$headings-margin-bottom:     ($spacer / 2) !default;
+$headings-font-family:       inherit !default;
+$headings-font-weight:       500 !default;
+$headings-line-height:       1.1 !default;
+$headings-color:             inherit !default;
+
+$lead-font-size:             1.25rem !default;
+$lead-font-weight:           300 !default;
+
+$text-muted:                  $gray-light !default;
+
+$hr-border-color:             rgba(0,0,0,.1) !default;
+$hr-border-width:             $border-width !default;
+
+//
+// Links
+// --------------------------------------------------
+
+$link-color:             $ui-primary;
+$link-hover:             darken($ui-primary, 15%);
+
+// Components
+//
+// Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+// Cards
+$card-spacer-x:            1.25rem !default;
+$card-spacer-y:            .75rem !default;
+$card-border-width:        .0625rem !default;
+$card-border-radius:       .25rem !default;
+$card-border-color:        #e5e5e5 !default;
+$card-border-radius-inner: ($card-border-radius - $card-border-width) !default;
+$card-cap-bg:              #f5f5f5 !default;
+
+$line-height-lg:         (4 / 3) !default;
+$line-height-sm:         1.5 !default;
+
+$border-radius:          .25rem !default;
+$border-radius-lg:       .3rem !default;
+$border-radius-sm:       .2rem !default;
+
+$component-active-color: #fff !default;
+$component-active-bg:    $brand-primary !default;
+
+$caret-width:            .3em !default;
+$caret-width-lg:         $caret-width !default;
+
+// Tables
+//
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+$table-cell-padding:            .75rem !default;
+$table-sm-cell-padding:         .3rem !default;
+
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+$table-border-color:            $gray-lighter !default;
+
+//
+// Buttons
+// --------------------------------------------------
+
+$button-text-color:      $gray-darker;
+$button-color:           $ui-gray;
+
+
+//
+// Animations
+// --------------------------------------------------
+
+$animation-xshort:       125ms;
+$animation-short:        250ms;
+$animation-medium:       500ms;
+$animation-long:         1s;
+$animation-xl:           2s;
+
+
+//
+// Border Radiuses
+// --------------------------------------------------
+
+$br-default:            3px;
+$br-button:             $br-default;
+$br-table:              $br-default;
+
+//
+// Grid
+// --------------------------------------------------
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+    // Extra small screen / phone
+    xs: 0,
+    // Small screen / phone
+    sm: 34em,
+    // Medium screen / tablet
+    md: 48em,
+    // Large screen / desktop
+    lg: 62em,
+    // Extra large screen / wide desktop
+    xl: 75em
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 34rem,    // 480
+    md: 45rem,    // 720
+    lg: 60rem,    // 960
+    xl: 72.25rem  // 1140
+) !default;
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:               12 !default;
+$grid-gutter-width:          1.875rem !default; // 30px

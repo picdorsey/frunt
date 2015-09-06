@@ -1,175 +1,189 @@
 @import url($font-url);
 
-// Headings
-
-h1 {
-    font-size: $font-size-h1;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
 }
 
-h2 {
-    font-size: $font-size-h2;
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    margin-bottom: $headings-margin-bottom;
 }
 
-h3 {
-    font-size: $font-size-h3;
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-bottom: $headings-margin-bottom;
 }
 
-h4 {
-    font-size: $font-size-h4;
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+.lead {
+    font-size: $lead-font-size;
+    font-weight: $lead-font-weight;
 }
 
-h5 {
-    font-size: $font-size-h5;
+// Type display classes
+.display-1 {
+    font-size: $display1-size;
+    font-weight: $display1-weight;
 }
 
-h6 {
-    font-size: $font-size-h6;
+.display-2 {
+    font-size: $display2-size;
+    font-weight: $display2-weight;
 }
 
-// Links
+.display-3 {
+    font-size: $display3-size;
+    font-weight: $display3-weight;
+}
+
+.display-4 {
+    font-size: $display4-size;
+    font-weight: $display4-weight;
+}
 
 a {
     color: $link-color;
-    text-decoration: none;
+    text-decoration: $link-decoration;
 
     @include transition(color $animation-xshort ease-in-out);
 
     &:hover {
         color: darken($link-color, 15%);
+        text-decoration: $link-hover-decoration;
+    }
+
+    &:focus {
+        // Default
+        outline: thin dotted;
+        // WebKit
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
     }
 }
 
-// Blockquote
 
-blockquote {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin: 30px 0;
-    padding: 30px;
-    text-align: center;
+//
+// Horizontal rules
+//
 
-    p {
-        font-size: 22px;
-        color: $gray;
-        font-style: italic;
+hr {
+    margin-top: $spacer-y;
+    margin-bottom: $spacer-y;
+    border: 0;
+    border-top: $hr-border-width solid $hr-border-color;
+}
 
-        &:first-child {
-            margin-top: 0;
-        }
 
+//
+// Emphasis
+//
+
+small,
+.small {
+    font-size: 80%;
+    font-weight: normal;
+}
+
+mark,
+.mark {
+    padding: .2em;
+    background-color: $red;
+}
+
+
+//
+// Lists
+//
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+
+    > li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+// Horizontal description lists w/ grid classes
+.dl-horizontal {
+  margin-right: -$grid-gutter-width;
+  margin-left: -$grid-gutter-width;
+  @include clearfix;
+}
+
+
+//
+// Misc
+//
+
+// Builds on `abbr`
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+    padding: ($spacer / 2) $spacer;
+    margin-bottom: $spacer;
+    font-size: $font-size-base * 1.25;
+    border-left: .25rem solid $gray-lighter;
+
+    p,
+    ul,
+    ol {
         &:last-child {
             margin-bottom: 0;
         }
+    }
 
-        &.by {
-            font-size: 14px;
+    footer {
+        display: block;
+        font-size: 80%; // back to default font-size
+        line-height: $line-height;
+        color: $gray-light;
+
+        &::before {
+            content: "\2014 \00A0"; // em dash, nbsp
         }
     }
 }
 
-// Icons
+// Opposite alignment of blockquote
+.blockquote-reverse {
+    padding-right: $spacer;
+    padding-left: 0;
+    text-align: right;
+    border-right: .25rem solid $gray-lighter;
+    border-left: 0;
 
-@font-face {
-    font-family: 'icomoon';
-    src:url('/assets/fonts/icomoon.eot?-21tjc4');
-    src:url('/assets/fonts/icomoon.eot?#iefix-21tjc4') format('embedded-opentype'),
-    url('/assets/fonts/icomoon.ttf?-21tjc4') format('truetype'),
-    url('/assets/fonts/icomoon.woff?-21tjc4') format('woff'),
-    url('/assets/fonts/icomoon.svg?-21tjc4#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    // Account for citation
+    footer {
+        &::before { content: ""; }
+        &::after {
+            content: "\00A0 \2014"; // nbsp, em dash
+        }
+    }
 }
-
-[class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-pencil:before {
-    content: "\e905";
-}
-.icon-image:before {
-    content: "\e90d";
-}
-.icon-camera:before {
-    content: "\e90f";
-}
-.icon-music:before {
-    content: "\e911";
-}
-.icon-play:before {
-    content: "\e912";
-}
-.icon-stack:before {
-    content: "\e92e";
-}
-.icon-price-tag:before {
-    content: "\e935";
-}
-.icon-location:before {
-    content: "\e947";
-}
-.icon-clock:before {
-    content: "\e94e";
-}
-.icon-bubble:before {
-    content: "\e96b";
-}
-.icon-user:before {
-    content: "\e971";
-}
-.icon-users:before {
-    content: "\e972";
-}
-.icon-quotes-left:before {
-    content: "\e977";
-}
-.icon-quotes-right:before {
-    content: "\e978";
-}
-.icon-spinner:before {
-    content: "\e97d";
-}
-.icon-bookmark:before {
-    content: "\e9d2";
-}
-.icon-info:before {
-    content: "\ea0c";
-}
-.icon-close:before {
-    content: "\ea0f";
-}
-.icon-check:before {
-    content: "\ea10";
-}
-.icon-google-plus:before {
-    content: "\ea88";
-}
-.icon-facebook:before {
-    content: "\ea8c";
-}
-.icon-instagram:before {
-    content: "\ea90";
-}
-.icon-twitter:before {
-    content: "\ea91";
-}
-.icon-feed:before {
-    content: "\ea94";
-}
-.icon-youtube:before {
-    content: "\ea99";
-}
-.icon-vimeo:before {
-    content: "\ea9c";
-}
-

@@ -30,7 +30,7 @@ $burger-transition-duration: .3s;
         height: $burger-height;
         background-color: $burger-bg-color;
 
-        @include mq($from: sm) {
+        @include media-breakpoint-up(xs) {
             background-color: $burger-bg-color-mobile;
         }
 

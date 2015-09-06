@@ -2,44 +2,26 @@
 // @author Piccirilli Dorsey
 // @copyright 2015
 
-//
-// Import Frunt Generator
-// --------------------------------------------------
+// Mixins
 
-@import '_vendor/frunt';
+@import '_mixins/*';
 
-//
-// Frunt Global Configuration
-// --------------------------------------------------
+// Core variables
 
-@import 'config';
-
-//
-// Frunt Core Mixins
-// --------------------------------------------------
-// Mixins used in the frunt ui core.
-
-@import '_mixins/animation';
-@import '_mixins/clearfix';
-@import '_mixins/valign';
-
-//
-// Frunt Core
-// --------------------------------------------------
-// The core frunt ui.
-
-@import '_core/reset';
+@import '_core/config';
+@import '_core/reboot';
 @import '_core/z-index';
 @import '_core/typography';
 @import '_core/grid';
 @import '_core/print';
 @import '_core/misc';
 
-// Helpers
-// --------------------------------------------------
-// Easy style tweaks and helpers.
+// Vendor
 
-@import 'mixins'; // User defined mixins, not related to a component
+@import '_vendor/frunt';
+
+// Helpers
+
 @import 'tweaks'; // Tweaks, becuase you can't help it
 
 // Partials

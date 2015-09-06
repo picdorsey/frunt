@@ -1,408 +1,119 @@
+// Container widths
 //
-// Grid system
-// --------------------------------------------------
-// Inspired by https://github.com/twbs/bootstrap
-
-@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
-    @for $i from (1 + 1) through $grid-columns {
-        $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
-    }
-    #{$list} {
-        position: relative;
-        min-height: 1px;
-        padding-left:  ($grid-gutter-width / 2);
-        padding-right: ($grid-gutter-width / 2);
-    }
-}
-
-@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
-    @for $i from (1 + 1) through $grid-columns {
-        $list: "#{$list}, .col-#{$class}-#{$i}";
-    }
-    #{$list} {
-        float: left;
-    }
-}
-
-@mixin calc-grid-column($index, $class, $type) {
-    @if ($type == width) and ($index > 0) {
-        .col-#{$class}-#{$index} {
-            width: percentage(($index / $grid-columns));
-        }
-    }
-    @if ($type == push) and ($index > 0) {
-        .col-#{$class}-push-#{$index} {
-            left: percentage(($index / $grid-columns));
-        }
-    }
-    @if ($type == push) and ($index == 0) {
-        .col-#{$class}-push-0 {
-            left: auto;
-        }
-    }
-    @if ($type == pull) and ($index > 0) {
-        .col-#{$class}-pull-#{$index} {
-            right: percentage(($index / $grid-columns));
-        }
-    }
-    @if ($type == pull) and ($index == 0) {
-        .col-#{$class}-pull-0 {
-            right: auto;
-        }
-    }
-    @if ($type == offset) {
-        .col-#{$class}-offset-#{$index} {
-            margin-left: percentage(($index / $grid-columns));
-        }
-    }
-}
-
-@mixin loop-grid-columns($columns, $class, $type) {
-    @for $i from 0 through $columns {
-        @include calc-grid-column($i, $class, $type);
-    }
-}
-
-@mixin make-grid($class) {
-    @include float-grid-columns($class);
-    @include loop-grid-columns($grid-columns, $class, width);
-    @include loop-grid-columns($grid-columns, $class, pull);
-    @include loop-grid-columns($grid-columns, $class, push);
-    @include loop-grid-columns($grid-columns, $class, offset);
-}
-
-@mixin container-fixed($gutter: $grid-gutter-width) {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-    @include clearfix();
-}
-
-@mixin make-row($gutter: $grid-gutter-width) {
-    margin-left:  ($gutter / -2);
-    margin-right: ($gutter / -2);
-    @include clearfix();
-}
-
-@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
-    position: relative;
-    float: left;
-    width: percentage(($columns / $grid-columns));
-    min-height: 1px;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-}
-
-@mixin make-xs-column-offset($columns) {
-    margin-left: percentage(($columns / $grid-columns));
-}
-
-@mixin make-xs-column-push($columns) {
-    left: percentage(($columns / $grid-columns));
-}
-
-@mixin make-xs-column-pull($columns) {
-    right: percentage(($columns / $grid-columns));
-}
-
-@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
-    position: relative;
-    min-height: 1px;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-
-    @media (min-width: $screen-sm-min) {
-        float: left;
-        width: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-sm-column-offset($columns) {
-    @media (min-width: $screen-sm-min) {
-        margin-left: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-sm-column-push($columns) {
-    @media (min-width: $screen-sm-min) {
-        left: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-sm-column-pull($columns) {
-    @media (min-width: $screen-sm-min) {
-        right: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
-    position: relative;
-    min-height: 1px;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-
-    @media (min-width: $screen-md-min) {
-        float: left;
-        width: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-md-column-offset($columns) {
-    @media (min-width: $screen-md-min) {
-        margin-left: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-md-column-push($columns) {
-    @media (min-width: $screen-md-min) {
-        left: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-md-column-pull($columns) {
-    @media (min-width: $screen-md-min) {
-        right: percentage(($columns / $grid-columns));
-    }
-}
-
-@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
-    position: relative;
-    min-height: 1px;
-    padding-left:  ($gutter / 2);
-    padding-right: ($gutter / 2);
-
-    @media (min-width: $screen-lg-min) {
-        float: left;
-        width: percentage(($columns / $grid-columns));
-    }
-}
-@mixin make-lg-column-offset($columns) {
-    @media (min-width: $screen-lg-min) {
-        margin-left: percentage(($columns / $grid-columns));
-    }
-}
-@mixin make-lg-column-push($columns) {
-    @media (min-width: $screen-lg-min) {
-        left: percentage(($columns / $grid-columns));
-    }
-}
-@mixin make-lg-column-pull($columns) {
-    @media (min-width: $screen-lg-min) {
-        right: percentage(($columns / $grid-columns));
-    }
-}
+// Set the container width, and override it for fixed navbars in media queries.
 
 .container {
-    @include container-fixed();
-
-    @media (min-width: $screen-sm-min) {
-        width: $container-sm;
-    }
-    @media (min-width: $screen-md-min) {
-        width: $container-md;
-    }
-    @media (min-width: $screen-lg-min) {
-        width: $container-lg;
-    }
+    @include make-container();
+    @include make-container-max-widths();
 }
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
 
 .container-fluid {
-    @include container-fixed();
+    @include make-container();
 }
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
 
 .row {
     @include make-row();
 }
 
+
+// Columns
+//
+// Common styles for small and large grid columns
+
 @include make-grid-columns();
 
-@include make-grid(xs);
 
-@media (min-width: $screen-sm-min) {
-    @include make-grid(sm);
-}
-
-@media (min-width: $screen-md-min) {
-    @include make-grid(md);
-}
-
-@media (min-width: $screen-lg-min) {
-    @include make-grid(lg);
-}
-
-
+// Flex variation
 //
-// Responsive utilities
-// --------------------------------------------------
+// Custom styles for additional flex alignment options.
 
-@mixin responsive-visibility($parent) {
-    #{$parent} {
-        display: block !important;
-    }
-    table#{$parent} { display: table; }
-    tr#{$parent} { display: table-row !important; }
-    th#{$parent},
-    td#{$parent} { display: table-cell !important; }
-}
+@if $enable-flex {
 
-@mixin responsive-invisibility($parent) {
-    #{$parent} {
-        display: none !important;
-    }
-}
+  // Flex column reordering
 
-@-ms-viewport {
-    width: device-width;
-}
+  .col-xs-first { order: -1; }
+  .col-xs-last { order: 1; }
 
-@include responsive-invisibility('.visible-xs, .visible-sm, .visible-md, .visible-lg');
-.visible-xs-block,
-.visible-xs-inline,
-.visible-xs-inline-block,
-.visible-sm-block,
-.visible-sm-inline,
-.visible-sm-inline-block,
-.visible-md-block,
-.visible-md-inline,
-.visible-md-inline-block,
-.visible-lg-block,
-.visible-lg-inline,
-.visible-lg-inline-block {
-    display: none !important;
-}
+  @include media-breakpoint-up(sm) {
+    .col-sm-first { order: -1; }
+    .col-sm-last { order: 1; }
+  }
+  @include media-breakpoint-up(md) {
+    .col-md-first { order: -1; }
+    .col-md-last { order: 1; }
+  }
+  @include media-breakpoint-up(lg) {
+    .col-lg-first { order: -1; }
+    .col-lg-last { order: 1; }
+  }
+  @include media-breakpoint-up(xl) {
+    .col-xl-first { order: -1; }
+    .col-xl-last { order: 1; }
+  }
 
-@media (max-width: $screen-xs-max) {
-    @include responsive-visibility('.visible-xs');
-}
+  // Alignment for every column in row
 
-.visible-xs-block {
-    @media (max-width: $screen-xs-max) {
-        display: block !important;
-    }
-}
+  .row-xs-top    { align-items: flex-start; }
+  .row-xs-center { align-items: center; }
+  .row-xs-bottom { align-items: flex-end; }
 
-.visible-xs-inline {
-    @media (max-width: $screen-xs-max) {
-        display: inline !important;
-    }
-}
+  @include media-breakpoint-up(sm) {
+    .row-sm-top    { align-items: flex-start; }
+    .row-sm-center { align-items: center; }
+    .row-sm-bottom { align-items: flex-end; }
+  }
+  @include media-breakpoint-up(md) {
+    .row-md-top    { align-items: flex-start; }
+    .row-md-center { align-items: center; }
+    .row-md-bottom { align-items: flex-end; }
+  }
+  @include media-breakpoint-up(lg) {
+    .row-lg-top    { align-items: flex-start; }
+    .row-lg-center { align-items: center; }
+    .row-lg-bottom { align-items: flex-end; }
+  }
+  @include media-breakpoint-up(xl) {
+    .row-xl-top    { align-items: flex-start; }
+    .row-xl-center { align-items: center; }
+    .row-xl-bottom { align-items: flex-end; }
+  }
 
-.visible-xs-inline-block {
-    @media (max-width: $screen-xs-max) {
-        display: inline-block !important;
-    }
-}
+  // Alignment per column
 
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    @include responsive-visibility('.visible-sm');
-}
+  .col-xs-top    { align-self: flex-start; }
+  .col-xs-center { align-self: center; }
+  .col-xs-bottom { align-self: flex-end; }
 
-.visible-sm-block {
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        display: block !important;
-    }
-}
+  @include media-breakpoint-up(sm) {
+    .col-sm-top    { align-self: flex-start; }
+    .col-sm-center { align-self: center; }
+    .col-sm-bottom { align-self: flex-end; }
+  }
+  @include media-breakpoint-up(md) {
+    .col-md-top    { align-self: flex-start; }
+    .col-md-center { align-self: center; }
+    .col-md-bottom { align-self: flex-end; }
+  }
+  @include media-breakpoint-up(lg) {
+    .col-lg-top    { align-self: flex-start; }
+    .col-lg-center { align-self: center; }
+    .col-lg-bottom { align-self: flex-end; }
+  }
+  @include media-breakpoint-up(xl) {
+    .col-xl-top    { align-self: flex-start; }
+    .col-xl-center { align-self: center; }
+    .col-xl-bottom { align-self: flex-end; }
+  }
 
-.visible-sm-inline {
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        display: inline !important;
-    }
-}
-
-.visible-sm-inline-block {
-    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        display: inline-block !important;
-    }
-}
-
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    @include responsive-visibility('.visible-md');
-}
-
-.visible-md-block {
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-        display: block !important;
-    }
-}
-
-.visible-md-inline {
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-        display: inline !important;
-    }
-}
-
-.visible-md-inline-block {
-    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-        display: inline-block !important;
-    }
-}
-
-@media (min-width: $screen-lg-min) {
-    @include responsive-visibility('.visible-lg');
-}
-
-.visible-lg-block {
-    @media (min-width: $screen-lg-min) {
-        display: block !important;
-    }
-}
-
-.visible-lg-inline {
-    @media (min-width: $screen-lg-min) {
-        display: inline !important;
-    }
-}
-
-.visible-lg-inline-block {
-    @media (min-width: $screen-lg-min) {
-        display: inline-block !important;
-    }
-}
-
-@media (max-width: $screen-xs-max) {
-    @include responsive-invisibility('.hidden-xs');
-}
-
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    @include responsive-invisibility('.hidden-sm');
-}
-
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    @include responsive-invisibility('.hidden-md');
-}
-
-@media (min-width: $screen-lg-min) {
-    @include responsive-invisibility('.hidden-lg');
-}
-
-@include responsive-invisibility('.visible-print');
-
-@media print {
-    @include responsive-visibility('.visible-print');
-}
-
-.visible-print-block {
-    display: none !important;
-    @media print {
-        display: block !important;
-    }
-}
-
-.visible-print-inline {
-    display: none !important;
-    @media print {
-        display: inline !important;
-    }
-}
-
-.visible-print-inline-block {
-    display: none !important;
-    @media print {
-        display: inline-block !important;
-    }
-}
-
-@media print {
-    @include responsive-invisibility('.hidden-print');
 }
