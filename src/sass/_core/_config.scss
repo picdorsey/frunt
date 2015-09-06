@@ -2,6 +2,49 @@
 
 $enable-flex:               false !default;
 
+
+//
+// Grid
+// --------------------------------------------------
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+    // Extra small screen / phone
+    xs: 0,
+    // Small screen / phone
+    sm: 34em,
+    // Medium screen / tablet
+    md: 48em,
+    // Large screen / desktop
+    lg: 62em,
+    // Extra large screen / wide desktop
+    xl: 75em
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 34rem,    // 480
+    md: 45rem,    // 720
+    lg: 60rem,    // 960
+    xl: 72.25rem  // 1140
+) !default;
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:               12 !default;
+$grid-gutter-width:          1.875rem !default; // 30px
+
 //
 // Colors
 // --------------------------------------------------
@@ -75,8 +118,6 @@ $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
 $link-hover-decoration:      underline !default;
 
-
-
 //
 // Typography
 // --------------------------------------------------
@@ -86,7 +127,7 @@ $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
-$font-url:               'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
+$font-url:                  'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root:             16px !default;
@@ -128,13 +169,6 @@ $text-muted:                  $gray-light !default;
 
 $hr-border-color:             rgba(0,0,0,.1) !default;
 $hr-border-width:             $border-width !default;
-
-//
-// Links
-// --------------------------------------------------
-
-$link-color:             $ui-primary;
-$link-hover:             darken($ui-primary, 15%);
 
 // Components
 //
@@ -183,7 +217,6 @@ $table-border-color:            $gray-lighter !default;
 $button-text-color:      $gray-darker;
 $button-color:           $ui-gray;
 
-
 //
 // Animations
 // --------------------------------------------------
@@ -202,45 +235,3 @@ $animation-xl:           2s;
 $br-default:            3px;
 $br-button:             $br-default;
 $br-table:              $br-default;
-
-//
-// Grid
-// --------------------------------------------------
-
-// Grid breakpoints
-//
-// Define the minimum and maximum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-$grid-breakpoints: (
-    // Extra small screen / phone
-    xs: 0,
-    // Small screen / phone
-    sm: 34em,
-    // Medium screen / tablet
-    md: 48em,
-    // Large screen / desktop
-    lg: 62em,
-    // Extra large screen / wide desktop
-    xl: 75em
-) !default;
-
-
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (
-    sm: 34rem,    // 480
-    md: 45rem,    // 720
-    lg: 60rem,    // 960
-    xl: 72.25rem  // 1140
-) !default;
-
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns:               12 !default;
-$grid-gutter-width:          1.875rem !default; // 30px

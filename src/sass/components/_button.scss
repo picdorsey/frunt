@@ -13,16 +13,16 @@ $button-danger:     $ui-danger;
 // Mixins
 @mixin button($background-color, $font-color, $hover-text-color: $background-color) {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
 
     color: $font-color;
-    font-size: 14px;
+    font-size: $font-size-base;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
     background-color: $background-color;
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: $br-default;
 
     $transition: background-color 0.15s linear, color 0.15s linear;
 

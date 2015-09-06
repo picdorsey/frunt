@@ -1,8 +1,5 @@
 // Tiles // --------------------------------------------------
 
-// Imports (TODO: breaks without this even though it is being imported in the main file?)
-@import '../_mixins/reset';
-
 // Mixin
 @mixin build($columns, $padding: false) {
     li {

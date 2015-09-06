@@ -1891,14 +1891,14 @@ mark,
 
 .\~button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #555555;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #eee;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
@@ -1918,14 +1918,14 @@ mark,
 
 .\~button.\--primary {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #337ab7;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
@@ -1945,14 +1945,14 @@ mark,
 
 .\~button.\--success {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #5cb85c;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
@@ -1972,14 +1972,14 @@ mark,
 
 .\~button.\--info {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #5bc0de;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
@@ -1999,14 +1999,14 @@ mark,
 
 .\~button.\--warning {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #f0ad4e;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
@@ -2026,14 +2026,14 @@ mark,
 
 .\~button.\--danger {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background-color: #d9534f;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
   transition-delay: 0;
 }
