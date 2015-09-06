@@ -3,25 +3,22 @@
 // @copyright 2015
 
 // Mixins
-
 @import '_mixins/*';
 
 // Core variables
-
 @import '_core/config';
 @import '_core/reboot';
 @import '_core/z-index';
 @import '_core/typography';
 @import '_core/grid';
+@import '_core/form';
 @import '_core/print';
 @import '_core/misc';
 
 // Vendor
-
 @import '_vendor/frunt';
 
 // Helpers
-
 @import 'tweaks'; // Tweaks, becuase you can't help it
 
 // Partials

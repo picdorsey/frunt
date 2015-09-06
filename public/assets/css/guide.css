@@ -431,6 +431,14 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @-moz-viewport {
   width: device-width;
 }
@@ -447,6 +455,10 @@ html {
   width: device-width;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (-webkit-min-device-pixel-ratio: 2.0833333333333335), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
 html {
   font-size: 16px;
   -webkit-tap-highlight-color: transparent;
@@ -455,6 +467,7 @@ html {
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
   color: #333;
   background-color: #fff;
@@ -732,44 +745,34 @@ mark,
   text-transform: uppercase;
 }
 
-.blockquote {
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  border-left: 0.25rem solid #eee;
+.blockquote,
+blockquote {
+  margin: 1.875rem 0;
+  padding: 1.875rem;
+  text-align: center;
+  border-top: 0.0625rem solid #eee;
+  border-bottom: 0.0625rem solid #eee;
+}
+
+.blockquote p,
+blockquote p {
+  font-size: 22px;
+  color: #555;
+  font-style: italic;
 }
 
 .blockquote p:last-child,
 .blockquote ul:last-child,
-.blockquote ol:last-child {
+.blockquote ol:last-child,
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
   margin-bottom: 0;
 }
 
-.blockquote footer {
-  display: block;
-  font-size: 80%;
-  line-height: 1.5;
-  color: #ccc;
-}
-
-.blockquote footer::before {
-  content: "\2014 \00A0";
-}
-
-.blockquote-reverse {
-  padding-right: 1rem;
-  padding-left: 0;
-  text-align: right;
-  border-right: 0.25rem solid #eee;
-  border-left: 0;
-}
-
-.blockquote-reverse footer::before {
-  content: "";
-}
-
-.blockquote-reverse footer::after {
-  content: "\00A0 \2014";
+.blockquote .by,
+blockquote .by {
+  font-size: 0.875rem;
 }
 
 .container {
@@ -1746,6 +1749,55 @@ mark,
   h3 {
     page-break-after: avoid;
   }
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #ccc;
+  height: 36px;
+  padding: 0.4rem 0.625rem;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  border-radius: 3px;
+  box-shadow: none;
+  background: #fff;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #337ab7;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
 }
 
 .clearfix:before,

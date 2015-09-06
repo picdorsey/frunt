@@ -1,0 +1,44 @@
+// Forms // --------------------------------------------------
+
+input,
+textarea,
+select {
+    border: 1px solid $gray-light;
+    height: 36px;
+    padding: ($spacer / 2.5) ($spacer / 1.6); /* The 6px vertically centers text on FF, ignored by Webkit */
+    border-radius: $br-table;
+    box-shadow: none;
+    background: #fff;
+}
+
+textarea {
+    min-height: 65px;
+    padding-top: ($spacer / 2.5);
+    padding-bottom: ($spacer / 2.5);
+    resize: vertical;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    border: 1px solid $ui-primary;
+    outline: 0;
+}
+label,
+legend {
+    display: block;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+fieldset {
+    border-width: 0;
+    padding: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline
+}
+label > .label-body {
+    display: inline-block;
+    font-weight: normal;
+    margin-left: .5rem;
+}

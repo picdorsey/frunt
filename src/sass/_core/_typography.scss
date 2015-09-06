@@ -145,11 +145,19 @@ mark,
 }
 
 // Blockquotes
-.blockquote {
-    padding: ($spacer / 2) $spacer;
-    margin-bottom: $spacer;
-    font-size: $font-size-base * 1.25;
-    border-left: .25rem solid $gray-lighter;
+.blockquote,
+blockquote {
+    margin: 1.875rem 0;
+    padding: 1.875rem;
+    text-align: center;
+    border-top: .0625rem solid $gray-lighter;
+    border-bottom: .0625rem solid $gray-lighter;
+
+    p {
+        font-size: 22px;
+        color: $gray;
+        font-style: italic;
+    }
 
     p,
     ul,
@@ -159,31 +167,7 @@ mark,
         }
     }
 
-    footer {
-        display: block;
-        font-size: 80%; // back to default font-size
-        line-height: $line-height;
-        color: $gray-light;
-
-        &::before {
-            content: "\2014 \00A0"; // em dash, nbsp
-        }
-    }
-}
-
-// Opposite alignment of blockquote
-.blockquote-reverse {
-    padding-right: $spacer;
-    padding-left: 0;
-    text-align: right;
-    border-right: .25rem solid $gray-lighter;
-    border-left: 0;
-
-    // Account for citation
-    footer {
-        &::before { content: ""; }
-        &::after {
-            content: "\00A0 \2014"; // nbsp, em dash
-        }
+    .by {
+        font-size: 0.875rem;
     }
 }
