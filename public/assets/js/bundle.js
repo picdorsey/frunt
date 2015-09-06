@@ -1560,14 +1560,14 @@ var _ = require('underscore');
 
 var app = {
 
-    init: function init() {}
+    init: function init() {
+        // Begin!
+    }
 
 };
 
 // Call the initialize function
 $(app.init);
-
-// Begin!
 
 },{"underscore":1}]},{},[2]);
 
