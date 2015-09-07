@@ -20,9 +20,9 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
     * gulp-concat
     * gulp-uglify
 * Sass Tools
-    * [Frunt](http://frunt.io)
     * gulp-autoprefixer
     * gulp-minify-css
+    * Bootstrap V4 (Alpha)
 
 ## Documentation
 
@@ -42,6 +42,159 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 #### Config
 Make the `config.production` variable `true` to always minify the files.
+
+### SCSS (Quick Reference)
+
+#### Flexbox
+
+Open the `_config.scss` file and find the `$enable-flex variable`.
+Change it from `false` to `true`.
+Recompile, and done!
+
+
+**Why flexbox?**
+
+
+In a nutshell, flexbox provides simpler and more flexible layout options in CSS. More specifically, it provides:
+
+* Easy vertical alignment of content within a parent element.
+* Easy reordering of content across devices and screen resolutions with the help of media queries.
+* Easy CSS-only equal height columns for your grid-based layouts.
+
+All these things are possible outside flexbox, but typically require extra hacks and workarounds to do right.
+
+#### Grid
+
+```
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+   	         One of three columns
+        </div>
+        <div class="col-sm-4">
+            One of three columns
+        </div>
+        <div class="col-sm-4">
+            One of three columns
+        </div>
+    </div>
+</div>
+```
+
+**Sizes**
+
+* **xs** < 34 em (Extra small screen / phone)
+* **sm** > 34 em (Small screen / phone
+* **md** > 48 em (Medium screen / tablet)
+* **lg** >62 em (Large screen, desktop)
+* **xl** 75em (Extra large screen, wide desktop)
+
+**Mixins**
+
+```
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+    margin-left:  ($gutter / -2);
+    margin-right: ($gutter / -2);
+    @include clearfix();
+}
+
+// Make the element grid-ready (applying everything but the width)
+@mixin make-col($gutter: $grid-gutter-width) {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-left:  ($gutter / 2);
+    padding-right: ($gutter / 2);
+}
+
+// Set a width (to be used in or out of media queries)
+@mixin make-col-span($columns) {
+  width: percentage(($columns / $grid-columns));
+}
+
+// Get fancy by offsetting, or changing the sort order
+@mixin make-col-offset($columns) {
+  margin-left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-push($columns) {
+  left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-pull($columns) {
+  right: percentage(($columns / $grid-columns));
+}
+```
+
+Example
+
+```
+.container {
+    max-width: 60em;
+    @include make-container();
+}
+.row {
+    @include make-row();
+}
+.content-main {
+    @include make-col();
+
+    @media (max-width: 32em) {
+        @include make-col-span(6);
+    }
+    @media (min-width: 32.1em) {
+      @include make-col-span(8);
+    }
+}
+.content-secondary {
+    @include make-col();
+
+    @media (max-width: 32em) {
+      @include make-col-span(6);
+    }
+    @media (min-width: 32.1em) {
+      @include make-col-span(4);
+    }
+}
+```
+
+#### Media Queries
+
+Scale Up (min-width)
+
+```
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+
+// Example usage:
+@include media-breakpoint-up(sm) {
+    .some-class {
+        display: block;
+    }
+}
+```
+
+Scale Down (max-width)
+
+```
+@include media-breakpoint-down(xs) { ... }
+@include media-breakpoint-down(sm) { ... }
+@include media-breakpoint-down(md) { ... }
+@include media-breakpoint-down(lg) { ... }
+```
+
+#### Components
+```
+@include component(foo) {
+
+	@include option(bar) { ... } // ~foo --bar
+	
+	@include part(baz) { ... } // ~foo__baz
+
+}
+
+```
 
 ## Readings
 http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm

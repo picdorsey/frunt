@@ -1,34 +1,34 @@
 
 // Shadow
 
-/**
- * A mixin which helps you to add depth to elements according to the Google Material Design spec:
- * http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
- *
- * Please note that the values given in the specification cannot be used as is. To create the same visual experience
- * the blur parameter has to be doubled.
- *
- * Author: Florian Kutschera (@gefangenimnetz), Conceptboard GmbH (@conceptboardapp)
- *
- * Example usage:
- *
- * .card {
- *     width: 95px;
- *     height: 95px;
- *     background: #f4f4f4;
- *     -webkit-transition: all 250ms;
- *     -moz-transition: all 250ms;
- *     transition: all 250ms;
- *     .shadow(1);
- *     &:hover {
- *         .shadow(3);
- *         -webkit-transform: translateY(-5px);
- *         -moz-transform: translateY(-5px);
- *         transform: translateY(-5px);
- *     }
- * }
- *
- */
+//
+ // A mixin which helps you to add depth to elements according to the Google Material Design spec:
+ // http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
+ //
+ // Please note that the values given in the specification cannot be used as is. To create the same visual experience
+ // the blur parameter has to be doubled.
+ //
+ // Author: Florian Kutschera (@gefangenimnetz), Conceptboard GmbH (@conceptboardapp)
+ //
+ // Example usage:
+ //
+ // .card {
+ //     width: 95px;
+ //     height: 95px;
+ //     background: #f4f4f4;
+ //     -webkit-transition: all 250ms;
+ //     -moz-transition: all 250ms;
+ //     transition: all 250ms;
+ //     .shadow(1);
+ //     &:hover {
+ //         .shadow(3);
+ //         -webkit-transform: translateY(-5px);
+ //         -moz-transform: translateY(-5px);
+ //         transform: translateY(-5px);
+ //     }
+ // }
+ //
+ //
 
 @mixin shadow($level: 1){
     @if $level == 1 {
