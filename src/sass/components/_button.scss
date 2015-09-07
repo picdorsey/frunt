@@ -24,9 +24,7 @@ $button-danger:     $ui-danger;
     border: 1px solid transparent;
     border-radius: $br-default;
 
-    $transition: background-color 0.15s linear, color 0.15s linear;
-
-    @include transition($transition);
+    transition: background-color 0.15s linear, color 0.15s linear;
 
     &:hover {
         background: transparent;

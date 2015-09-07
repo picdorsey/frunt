@@ -3,7 +3,9 @@
  * @author Piccirilli Dorsey
  */
 
-var _ = require('underscore');
+'use strict';
+
+import _ from 'underscore';
 
 var app = {
 

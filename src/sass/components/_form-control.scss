@@ -8,8 +8,7 @@
     border: 1px solid $gray;
     background: #fff;
 
-    $animation: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
-    @include transition($animation);
+    transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
 
     &:hover,
     &:focus {

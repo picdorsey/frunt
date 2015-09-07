@@ -183,6 +183,8 @@ figure {
 img {
     // By default, `<img>`s are `inline-block`. This assumes that, and vertically
     // centers them. This won't apply should you reset them to `block` level.
+    max-width: 100%;
+    font-style: italic;
     vertical-align: middle;
 }
 

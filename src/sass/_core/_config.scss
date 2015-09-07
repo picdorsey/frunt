@@ -116,7 +116,7 @@ $body-color:                 $gray-dark !default;
 $link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
 $link-hover-color:           darken($link-color, 15%) !default;
-$link-hover-decoration:      underline !default;
+$link-hover-decoration:      none !default;
 
 //
 // Typography
@@ -236,4 +236,5 @@ $animation-xl:           2s;
 
 $br-default:            3px;
 $br-button:             $br-default;
+$br-input:              $br-default;
 $br-table:              $br-default;

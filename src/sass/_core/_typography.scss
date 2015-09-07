@@ -57,7 +57,7 @@ a {
     color: $link-color;
     text-decoration: $link-decoration;
 
-    @include transition(color $animation-xshort ease-in-out);
+    transition: color $animation-xshort ease-in-out;
 
     &:hover {
         color: darken($link-color, 15%);
@@ -128,9 +128,9 @@ mark,
 
 // Horizontal description lists w/ grid classes
 .dl-horizontal {
-  margin-right: -$grid-gutter-width;
-  margin-left: -$grid-gutter-width;
-  @include clearfix;
+    margin-right: -$grid-gutter-width;
+    margin-left: -$grid-gutter-width;
+    @include clearfix;
 }
 
 
@@ -140,8 +140,8 @@ mark,
 
 // Builds on `abbr`
 .initialism {
-  font-size: 90%;
-  text-transform: uppercase;
+    font-size: 90%;
+    text-transform: uppercase;
 }
 
 // Blockquotes

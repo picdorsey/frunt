@@ -1556,7 +1556,11 @@
 
 'use strict';
 
-var _ = require('underscore');
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
 
 var app = {
 
