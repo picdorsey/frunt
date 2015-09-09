@@ -2070,7 +2070,7 @@ label > .label-body {
   position: relative;
 }
 
-.\~burger {
+.c-burger {
   position: relative;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -2081,7 +2081,7 @@ label > .label-body {
   text-indent: -999px;
 }
 
-.\~burger, .\~burger:before, .\~burger:after {
+.c-burger, .c-burger:before, .c-burger:after {
   display: block;
   width: 30px;
   height: 5px;
@@ -2092,34 +2092,34 @@ label > .label-body {
   transition-duration: 0.3s;
 }
 
-.\~burger:before, .\~burger:after {
+.c-burger:before, .c-burger:after {
   position: absolute;
   content: "";
 }
 
-.\~burger:before {
+.c-burger:before {
   margin-top: -8px;
 }
 
-.\~burger:after {
+.c-burger:after {
   margin-top: 8px;
 }
 
-.active .\~burger {
+.active .c-burger {
   background-color: transparent;
 }
 
-.active .\~burger:before {
+.active .c-burger:before {
   -webkit-transform: translateY(8px) rotate(45deg);
   transform: translateY(8px) rotate(45deg);
 }
 
-.active .\~burger:after {
+.active .c-burger:after {
   -webkit-transform: translateY(-8px) rotate(-45deg);
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.\~button {
+.c-button {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #4d575c;
@@ -2132,20 +2132,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button:hover {
+.c-button:hover {
   background: transparent;
   border-color: #eceeef;
   color: #2a3032;
 }
 
-.\~button:active,
-.\~button:focus {
+.c-button:active,
+.c-button:focus {
   background: transparent;
   border-color: #eceeef;
   color: #2a3032;
 }
 
-.\~button.\--primary {
+.c-button.\--primary {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2158,20 +2158,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button.\--primary:hover {
+.c-button.\--primary:hover {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.\~button.\--primary:active,
-.\~button.\--primary:focus {
+.c-button.\--primary:active,
+.c-button.\--primary:focus {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.\~button.\--success {
+.c-button.\--success {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2184,20 +2184,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button.\--success:hover {
+.c-button.\--success:hover {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.\~button.\--success:active,
-.\~button.\--success:focus {
+.c-button.\--success:active,
+.c-button.\--success:focus {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.\~button.\--info {
+.c-button.\--info {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2210,20 +2210,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button.\--info:hover {
+.c-button.\--info:hover {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.\~button.\--info:active,
-.\~button.\--info:focus {
+.c-button.\--info:active,
+.c-button.\--info:focus {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.\~button.\--warning {
+.c-button.\--warning {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2236,20 +2236,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button.\--warning:hover {
+.c-button.\--warning:hover {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.\~button.\--warning:active,
-.\~button.\--warning:focus {
+.c-button.\--warning:active,
+.c-button.\--warning:focus {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.\~button.\--danger {
+.c-button.\--danger {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2262,20 +2262,20 @@ label > .label-body {
   transition: background-color 0.15s linear, color 0.15s linear;
 }
 
-.\~button.\--danger:hover {
+.c-button.\--danger:hover {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.\~button.\--danger:active,
-.\~button.\--danger:focus {
+.c-button.\--danger:active,
+.c-button.\--danger:focus {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.\~embed {
+.c-embed {
   position: relative;
   display: block;
   height: 0;
@@ -2283,7 +2283,7 @@ label > .label-body {
   overflow: hidden;
 }
 
-.\~embed__item {
+.c-embed__item {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2293,19 +2293,19 @@ label > .label-body {
   border: 0;
 }
 
-.\~embed.\--_21_by_9 {
+.c-embed.\--_21_by_9 {
   padding-bottom: 42.85714%;
 }
 
-.\~embed.\--_16_by_9 {
+.c-embed.\--_16_by_9 {
   padding-bottom: 56.25%;
 }
 
-.\~embed.\--_4_by_3 {
+.c-embed.\--_4_by_3 {
   padding-bottom: 75%;
 }
 
-.\~form-control {
+.c-form-control {
   width: 100%;
   height: auto;
   border-radius: 0;
@@ -2314,89 +2314,89 @@ label > .label-body {
   transition: background 125ms ease-in-out, border-color 125ms ease-in-out;
 }
 
-.\~form-control:hover,
-.\~form-control:focus {
+.c-form-control:hover,
+.c-form-control:focus {
   background: #373a3c;
 }
 
-.\~form-control:focus {
+.c-form-control:focus {
   border: 1px solid #337ab7;
 }
 
-.\~form-control.\--small {
+.c-form-control.\--small {
   height: 41px;
 }
 
-.\~section {
+.c-section {
   padding: 1rem 0;
 }
 
-.\~table {
+.c-table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
 }
 
-.\~table th,
-.\~table td {
+.c-table th,
+.c-table td {
   padding: 0.75rem;
   line-height: 1.5;
   vertical-align: top;
   border-top: 1px solid #eceeef;
 }
 
-.\~table thead th {
+.c-table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #eceeef;
 }
 
-.\~table tbody + tbody {
+.c-table tbody + tbody {
   border-top: 2px solid #eceeef;
 }
 
-.\~table .table {
+.c-table .table {
   background-color: #fff;
 }
 
-.\~table.\--small th,
-.\~table.\--small td {
+.c-table.\--small th,
+.c-table.\--small td {
   padding: 0.3rem;
 }
 
-.\~table.\--bordered {
+.c-table.\--bordered {
   border: 1px solid #eceeef;
 }
 
-.\~table.\--bordered th,
-.\~table.\--bordered td {
+.c-table.\--bordered th,
+.c-table.\--bordered td {
   border: 1px solid #eceeef;
 }
 
-.\~table.\--bordered thead th,
-.\~table.\--bordered thead td {
+.c-table.\--bordered thead th,
+.c-table.\--bordered thead td {
   border-bottom-width: 2px;
 }
 
-.\~tiles {
+.c-tiles {
   margin: 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
 }
 
-.\~tiles li {
+.c-tiles li {
   display: block;
   float: left;
   margin-bottom: 0;
 }
 
-.\~tiles li .tile {
+.c-tiles li .tile {
   display: block;
   position: relative;
   z-index: 100;
 }
 
-.\~tiles li .tile .overlay {
+.c-tiles li .tile .overlay {
   display: block;
   position: absolute;
   top: 0;
@@ -2412,115 +2412,115 @@ label > .label-body {
   z-index: 200;
 }
 
-.\~tiles li .tile .overlay h1, .\~tiles li .tile .overlay h2, .\~tiles li .tile .overlay h3, .\~tiles li .tile .overlay h4, .\~tiles li .tile .overlay h5, .\~tiles li .tile .overlay h6, .\~tiles li .tile .overlay p, .\~tiles li .tile .overlay span, .\~tiles li .tile .overlay ul, .\~tiles li .tile .overlay ol {
+.c-tiles li .tile .overlay h1, .c-tiles li .tile .overlay h2, .c-tiles li .tile .overlay h3, .c-tiles li .tile .overlay h4, .c-tiles li .tile .overlay h5, .c-tiles li .tile .overlay h6, .c-tiles li .tile .overlay p, .c-tiles li .tile .overlay span, .c-tiles li .tile .overlay ul, .c-tiles li .tile .overlay ol {
   margin: 0;
   padding: 0;
 }
 
-.\~tiles li .tile .overlay .overlay-content {
+.c-tiles li .tile .overlay .overlay-content {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
-.\~tiles li .tile .overlay .overlay-content [class^='icon-'] {
+.c-tiles li .tile .overlay .overlay-content [class^='icon-'] {
   font-size: 6rem;
 }
 
-.\~tiles li .tile.active .overlay,
-.\~tiles li .tile:hover .overlay {
+.c-tiles li .tile.active .overlay,
+.c-tiles li .tile:hover .overlay {
   opacity: 1;
 }
 
-.\~tiles li .tile.active .overlay *,
-.\~tiles li .tile:hover .overlay * {
+.c-tiles li .tile.active .overlay *,
+.c-tiles li .tile:hover .overlay * {
   color: #fff;
   text-decoration: none;
 }
 
-.\~tiles.\--halves li {
+.c-tiles.\--halves li {
   width: 50%;
 }
 
-.\~tiles.\--thirds li {
+.c-tiles.\--thirds li {
   width: 33.33333%;
 }
 
-.\~tiles.\--quarters li {
+.c-tiles.\--quarters li {
   width: 25%;
 }
 
-.\~tiles.\--fifths li {
+.c-tiles.\--fifths li {
   width: 20%;
 }
 
-.\~tiles.\--sixths li {
+.c-tiles.\--sixths li {
   width: 16.66667%;
 }
 
-.\~tiles.\--halves-padded li {
+.c-tiles.\--halves-padded li {
   width: 50%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--halves-padded li:first-child {
+.c-tiles.\--halves-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--halves-padded li:nth-child(2) {
+.c-tiles.\--halves-padded li:nth-child(2) {
   padding-right: 0;
 }
 
-.\~tiles.\--thirds-padded li {
+.c-tiles.\--thirds-padded li {
   width: 33.33333%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--thirds-padded li:first-child {
+.c-tiles.\--thirds-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--thirds-padded li:nth-child(3) {
+.c-tiles.\--thirds-padded li:nth-child(3) {
   padding-right: 0;
 }
 
-.\~tiles.\--quarters-padded li {
+.c-tiles.\--quarters-padded li {
   width: 25%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--quarters-padded li:first-child {
+.c-tiles.\--quarters-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--quarters-padded li:nth-child(4) {
+.c-tiles.\--quarters-padded li:nth-child(4) {
   padding-right: 0;
 }
 
-.\~tiles.\--fifths-padded li {
+.c-tiles.\--fifths-padded li {
   width: 20%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--fifths-padded li:first-child {
+.c-tiles.\--fifths-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--fifths-padded li:nth-child(5) {
+.c-tiles.\--fifths-padded li:nth-child(5) {
   padding-right: 0;
 }
 
-.\~tiles.\--sixths-padded li {
+.c-tiles.\--sixths-padded li {
   width: 16.66667%;
   padding: 0 5px 10px 5px;
 }
 
-.\~tiles.\--sixths-padded li:first-child {
+.c-tiles.\--sixths-padded li:first-child {
   padding-left: 0;
 }
 
-.\~tiles.\--sixths-padded li:nth-child(6) {
+.c-tiles.\--sixths-padded li:nth-child(6) {
   padding-right: 0;
 }
 
@@ -2648,11 +2648,11 @@ label > .label-body {
   padding-top: 100px;
 }
 
-#frunt .\@guide .\~section {
+#frunt .\@guide .c-section {
   margin: 0 0 30px 0;
 }
 
-#frunt .\@guide .\~section__heading {
+#frunt .\@guide .c-section__heading {
   font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
