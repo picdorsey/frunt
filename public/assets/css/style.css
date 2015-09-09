@@ -2083,7 +2083,7 @@ label > .label-body {
 
 .c-burger, .c-burger:before, .c-burger:after {
   display: block;
-  width: 30px;
+  width: 1.875rem;
   height: 5px;
   background-color: #373a3c;
   background-color: #373a3c;
@@ -2129,7 +2129,7 @@ label > .label-body {
   background-color: #eceeef;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button:hover {
@@ -2138,11 +2138,16 @@ label > .label-body {
   color: #2a3032;
 }
 
-.c-button:active,
-.c-button:focus {
+.c-button:active {
   background: transparent;
   border-color: #eceeef;
   color: #2a3032;
+}
+
+.c-button:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-button.\--primary {
@@ -2155,7 +2160,7 @@ label > .label-body {
   background-color: #337ab7;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button.\--primary:hover {
@@ -2164,11 +2169,16 @@ label > .label-body {
   color: #22527b;
 }
 
-.c-button.\--primary:active,
-.c-button.\--primary:focus {
+.c-button.\--primary:active {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
+}
+
+.c-button.\--primary:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-button.\--success {
@@ -2181,7 +2191,7 @@ label > .label-body {
   background-color: #5cb85c;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button.\--success:hover {
@@ -2190,11 +2200,16 @@ label > .label-body {
   color: #3d8b3d;
 }
 
-.c-button.\--success:active,
-.c-button.\--success:focus {
+.c-button.\--success:active {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
+}
+
+.c-button.\--success:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-button.\--info {
@@ -2207,7 +2222,7 @@ label > .label-body {
   background-color: #5bc0de;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button.\--info:hover {
@@ -2216,11 +2231,16 @@ label > .label-body {
   color: #28a1c5;
 }
 
-.c-button.\--info:active,
-.c-button.\--info:focus {
+.c-button.\--info:active {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
+}
+
+.c-button.\--info:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-button.\--warning {
@@ -2233,7 +2253,7 @@ label > .label-body {
   background-color: #f0ad4e;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button.\--warning:hover {
@@ -2242,11 +2262,16 @@ label > .label-body {
   color: #df8a13;
 }
 
-.c-button.\--warning:active,
-.c-button.\--warning:focus {
+.c-button.\--warning:active {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
+}
+
+.c-button.\--warning:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-button.\--danger {
@@ -2259,7 +2284,7 @@ label > .label-body {
   background-color: #d9534f;
   border: 1px solid transparent;
   border-radius: 3px;
-  transition: background-color 0.15s linear, color 0.15s linear;
+  transition: background-color 125ms linear, color 125ms linear;
 }
 
 .c-button.\--danger:hover {
@@ -2268,11 +2293,16 @@ label > .label-body {
   color: #b52b27;
 }
 
-.c-button.\--danger:active,
-.c-button.\--danger:focus {
+.c-button.\--danger:active {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
+}
+
+.c-button.\--danger:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }
 
 .c-embed {

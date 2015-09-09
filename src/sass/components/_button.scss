@@ -24,7 +24,7 @@ $button-danger:     $ui-danger;
     border: 1px solid transparent;
     border-radius: $br-default;
 
-    transition: background-color 0.15s linear, color 0.15s linear;
+    transition: background-color $animation-xshort linear, color $animation-xshort linear;
 
     &:hover {
         background: transparent;
@@ -32,11 +32,16 @@ $button-danger:     $ui-danger;
         color: $hover-text-color;
     }
 
-    &:active,
-    &:focus {
+    &:active {
         background: transparent;
         border-color: $background-color;
         color: $hover-text-color;
+    }
+
+    &:focus {
+        outline: thin dotted;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
     }
 }
 
