@@ -441,14 +441,14 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #333;
+  color: #373a3c;
   background-color: #fff;
 }
 
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #818a91;
 }
 
 address {
@@ -525,7 +525,7 @@ table {
 caption {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  color: #ccc;
+  color: #818a91;
   text-align: left;
   caption-side: bottom;
 }
@@ -723,14 +723,14 @@ blockquote {
   margin: 1.875rem 0;
   padding: 1.875rem;
   text-align: center;
-  border-top: 0.0625rem solid #eee;
-  border-bottom: 0.0625rem solid #eee;
+  border-top: 0.0625rem solid #eceeef;
+  border-bottom: 0.0625rem solid #eceeef;
 }
 
 .blockquote p,
 blockquote p {
   font-size: 22px;
-  color: #555;
+  color: #55595c;
   font-style: italic;
 }
 
@@ -1672,6 +1672,55 @@ blockquote .by {
   }
 }
 
+input,
+textarea,
+select {
+  border: 1px solid #818a91;
+  height: 36px;
+  padding: 0.4rem 0.625rem;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  border-radius: 3px;
+  box-shadow: none;
+  background: #fff;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #337ab7;
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
+}
+
 @media print {
   * {
     background: transparent !important;
@@ -1722,55 +1771,6 @@ blockquote .by {
   h3 {
     page-break-after: avoid;
   }
-}
-
-input,
-textarea,
-select {
-  border: 1px solid #ccc;
-  height: 36px;
-  padding: 0.4rem 0.625rem;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
-  border-radius: 3px;
-  box-shadow: none;
-  background: #fff;
-}
-
-textarea {
-  min-height: 65px;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border: 1px solid #337ab7;
-  outline: 0;
-}
-
-label,
-legend {
-  display: block;
-  font-weight: 600;
-  margin-bottom: .5rem;
-}
-
-fieldset {
-  border-width: 0;
-  padding: 0;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-}
-
-label > .label-body {
-  display: inline-block;
-  font-weight: normal;
-  margin-left: .5rem;
 }
 
 .clearfix:before,
@@ -2085,8 +2085,8 @@ label > .label-body {
   display: block;
   width: 30px;
   height: 5px;
-  background-color: #333;
-  background-color: #333;
+  background-color: #373a3c;
+  background-color: #373a3c;
   transition-property: background-color, -webkit-transform;
   transition-property: background-color, transform;
   transition-duration: 0.3s;
@@ -2122,11 +2122,11 @@ label > .label-body {
 .\~button {
   display: inline-block;
   padding: 0.625rem 1.25rem;
-  color: #555555;
+  color: #4d575c;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background-color: #eee;
+  background-color: #eceeef;
   border: 1px solid transparent;
   border-radius: 3px;
   transition: background-color 0.15s linear, color 0.15s linear;
@@ -2134,15 +2134,15 @@ label > .label-body {
 
 .\~button:hover {
   background: transparent;
-  border-color: #eee;
-  color: #2f2f2f;
+  border-color: #eceeef;
+  color: #2a3032;
 }
 
 .\~button:active,
 .\~button:focus {
   background: transparent;
-  border-color: #eee;
-  color: #2f2f2f;
+  border-color: #eceeef;
+  color: #2a3032;
 }
 
 .\~button.\--primary {
@@ -2309,14 +2309,14 @@ label > .label-body {
   width: 100%;
   height: auto;
   border-radius: 0;
-  border: 1px solid #555;
+  border: 1px solid #55595c;
   background: #fff;
   transition: background 125ms ease-in-out, border-color 125ms ease-in-out;
 }
 
 .\~form-control:hover,
 .\~form-control:focus {
-  background: #333;
+  background: #373a3c;
 }
 
 .\~form-control:focus {
@@ -2342,16 +2342,16 @@ label > .label-body {
   padding: 0.75rem;
   line-height: 1.5;
   vertical-align: top;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eceeef;
 }
 
 .\~table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #eceeef;
 }
 
 .\~table tbody + tbody {
-  border-top: 2px solid #eee;
+  border-top: 2px solid #eceeef;
 }
 
 .\~table .table {
@@ -2364,12 +2364,12 @@ label > .label-body {
 }
 
 .\~table.\--bordered {
-  border: 1px solid #eee;
+  border: 1px solid #eceeef;
 }
 
 .\~table.\--bordered th,
 .\~table.\--bordered td {
-  border: 1px solid #eee;
+  border: 1px solid #eceeef;
 }
 
 .\~table.\--bordered thead th,
@@ -2530,7 +2530,7 @@ label > .label-body {
   width: 100%;
   height: 80px;
   background-color: #4100a8;
-  color: #555;
+  color: #55595c;
   z-index: 900;
 }
 
@@ -2623,17 +2623,17 @@ label > .label-body {
 }
 
 #guide-main #guide-sidebar .guide-sidebar-nav ul li a:hover {
-  color: #222;
-  background-color: #eee;
+  color: #222222;
+  background-color: #eceeef;
 }
 
 #guide-footer {
-  background-color: #eee;
+  background-color: #eceeef;
   padding: 30px 0;
   margin: 60px 0 0 0;
   text-align: center;
   font-size: 14px;
-  color: #555;
+  color: #55595c;
 }
 
 .guide-heading {
@@ -2657,7 +2657,7 @@ label > .label-body {
   font-weight: 300;
   text-transform: uppercase;
   padding-bottom: 10px;
-  border-bottom: 5px solid #eee;
+  border-bottom: 5px solid #eceeef;
   margin-bottom: 30px;
 }
 

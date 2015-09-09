@@ -1,46 +1,18 @@
 // Website Style Guide // --------------------------------------------------
 
-// Mixins
-
 @import '_mixins/*';
-
-// Core variables
-
+@import '_core/frunt';
 @import '_core/config';
 @import '_core/reboot';
 @import '_core/z-index';
 @import '_core/typography';
 @import '_core/grid';
-@import '_core/print';
 @import '_core/form';
+@import '_core/print';
 @import '_core/misc';
-
-// Vendor
-
-@import '_vendor/frunt';
-
-// Helpers
-
-@import 'tweaks'; // Tweaks, becuase you can't help it
-
-// Partials
-// --------------------------------------------------
-// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
-
+@import '_core/tweaks';
 @import "partials/*";
-
-// Components
-// --------------------------------------------------
-// Reusable components that make up a webpage.
-// Referenced in html with a 'c-' prefix (e.g. class="c-button")
-
 @import 'components/*';
-
-// Layouts
-// --------------------------------------------------
-// Layouts are specific to section and override any components, parts or tweaks.
-// Layouts are used is scss: @include layout(home) and in html: class="@home"
-
 @import 'layouts/*';
 
 // Header
