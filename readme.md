@@ -188,9 +188,9 @@ Scale Down (max-width)
 ```
 @include component(foo) {
 
-	@include option(bar) { ... } // ~foo --bar
+	@include option(bar) { ... } // c-foo --bar
 	
-	@include part(baz) { ... } // ~foo__baz
+	@include part(baz) { ... } // c-foo__baz
 
 }
 
