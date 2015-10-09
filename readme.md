@@ -65,11 +65,11 @@ All these things are possible outside flexbox, but typically require extra hacks
 
 #### Grid
 
-```
+```html
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-   	         One of three columns
+             One of three columns
         </div>
         <div class="col-sm-4">
             One of three columns
@@ -91,7 +91,7 @@ All these things are possible outside flexbox, but typically require extra hacks
 
 **Mixins**
 
-```
+```scss
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: $grid-gutter-width) {
     margin-left:  ($gutter / -2);
@@ -127,7 +127,7 @@ All these things are possible outside flexbox, but typically require extra hacks
 
 Example
 
-```
+```scss
 .container {
     max-width: 60em;
     @include make-container();
@@ -161,7 +161,7 @@ Example
 
 Scale Up (min-width)
 
-```
+```scss
 @include media-breakpoint-up(sm) { ... }
 @include media-breakpoint-up(md) { ... }
 @include media-breakpoint-up(lg) { ... }
@@ -177,7 +177,7 @@ Scale Up (min-width)
 
 Scale Down (max-width)
 
-```
+```scss
 @include media-breakpoint-down(xs) { ... }
 @include media-breakpoint-down(sm) { ... }
 @include media-breakpoint-down(md) { ... }
@@ -185,15 +185,34 @@ Scale Down (max-width)
 ```
 
 #### Components
-```
+```scss
 @include component(foo) {
 
-	@include option(bar) { ... } // c-foo --bar
-	
-	@include part(baz) { ... } // c-foo__baz
+    @include option(bar) { ... } // c-foo --bar
+    
+    @include part(baz) { ... } // c-foo__baz
 
 }
 
+```
+
+### How do parts react to component states like hover?
+In Sass you can append a `&` to a selector or pseudo-selector to have it applied to the parent context. So for example to have a `part` react when the `component` gets hovered:
+
+```scss
+@include component(capacitor){
+    background: red;
+  
+    @include part(flux){
+      background: orange;
+    }
+  
+    &:hover & {
+      @include part(flux){
+        background: blue;
+      }
+    }
+}
 ```
 
 ## Readings
