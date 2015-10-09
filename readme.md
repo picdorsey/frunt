@@ -186,11 +186,11 @@ Scale Down (max-width)
 
 #### Components
 ```scss
-@include component(foo) {
+@include component(Foo) {
 
-    @include option(bar) { ... } // c-foo --bar
+    @include option(bar) { ... } // Foo --bar
     
-    @include part(baz) { ... } // c-foo__baz
+    @include part(baz) { ... } // Foo__baz
 
 }
 
