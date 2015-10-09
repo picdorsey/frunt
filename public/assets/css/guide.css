@@ -2070,7 +2070,7 @@ label > .label-body {
   position: relative;
 }
 
-.c-burger {
+.Burger {
   position: relative;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -2081,7 +2081,7 @@ label > .label-body {
   text-indent: -999px;
 }
 
-.c-burger, .c-burger:before, .c-burger:after {
+.Burger, .Burger:before, .Burger:after {
   display: block;
   width: 1.875rem;
   height: 5px;
@@ -2092,34 +2092,34 @@ label > .label-body {
   transition-duration: 0.3s;
 }
 
-.c-burger:before, .c-burger:after {
+.Burger:before, .Burger:after {
   position: absolute;
   content: "";
 }
 
-.c-burger:before {
+.Burger:before {
   margin-top: -8px;
 }
 
-.c-burger:after {
+.Burger:after {
   margin-top: 8px;
 }
 
-.active .c-burger {
+.active .Burger {
   background-color: transparent;
 }
 
-.active .c-burger:before {
+.active .Burger:before {
   -webkit-transform: translateY(8px) rotate(45deg);
   transform: translateY(8px) rotate(45deg);
 }
 
-.active .c-burger:after {
+.active .Burger:after {
   -webkit-transform: translateY(-8px) rotate(-45deg);
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.c-button {
+.Button {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #4d575c;
@@ -2132,25 +2132,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button:hover {
+.Button:hover {
   background: transparent;
   border-color: #eceeef;
   color: #2a3032;
 }
 
-.c-button:active {
+.Button:active {
   background: transparent;
   border-color: #eceeef;
   color: #2a3032;
 }
 
-.c-button:focus {
+.Button:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-button.\--primary {
+.Button.\--primary {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2163,25 +2163,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button.\--primary:hover {
+.Button.\--primary:hover {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.c-button.\--primary:active {
+.Button.\--primary:active {
   background: transparent;
   border-color: #337ab7;
   color: #22527b;
 }
 
-.c-button.\--primary:focus {
+.Button.\--primary:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-button.\--success {
+.Button.\--success {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2194,25 +2194,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button.\--success:hover {
+.Button.\--success:hover {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.c-button.\--success:active {
+.Button.\--success:active {
   background: transparent;
   border-color: #5cb85c;
   color: #3d8b3d;
 }
 
-.c-button.\--success:focus {
+.Button.\--success:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-button.\--info {
+.Button.\--info {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2225,25 +2225,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button.\--info:hover {
+.Button.\--info:hover {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.c-button.\--info:active {
+.Button.\--info:active {
   background: transparent;
   border-color: #5bc0de;
   color: #28a1c5;
 }
 
-.c-button.\--info:focus {
+.Button.\--info:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-button.\--warning {
+.Button.\--warning {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2256,25 +2256,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button.\--warning:hover {
+.Button.\--warning:hover {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.c-button.\--warning:active {
+.Button.\--warning:active {
   background: transparent;
   border-color: #f0ad4e;
   color: #df8a13;
 }
 
-.c-button.\--warning:focus {
+.Button.\--warning:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-button.\--danger {
+.Button.\--danger {
   display: inline-block;
   padding: 0.625rem 1.25rem;
   color: #fff;
@@ -2287,25 +2287,25 @@ label > .label-body {
   transition: background-color 125ms linear, color 125ms linear;
 }
 
-.c-button.\--danger:hover {
+.Button.\--danger:hover {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.c-button.\--danger:active {
+.Button.\--danger:active {
   background: transparent;
   border-color: #d9534f;
   color: #b52b27;
 }
 
-.c-button.\--danger:focus {
+.Button.\--danger:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-.c-embed {
+.Embed {
   position: relative;
   display: block;
   height: 0;
@@ -2313,7 +2313,7 @@ label > .label-body {
   overflow: hidden;
 }
 
-.c-embed__item {
+.Embed__item {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2323,19 +2323,19 @@ label > .label-body {
   border: 0;
 }
 
-.c-embed.\--_21_by_9 {
+.Embed.\--_21_by_9 {
   padding-bottom: 42.85714%;
 }
 
-.c-embed.\--_16_by_9 {
+.Embed.\--_16_by_9 {
   padding-bottom: 56.25%;
 }
 
-.c-embed.\--_4_by_3 {
+.Embed.\--_4_by_3 {
   padding-bottom: 75%;
 }
 
-.c-form-control {
+.Form-control {
   width: 100%;
   height: auto;
   border-radius: 0;
@@ -2344,89 +2344,89 @@ label > .label-body {
   transition: background 125ms ease-in-out, border-color 125ms ease-in-out;
 }
 
-.c-form-control:hover,
-.c-form-control:focus {
+.Form-control:hover,
+.Form-control:focus {
   background: #373a3c;
 }
 
-.c-form-control:focus {
+.Form-control:focus {
   border: 1px solid #337ab7;
 }
 
-.c-form-control.\--small {
+.Form-control.\--small {
   height: 41px;
 }
 
-.c-section {
+.Section {
   padding: 1rem 0;
 }
 
-.c-table {
+.Table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
 }
 
-.c-table th,
-.c-table td {
+.Table th,
+.Table td {
   padding: 0.75rem;
   line-height: 1.5;
   vertical-align: top;
   border-top: 1px solid #eceeef;
 }
 
-.c-table thead th {
+.Table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #eceeef;
 }
 
-.c-table tbody + tbody {
+.Table tbody + tbody {
   border-top: 2px solid #eceeef;
 }
 
-.c-table .table {
+.Table .table {
   background-color: #fff;
 }
 
-.c-table.\--small th,
-.c-table.\--small td {
+.Table.\--small th,
+.Table.\--small td {
   padding: 0.3rem;
 }
 
-.c-table.\--bordered {
+.Table.\--bordered {
   border: 1px solid #eceeef;
 }
 
-.c-table.\--bordered th,
-.c-table.\--bordered td {
+.Table.\--bordered th,
+.Table.\--bordered td {
   border: 1px solid #eceeef;
 }
 
-.c-table.\--bordered thead th,
-.c-table.\--bordered thead td {
+.Table.\--bordered thead th,
+.Table.\--bordered thead td {
   border-bottom-width: 2px;
 }
 
-.c-tiles {
+.Tiles {
   margin: 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
 }
 
-.c-tiles li {
+.Tiles li {
   display: block;
   float: left;
   margin-bottom: 0;
 }
 
-.c-tiles li .tile {
+.Tiles li .tile {
   display: block;
   position: relative;
   z-index: 100;
 }
 
-.c-tiles li .tile .overlay {
+.Tiles li .tile .overlay {
   display: block;
   position: absolute;
   top: 0;
@@ -2442,115 +2442,115 @@ label > .label-body {
   z-index: 200;
 }
 
-.c-tiles li .tile .overlay h1, .c-tiles li .tile .overlay h2, .c-tiles li .tile .overlay h3, .c-tiles li .tile .overlay h4, .c-tiles li .tile .overlay h5, .c-tiles li .tile .overlay h6, .c-tiles li .tile .overlay p, .c-tiles li .tile .overlay span, .c-tiles li .tile .overlay ul, .c-tiles li .tile .overlay ol {
+.Tiles li .tile .overlay h1, .Tiles li .tile .overlay h2, .Tiles li .tile .overlay h3, .Tiles li .tile .overlay h4, .Tiles li .tile .overlay h5, .Tiles li .tile .overlay h6, .Tiles li .tile .overlay p, .Tiles li .tile .overlay span, .Tiles li .tile .overlay ul, .Tiles li .tile .overlay ol {
   margin: 0;
   padding: 0;
 }
 
-.c-tiles li .tile .overlay .overlay-content {
+.Tiles li .tile .overlay .overlay-content {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
-.c-tiles li .tile .overlay .overlay-content [class^='icon-'] {
+.Tiles li .tile .overlay .overlay-content [class^='icon-'] {
   font-size: 6rem;
 }
 
-.c-tiles li .tile.active .overlay,
-.c-tiles li .tile:hover .overlay {
+.Tiles li .tile.active .overlay,
+.Tiles li .tile:hover .overlay {
   opacity: 1;
 }
 
-.c-tiles li .tile.active .overlay *,
-.c-tiles li .tile:hover .overlay * {
+.Tiles li .tile.active .overlay *,
+.Tiles li .tile:hover .overlay * {
   color: #fff;
   text-decoration: none;
 }
 
-.c-tiles.\--halves li {
+.Tiles.\--halves li {
   width: 50%;
 }
 
-.c-tiles.\--thirds li {
+.Tiles.\--thirds li {
   width: 33.33333%;
 }
 
-.c-tiles.\--quarters li {
+.Tiles.\--quarters li {
   width: 25%;
 }
 
-.c-tiles.\--fifths li {
+.Tiles.\--fifths li {
   width: 20%;
 }
 
-.c-tiles.\--sixths li {
+.Tiles.\--sixths li {
   width: 16.66667%;
 }
 
-.c-tiles.\--halves-padded li {
+.Tiles.\--halves-padded li {
   width: 50%;
   padding: 0 5px 10px 5px;
 }
 
-.c-tiles.\--halves-padded li:first-child {
+.Tiles.\--halves-padded li:first-child {
   padding-left: 0;
 }
 
-.c-tiles.\--halves-padded li:nth-child(2) {
+.Tiles.\--halves-padded li:nth-child(2) {
   padding-right: 0;
 }
 
-.c-tiles.\--thirds-padded li {
+.Tiles.\--thirds-padded li {
   width: 33.33333%;
   padding: 0 5px 10px 5px;
 }
 
-.c-tiles.\--thirds-padded li:first-child {
+.Tiles.\--thirds-padded li:first-child {
   padding-left: 0;
 }
 
-.c-tiles.\--thirds-padded li:nth-child(3) {
+.Tiles.\--thirds-padded li:nth-child(3) {
   padding-right: 0;
 }
 
-.c-tiles.\--quarters-padded li {
+.Tiles.\--quarters-padded li {
   width: 25%;
   padding: 0 5px 10px 5px;
 }
 
-.c-tiles.\--quarters-padded li:first-child {
+.Tiles.\--quarters-padded li:first-child {
   padding-left: 0;
 }
 
-.c-tiles.\--quarters-padded li:nth-child(4) {
+.Tiles.\--quarters-padded li:nth-child(4) {
   padding-right: 0;
 }
 
-.c-tiles.\--fifths-padded li {
+.Tiles.\--fifths-padded li {
   width: 20%;
   padding: 0 5px 10px 5px;
 }
 
-.c-tiles.\--fifths-padded li:first-child {
+.Tiles.\--fifths-padded li:first-child {
   padding-left: 0;
 }
 
-.c-tiles.\--fifths-padded li:nth-child(5) {
+.Tiles.\--fifths-padded li:nth-child(5) {
   padding-right: 0;
 }
 
-.c-tiles.\--sixths-padded li {
+.Tiles.\--sixths-padded li {
   width: 16.66667%;
   padding: 0 5px 10px 5px;
 }
 
-.c-tiles.\--sixths-padded li:first-child {
+.Tiles.\--sixths-padded li:first-child {
   padding-left: 0;
 }
 
-.c-tiles.\--sixths-padded li:nth-child(6) {
+.Tiles.\--sixths-padded li:nth-child(6) {
   padding-right: 0;
 }
 
@@ -2678,11 +2678,11 @@ label > .label-body {
   padding-top: 100px;
 }
 
-#frunt .\@guide .c-section {
+#frunt .\@guide .section {
   margin: 0 0 30px 0;
 }
 
-#frunt .\@guide .c-section__heading {
+#frunt .\@guide .section__heading {
   font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;

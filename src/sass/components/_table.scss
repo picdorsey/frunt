@@ -2,7 +2,7 @@
 // Basic Bootstrap table
 //
 
-@include component(table) {
+@include component(Table) {
     width: 100%;
     max-width: 100%;
     margin-bottom: $spacer;

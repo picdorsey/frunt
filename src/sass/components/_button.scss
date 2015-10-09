@@ -47,7 +47,7 @@ $button-danger:     $ui-danger;
 
 
 // Component
-@include component(button) {
+@include component(Button) {
     @include button($button-default, darken($button-default, 60%), darken($button-default, 75%));
 
     @include option(primary) {

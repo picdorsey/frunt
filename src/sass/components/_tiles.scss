@@ -20,7 +20,7 @@
 }
 
 // Component
-@include component(tiles) {
+@include component(Tiles) {
     @include reset-list;
     overflow: hidden;
 
