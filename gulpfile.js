@@ -59,7 +59,7 @@ gulp.task('styles', function () {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.css))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'Styles Complete'}));
+        .pipe(plugins.notify({message: 'Styles Complete', onLast: true}));
 });
 
 // Scripts // --------------------------------------------------
@@ -86,7 +86,7 @@ gulp.task('browserify', function () {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(gulp.dest(config.dist.js))
-        .pipe(plugins.notify({message: 'Browserify Complete'}));
+        .pipe(plugins.notify({message: 'Browserify Complete', onLast: true}));
 });
 
 gulp.task('js', function() {
@@ -98,7 +98,7 @@ gulp.task('js', function() {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.js))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'JS Complete'}));
+        .pipe(plugins.notify({message: 'JS Complete', onLast: true}));
 });
 
 // HTML // --------------------------------------------------
