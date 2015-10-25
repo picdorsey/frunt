@@ -1,12 +1,12 @@
 {
   "name": "frunt",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Scaffolds out a Frunt & gulp.js boilerplate for front-end development",
   "author": "Piccirilli Dorsey, inc",
   "repository": {},
   "scripts": {
-    "test": "gulp test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && gulp --production"
   },
   "browser": {},

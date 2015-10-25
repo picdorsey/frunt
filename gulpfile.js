@@ -1,5 +1,17 @@
-/*jslint node: true */
-'use strict';
+/**
+ * Gulp Build Script
+ * -----------------------------------------------------------------------------
+ * @category   Node.js Build File
+ * @package    Frunt
+ * @copyright  Copyright (c) 2015 Piccirilli Dorsey
+ * @license    https://opensource.org/licenses/MIT The MIT License (MIT)
+ * @version    1.0
+ * @link       https://github.com/picdorsey/frunt
+ */
+
+//
+// Modules
+//
 
 var gulp = require('gulp');
 var argv = require('yargs').argv;
@@ -11,9 +23,11 @@ var del = require('del');
 var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
 var stringify = require('stringify');
-
-// Autoload any gulp plugins
 var plugins = require('gulp-load-plugins')();
+
+//
+// Assets Paths / Config
+//
 
 var dist = './public/';
 var src = './src/';
@@ -40,7 +54,9 @@ var config = {
     }
 };
 
-// Sass // --------------------------------------------------
+//
+// Sass
+//
 
 gulp.task('styles', function () {
     gulp.src(config.src.scss + '*.scss')
@@ -59,10 +75,12 @@ gulp.task('styles', function () {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.css))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'Styles Complete', onLast: true}));
+        .pipe(plugins.notify({message: 'Stylesheets Compiled!', onLast: true}));
 });
 
-// Scripts // --------------------------------------------------
+//
+// Javascript
+//
 
 gulp.task('lint', function () {
     gulp.src([config.src.js + '**/*.js', '!' +  config.src.js + 'vendor/*.js'])
@@ -86,7 +104,7 @@ gulp.task('browserify', function () {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(gulp.dest(config.dist.js))
-        .pipe(plugins.notify({message: 'Browserify Complete', onLast: true}));
+        .pipe(plugins.notify({message: 'Scripts Compiled!', onLast: true}));
 });
 
 gulp.task('js', function() {
@@ -98,50 +116,21 @@ gulp.task('js', function() {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.js))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'JS Complete', onLast: true}));
+        .pipe(plugins.notify({message: 'Vendor Scripts Compiled!', onLast: true}));
 });
 
-// HTML // --------------------------------------------------
+//
+// HTML
+//
 
 gulp.task('html', function () {
     gulp.src(dist + '/**/*.html')
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})));
 });
 
-// PHP // --------------------------------------------------
-
-gulp.task('php', function () {
-    gulp.src(['**/*.php', '!./vendor/**/*'])
-       .pipe(plugins.if(argv.livereload, plugins.livereload()));
-});
-
-gulp.task('php.format', function () {
-    return gulp.src(['**/*.php', '!./vendor/**/*'])
-        .pipe(plugins.plumber({ errorHandler: function (err) { console.log(err); } }))
-        // Validate files using PHP Code Sniffer
-        .pipe(plugins.phpcs({
-            bin: 'phpcs',
-            standard: 'PSR2',
-            warningSeverity: 0
-        }))
-        // Log all problems that were found
-        .pipe(plugins.phpcs.reporter('log'));
-});
-
-var format = function (config) {
-    return gulp.src(config)
-        .pipe(plugins.plumber({ errorHandler: function (err) { console.log(err); } }))
-        // Validate files using PHP Code Sniffer
-        .pipe(plugins.phpcs({
-            bin: 'phpcs',
-            standard: 'PSR2',
-            warningSeverity: 0
-        }))
-        // Log all problems that were found
-        .pipe(plugins.phpcs.reporter('log'));
-};
-
-// Clean // --------------------------------------------------
+//
+// Clean
+//
 
 gulp.task('clean', function() {
     del([
@@ -157,7 +146,9 @@ gulp.task('clean', function() {
     ]);
 });
 
-// Server // --------------------------------------------------
+//
+// Browser Sync
+//
 
 gulp.task('browser-sync', function () {
     browserSync({
@@ -173,7 +164,9 @@ gulp.task('browser-sync', function () {
     });
 });
 
-// Task // --------------------------------------------------
+//
+// Gulp Tasks
+//
 
 gulp.task('watch', function () {
     plugins.watch(config.src.js + '**/*', function () {
@@ -187,12 +180,6 @@ gulp.task('watch', function () {
     plugins.watch(dist + '/**/*.html', function () {
         gulp.start('html');
     });
-
-    plugins.watch(['**/*.php', '!./vendor/**/*'], function (event) {
-        gulp.start(['php']);
-        // PSR-2 Autoformat using https://github.com/squizlabs/PHP_CodeSniffer
-        // format(event.path);
-    });
 });
 
 gulp.task('dev', function () {
@@ -203,10 +190,6 @@ gulp.task('dev', function () {
     } else {
         gulp.start('browser-sync');
     }
-});
-
-gulp.task('test', function () {
-    gulp.start('lint');
 });
 
 gulp.task('default', function () {
