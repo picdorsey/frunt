@@ -9,6 +9,7 @@
         <title>Website Style Guide</title>
         <meta name="description" content="This is your websites style guide for quick reference and prototyping new components.">
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/guide.css">
 
         <!--[if lt IE 9]>
@@ -30,6 +31,67 @@
             <div class="container">
                 <div class="row">
                     <div id="guide-content">
+
+                        <!-- Design -->
+                        <h1 class="guide-heading">Design</h1>
+
+                        <!-- Colors -->
+                        <section id="design-colors" class="Section">
+                            <h2 class="Section__heading">Colors</h2>
+
+                            <ul class="color-swatches Tiles --fifths">
+                                <li class="blue"></li>
+                                <li class="light-blue"></li>
+                                <li class="green"></li>
+                                <li class="orange"></li>
+                                <li class="red"></li>
+                            </ul>
+
+                            <hr>
+
+                            <ul class="color-swatches Tiles --fifths">
+                                <li class="gray-darker"></li>
+                                <li class="gray-dark"></li>
+                                <li class="gray"></li>
+                                <li class="gray-light"></li>
+                                <li class="gray-lighter"></li>
+                            </ul>
+
+                        </section>
+
+                        <!-- Fonts -->
+                        <section id="design-fonts" class="Section">
+                            <h2 class="Section__heading">Fonts</h2>
+
+                            <h2 class="sans-serif light">Open Sans Light</h2>
+
+                            <hr>
+
+                            <h2 class="sans-serif normal">Open Sans Regular</h2>
+
+                            <hr>
+
+                            <h2 class="sans-serif semi-bold">Open Sans Semi-Bold</h2>
+
+                            <hr>
+
+                            <h2 class="sans-serif bold">Open Sans Bold</h2>
+
+                            <hr>
+
+                            <h2 class="sans-serif extra-bold">Open Sans Extra-Bold</h2>
+
+                            <hr>
+
+                            <h2 class="serif">Georgia Regular</h2>
+
+                            <hr>
+
+                            <h2 class="serif"><em>Georgia Italic</em></h2>
+
+                            <hr>
+
+                        </section>
 
                         <!-- Core -->
                         <h1 class="guide-heading">Core</h1>
@@ -109,7 +171,7 @@
                             <h2 class="Section__heading">Form</h2>
 
                             <form>
-                                <input class="form-control" type="text" placeholder="placeholder">
+                                <input class="Form-control" type="text" placeholder="placeholder">
                             </form>
                         </section>
 
@@ -155,7 +217,8 @@
                             <h2 class="Section__heading">Tiles</h2>
 
                             <p>
-                                Tiles can be: halves, thirds, quarters, fifths and sixths.
+                                Tiles can have options: <strong>--halves</strong>, <strong>--thirds</strong>,
+                                <strong>--quarters</strong>, <strong>--fifths</strong> and <strong>--sixths</strong>.
                                 Also, the tiles will wrap automatically, no need for wrapping rows.
                             </p>
 
@@ -228,7 +291,7 @@
 
                                         <div class="overlay">
                                             <div class="overlay-content">
-                                                <span class="icon-image"></span>
+                                                <i class="fa fa-picture-o"></i>
                                             </div>
                                         </div>
                                     </a>
@@ -239,7 +302,7 @@
 
                                         <div class="overlay">
                                             <div class="overlay-content">
-                                                <span class="icon-music"></span>
+                                                <i class="fa fa-music"></i>
                                                 <p>Chill &amp; Relax</p>
                                             </div>
                                         </div>
@@ -254,7 +317,7 @@
                         </section>
 
                         <section id="responsive-embeds" class="Section">
-                            <h1 class="guide-heading">Responsive embeds</h1>
+                            <h1 class="Section__heading">Responsive embeds</h1>
 
                             <div class="Embed --_16_by_9">
                                 <iframe class="Embed__item" src="https://www.youtube.com/embed/J-WqMj79uHM" allowfullscreen></iframe>
@@ -308,6 +371,14 @@
                     <aside id="guide-sidebar">
 
                         <div class="sticky sidebar-nav">
+                            <nav class="guide-sidebar-nav">
+                                <h3 class="guide-sidebar-nav-heading">Design</h3>
+                                <ul>
+                                    <li><a href="#design-colors">Colors</a></li>
+                                    <li><a href="#design-fonts">Fonts</a></li>
+                                </ul>
+                            </nav>
+
                             <nav class="guide-sidebar-nav">
                                 <h3 class="guide-sidebar-nav-heading">Core</h3>
                                 <ul>

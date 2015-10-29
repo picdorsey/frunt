@@ -627,22 +627,22 @@ h6, .h6 {
 
 .display-1 {
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .display-2 {
   font-size: 5.5rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .display-3 {
   font-size: 4.5rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .display-4 {
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 a {
@@ -2070,6 +2070,98 @@ label > .label-body {
   position: relative;
 }
 
+#frunt .\+hidden-xs-up {
+  display: none !important;
+}
+
+@media (max-width: 33.9em) {
+  #frunt .\+hidden-xs-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 34em) {
+  #frunt .\+hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 47.9em) {
+  #frunt .\+hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48em) {
+  #frunt .\+hidden-md-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 61.9em) {
+  #frunt .\+hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 62em) {
+  #frunt .\+hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 74.9em) {
+  #frunt .\+hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 75em) {
+  #frunt .\+hidden-xl-up {
+    display: none !important;
+  }
+}
+
+#frunt .\+hidden-xl-down {
+  display: none !important;
+}
+
+#frunt .\+visible-print-block {
+  display: none !important;
+}
+
+@media print {
+  #frunt .\+visible-print-block {
+    display: block !important;
+  }
+}
+
+#frunt .\+visible-print-inline {
+  display: none !important;
+}
+
+@media print {
+  #frunt .\+visible-print-inline {
+    display: inline !important;
+  }
+}
+
+#frunt .\+visible-print-inline-block {
+  display: none !important;
+}
+
+@media print {
+  #frunt .\+visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  #frunt .\+hidden-print {
+    display: none !important;
+  }
+}
+
 .Burger {
   position: relative;
   margin-top: 8px;
@@ -2338,19 +2430,19 @@ label > .label-body {
 .Form-control {
   width: 100%;
   height: auto;
-  border-radius: 0;
-  border: 1px solid #55595c;
+  border-radius: 3px;
+  border: 1px solid #eceeef;
   background: #fff;
   transition: background 125ms ease-in-out, border-color 125ms ease-in-out;
 }
 
 .Form-control:hover,
 .Form-control:focus {
-  background: #373a3c;
+  background: white;
 }
 
 .Form-control:focus {
-  border: 1px solid #337ab7;
+  border: 1px solid #818a91;
 }
 
 .Form-control.\--small {
@@ -2365,6 +2457,10 @@ label > .label-body {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  table-layout: fixed;
 }
 
 .Table th,
@@ -2373,11 +2469,19 @@ label > .label-body {
   line-height: 1.5;
   vertical-align: top;
   border-top: 1px solid #eceeef;
+  word-wrap: break-word;
 }
 
 .Table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #eceeef;
+}
+
+.Table thead th h1, .Table thead th h2, .Table thead th h3, .Table thead th h4, .Table thead th h5 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .Table tbody + tbody {
@@ -2386,11 +2490,6 @@ label > .label-body {
 
 .Table .table {
   background-color: #fff;
-}
-
-.Table.\--small th,
-.Table.\--small td {
-  padding: 0.3rem;
 }
 
 .Table.\--bordered {
@@ -2405,6 +2504,19 @@ label > .label-body {
 .Table.\--bordered thead th,
 .Table.\--bordered thead td {
   border-bottom-width: 2px;
+}
+
+.Table.\--striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.Table.\--hover tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.Table.\--compact th,
+.Table.\--compact td {
+  padding: 0.3rem;
 }
 
 .Tiles {

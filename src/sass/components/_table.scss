@@ -1,5 +1,5 @@
 //
-// Basic Bootstrap table
+// Basic Table Component
 //
 
 @include component(Table) {
@@ -7,17 +7,32 @@
     max-width: 100%;
     margin-bottom: $spacer;
 
+    font-family: $font-family-sans-serif;
+    font-size: 14px;
+    color: $gray-darker;
+
+    table-layout: fixed;
+
     th,
     td {
         padding: $table-cell-padding;
         line-height: $line-height;
         vertical-align: top;
         border-top: 1px solid $table-border-color;
+
+        word-wrap: break-word;
     }
 
     thead th {
         vertical-align: bottom;
         border-bottom: 2px solid $table-border-color;
+
+        h1, h2, h3, h4, h5 {
+            font-family: $font-family-sans-serif;
+            font-size: 1.5rem;
+            font-weight: $font-weight-bold;
+            margin: 0;
+        }
     }
 
     tbody + tbody {
@@ -26,13 +41,6 @@
 
     .table {
         background-color: $body-bg;
-    }
-
-    @include option(small) {
-        th,
-        td {
-          padding: $table-sm-cell-padding;
-        }
     }
 
     @include option(bordered) {
@@ -48,6 +56,27 @@
           td {
             border-bottom-width: 2px;
           }
+        }
+    }
+
+    @include option(striped) {
+        tbody tr:nth-of-type(odd) {
+            background-color: $table-bg-accent;
+        }
+    }
+
+    @include option(hover) {
+        tbody tr {
+            &:hover {
+                background-color: $table-bg-hover;
+            }
+        }
+    }
+
+    @include option(compact) {
+        th,
+        td {
+            padding: $table-sm-cell-padding;
         }
     }
 }

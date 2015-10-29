@@ -47,11 +47,11 @@ $blue: #337ab7;
 $green: #5cb85c;
 $light-blue: #5bc0de;
 $yellow: #f0ad4e;
+$orange: #f89739;
 $red: #d9534f;
 
-// Colors
-//
 // Grayscale and brand colors for use across Bootstrap.
+
 $gray-darker: #222222;
 $gray-dark: #373a3c;
 $gray: #55595c;
@@ -103,7 +103,13 @@ $font-family-base: $font-family-sans-serif;
 
 $font-url: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
 
-$font-weight-base: 400;
+$font-weight-light: 100;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+$font-weight-base: $font-weight-normal;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px;
@@ -125,10 +131,10 @@ $display2-size: 5.5rem;
 $display3-size: 4.5rem;
 $display4-size: 3.5rem;
 
-$display1-weight: 300;
-$display2-weight: 300;
-$display3-weight: 300;
-$display4-weight: 300;
+$display1-weight: $font-weight-light;
+$display2-weight: $font-weight-light;
+$display3-weight: $font-weight-light;
+$display4-weight: $font-weight-light;
 
 $line-height: 1.5;
 
@@ -185,3 +191,10 @@ $br-default: 3px;
 $br-button: $br-default;
 $br-input: $br-default;
 $br-table: $br-default;
+
+//
+// Misc
+// --------------------------------------------------
+//
+
+$gutter: 1.875rem;

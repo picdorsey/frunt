@@ -1,8 +1,8 @@
 // Website Style Guide // --------------------------------------------------
 
 @import '_mixins/*';
-@import '_core/frunt';
 @import '_core/config';
+@import '_core/frunt';
 @import '_core/reboot';
 @import '_core/z-index';
 @import '_core/typography';
@@ -11,9 +11,7 @@
 @import '_core/print';
 @import '_core/misc';
 @import '_core/tweaks';
-@import "partials/*";
 @import 'components/*';
-@import 'layouts/*';
 
 // Header
 @include partial(guide-header) {
@@ -21,7 +19,7 @@
     top: 0;
     width: 100%;
     height: 80px;
-    background-color: #4100a8;
+    background-color: $ui-primary;
     color: $gray;
     z-index: $zIndex-9;
 
@@ -114,12 +112,18 @@
     margin: 60px 0 0 0;
     text-align: center;
     font-size: 14px;
-    color: $gray;
+    color: $gray-dark;
 }
 
 // Guide Heading
 .guide-heading {
-    margin: -10px 0 30px 0;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 80px 0 30px 0;
+
+    &:first-child {
+        margin: -10px 0 30px 0;
+    }
 }
 
 // Code Blocks
@@ -178,4 +182,88 @@
 .sticky.fixed.bottom {
     top: auto;
     bottom: 0px;
+}
+
+// Color Tiles
+
+.Tiles {
+    &.color-swatches {
+        li {
+            height: 100px;
+        }
+    }
+    .overlay-content {
+        .fa {
+            font-size: 300%;
+        }
+    }
+    .primary {
+        background-color: $blue;
+    }
+    .secondary {
+        background-color: $light-blue;
+    }
+    .tertiary {
+        background-color: $orange;
+    }
+    .blue {
+        background-color: $blue;
+    }
+    .green {
+        background-color: $green;
+    }
+    .light-blue {
+        background-color: $light-blue;
+    }
+    .orange {
+        background-color: $orange;
+    }
+    .red {
+        background-color: $red;
+    }
+    .gray-darker {
+        background-color: $gray-darker;
+    }
+    .gray-dark {
+        background-color: $gray-dark;
+    }
+    .gray {
+        background-color: $gray;
+    }
+    .gray-light {
+        background-color: $gray-light;
+    }
+    .gray-lighter {
+        background-color: $gray-lighter;
+    }
+}
+
+// Fonts
+
+.sans-serif {
+    font-family: $font-family-sans-serif;
+}
+
+.serif {
+    font-family: $font-family-serif;
+}
+
+.light {
+    font-weight: $font-weight-light;
+}
+
+.normal {
+    font-weight: $font-weight-normal;
+}
+
+.semi-bold {
+    font-weight: $font-weight-semi-bold;
+}
+
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+.extra-bold {
+    font-weight: $font-weight-extra-bold;
 }

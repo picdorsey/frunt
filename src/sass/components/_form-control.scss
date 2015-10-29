@@ -4,19 +4,19 @@
     width: 100%;
     height: auto;
 
-    border-radius: 0;
-    border: 1px solid $gray;
+    border-radius: $br-input;
+    border: 1px solid $gray-lighter;
     background: #fff;
 
     transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
 
     &:hover,
     &:focus {
-        background: $gray-dark;
+       background: lighten($gray-lighter, 10%);
     }
 
     &:focus {
-        border: 1px solid $ui-primary;
+        border: 1px solid $gray-light;
     }
 
     @include option(small) {
