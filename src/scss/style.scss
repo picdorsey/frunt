@@ -2,15 +2,19 @@
 // @author Piccirilli Dorsey
 // @copyright 2015
 
+// Configuration
+// --------------------------------------------------
+
+@import 'config';
+
 // Mixins
 // --------------------------------------------------
 
 @import '_mixins/*';
 
-// Core Variables
+// Core
 // --------------------------------------------------
 
-@import '_core/config';
 @import '_core/frunt';
 @import '_core/reboot';
 @import '_core/z-index';
@@ -19,11 +23,7 @@
 @import '_core/form';
 @import '_core/print';
 @import '_core/misc';
-@import '_core/tweaks'; // Tweaks, becuase you can't help it
-
-// Vendor
-// --------------------------------------------------
-
+@import '_core/tweaks';
 
 // Partials
 // --------------------------------------------------
