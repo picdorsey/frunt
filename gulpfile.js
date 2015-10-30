@@ -35,7 +35,7 @@ var src = './src/';
 var config = {
     production: !! plugins.util.env.production,
     src: {
-        scss: src + 'sass/',
+        scss: src + 'scss/',
         js: src + 'js/'
     },
     dist: {
@@ -141,7 +141,7 @@ gulp.task('clean', function() {
         './public/assets/js/*.map',
         // Guide
         './public/guide.html',
-        './src/sass/guide.scss',
+        './src/scss/guide.scss',
         './src/js/vendor/jquery.sticky.js',
     ]);
 });
