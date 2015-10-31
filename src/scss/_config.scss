@@ -37,7 +37,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
-$grid-gutter-width: 1.875rem; // 30px
+$grid-gutter: 1.875rem; // 30px
 
 //
 // Colors
@@ -103,6 +103,8 @@ $font-family-base: $font-family-sans-serif;
 
 $font-url: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
 
+// Font weights
+// NOTE: These will need to be tweaked based on the current font.
 $font-weight-light: 100;
 $font-weight-normal: 400;
 $font-weight-semi-bold: 600;
@@ -193,8 +195,16 @@ $br-input: $br-default;
 $br-table: $br-default;
 
 //
-// Misc
+// Z-Index Scale (private vars)
 // --------------------------------------------------
-//
 
-$gutter: 1.875rem;
+$zIndex-1:   100;
+$zIndex-2:   200;
+$zIndex-3:   300;
+$zIndex-4:   400;
+$zIndex-5:   500;
+$zIndex-6:   600;
+$zIndex-7:   700;
+$zIndex-8:   800;
+$zIndex-9:   900; // sticky headers, etc.
+$zIndex-10: 1000; // overlays
