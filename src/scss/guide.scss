@@ -1,17 +1,53 @@
 // Website Style Guide // --------------------------------------------------
 
-@import '_mixins/*';
+// @app // --------------------------------------------------
+// @author Piccirilli Dorsey
+// @copyright 2015
+
+// Configuration
+// --------------------------------------------------
+
 @import 'config';
+
+// Mixins
+// --------------------------------------------------
+
+@import '_mixins/*';
+
+// Core
+// --------------------------------------------------
+
 @import '_core/frunt';
 @import '_core/reboot';
-@import '_core/z-index';
 @import '_core/typography';
 @import '_core/grid';
 @import '_core/form';
 @import '_core/print';
 @import '_core/misc';
 @import '_core/tweaks';
+
+// Partials
+// --------------------------------------------------
+// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
+
+@import "partials/*";
+
+// Components
+// --------------------------------------------------
+// Reusable components that make up a webpage.
+// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+
 @import 'components/*';
+
+// Layouts
+// --------------------------------------------------
+// Layouts are specific to section and override any components, parts or tweaks.
+// Layouts are used is scss: @include layout(home) and in html: class="@home"
+
+@import 'layouts/*';
+
+// Guide specific styles
+// --------------------------------------------------
 
 // Header
 @include partial(guide-header) {
@@ -38,7 +74,7 @@
             opacity: .9;
         }
 
-        .\~burger {
+        .Burger {
             &, &:before, &:after {
                 background-color: #fff;
             }
