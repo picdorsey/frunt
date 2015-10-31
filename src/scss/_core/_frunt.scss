@@ -2,7 +2,7 @@
 // Clean, reusable component architecture.
 // Inspired by http://www.csstyle.io
 
-$csstyle-component-symbol: '' !default;
+$csstyle-component-symbol: '' !default; // Capital letter
 $csstyle-option-symbol: '\\--' !default;
 $csstyle-part-symbol: '__' !default;
 $csstyle-tweak-symbol: '\\+' !default;
