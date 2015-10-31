@@ -1656,7 +1656,7 @@ select {
   height: 36px;
   padding: 0.4rem 0.625rem;
   /* The 6px vertically centers text on FF, ignored by Webkit */
-  border-radius: 3px;
+  border-radius: 0;
   box-shadow: none;
   background: #fff;
 }
@@ -2186,7 +2186,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #eceeef;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2217,7 +2217,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #337ab7;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2248,7 +2248,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #5cb85c;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2279,7 +2279,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #5bc0de;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2310,7 +2310,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #f0ad4e;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2341,7 +2341,7 @@ label > .label-body {
   text-transform: uppercase;
   background-color: #d9534f;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   transition: background-color 125ms linear, color 125ms linear;
 }
 
@@ -2396,7 +2396,7 @@ label > .label-body {
 .Form-control {
   width: 100%;
   height: auto;
-  border-radius: 3px;
+  border-radius: 0;
   border: 1px solid #eceeef;
   background: #fff;
   transition: background 125ms ease-in-out, border-color 125ms ease-in-out;
@@ -2407,7 +2407,7 @@ label > .label-body {
 }
 
 .Form-control:focus {
-  border: 1px solid #818a91;
+  border: 1px solid #337ab7;
 }
 
 .Form-control.\--small {
