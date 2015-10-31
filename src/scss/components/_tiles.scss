@@ -1,5 +1,8 @@
 // Tiles // --------------------------------------------------
 
+// Config
+$tile-padding: 10px;
+
 // Mixin
 @mixin build($columns, $padding: false) {
     li {
@@ -107,22 +110,22 @@
 
     // Padded
     @include option(halves-padded) {
-        @include build(2, 10px);
+        @include build(2, $tile-padding);
     }
 
     @include option(thirds-padded) {
-        @include build(3, 10px);
+        @include build(3, $tile-padding);
     }
 
     @include option(quarters-padded) {
-        @include build(4, 10px);
+        @include build(4, $tile-padding);
     }
 
     @include option(fifths-padded) {
-        @include build(5, 10px);
+        @include build(5, $tile-padding);
     }
 
     @include option(sixths-padded) {
-        @include build(6, 10px);
+        @include build(6, $tile-padding);
     }
 }
