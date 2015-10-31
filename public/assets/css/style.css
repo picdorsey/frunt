@@ -626,26 +626,6 @@ h6, .h6 {
   font-weight: 300;
 }
 
-.display-1 {
-  font-size: 6rem;
-  font-weight: 100;
-}
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 100;
-}
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 100;
-}
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 100;
-}
-
 a {
   color: #337ab7;
   text-decoration: none;
@@ -1770,15 +1750,6 @@ label > .label-body {
   }
 }
 
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
 #frunt .\+left {
   text-align: left;
 }
@@ -2170,7 +2141,7 @@ label > .label-body {
 
 .Burger, .Burger:before, .Burger:after {
   display: block;
-  width: 1.875rem;
+  width: 30px;
   height: 5px;
   background-color: #373a3c;
   background-color: #373a3c;
