@@ -44,8 +44,8 @@ $grid-gutter: 1.875rem; // 30px
 // --------------------------------------------------
 
 $blue: #337ab7;
+$blue-light: #5bc0de;
 $green: #5cb85c;
-$light-blue: #5bc0de;
 $yellow: #f0ad4e;
 $orange: #f89739;
 $red: #d9534f;
@@ -61,7 +61,7 @@ $gray-lightest: #f7f7f9;
 
 $ui-primary: $blue;
 $ui-success: $green;
-$ui-info: $light-blue;
+$ui-info: $blue-light;
 $ui-warning: $yellow;
 $ui-danger: $red;
 $ui-gray: $gray;
@@ -189,7 +189,7 @@ $animation-xl: 2s;
 // Border Radiuses
 // --------------------------------------------------
 
-$br-default: 3px;
+$br-default: 0;
 $br-button: $br-default;
 $br-input: $br-default;
 $br-table: $br-default;
