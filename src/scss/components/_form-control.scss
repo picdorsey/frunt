@@ -16,7 +16,7 @@
     }
 
     &:focus {
-        border: 1px solid $gray-light;
+        border: 1px solid $ui-primary;
     }
 
     @include option(small) {
