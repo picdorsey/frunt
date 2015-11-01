@@ -79,6 +79,7 @@ function compileScss(src, dist, cb) {
         .pipe(plugins.if(config.production, plugins.minifyCss({processImport: false})))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(dist))
+        .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(cb());
 }
 
