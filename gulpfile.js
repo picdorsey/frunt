@@ -199,7 +199,7 @@ gulp.task('watch', function () {
     });
 
     plugins.watch(config.src.scss + '**/*.scss', function () {
-        gulp.start('styles');
+        gulp.start('styles', 'guide');
     });
 
     plugins.watch(dist + '/**/*.html', function () {
