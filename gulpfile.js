@@ -83,7 +83,7 @@ function compileScss(src, dist, cb) {
 }
 
 gulp.task('styles', function () {
-    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dist.css, function (gulp) {
+    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dist.css, function () {
         return plugins.notify({message: 'Site Styles Compiled!', onLast: true});
     });
 });
