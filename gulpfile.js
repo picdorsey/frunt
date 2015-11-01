@@ -50,8 +50,8 @@ var config = {
     sourcemaps: ! plugins.util.env.production,
     autoprefix:   true,
     babelOptions: {
-          stage: 2,
-          compact: false
+        presets: ['es2015'],
+        compact: false
     },
     autoprefixerOptions: {
         browsers: ['last 2 versions'],
