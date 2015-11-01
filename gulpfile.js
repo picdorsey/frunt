@@ -140,9 +140,8 @@ gulp.task('clean', function() {
         './public/assets/js/*.js',
         './public/assets/js/*.map',
         // Guide
-        './public/guide.html',
-        './src/scss/guide.scss',
-        './src/js/vendor/jquery.sticky.js',
+        './public/guide/*', // Needs to be run before the dir can be removed.
+        './public/guide',
     ]);
 });
 
