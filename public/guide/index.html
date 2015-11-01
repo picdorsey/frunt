@@ -13,8 +13,8 @@
         <link rel="stylesheet" href="assets/css/guide.css">
 
         <!--[if lt IE 9]>
-        <script src="assets/vendor/js/html5shiv.min.js"></script>
-        <script src="assets/vendor/js/respond.min.js"></script>
+            <script src="assets/vendor/js/html5shiv.min.js"></script>
+            <script src="assets/vendor/js/respond.min.js"></script>
         <![endif]-->
     </head>
 
@@ -418,7 +418,7 @@
 
         <footer id="guide-footer">
             <div class="container">
-                Designed &amp maintained by <a href="http://picdorsey.com">Piccirilli Dorsey</a>.
+                Designed &amp; maintained by <a href="http://picdorsey.com">Piccirilli Dorsey</a>.
                 <br>Code licensed under <a href="https://github.com/picdorsey/frunt/blob/master/LICENSE">MIT</a>,
                 documentation under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0.</a>
             </div>
@@ -432,15 +432,19 @@
 
         <!-- Guide JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.1/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/vendor/jquery.sticky.js"></script>
+        <script src="assets/js/vendor/slideout.min.js"></script>
+
         <script>
             $(function(){
+
                 // Sticky Nav
                 $('.sidebar-nav').sticky({
-                    context: '#guide-content',
-                    offset: 110,
+                    topSpacing: 110
                 });
+
                 // Nav click
-                $('.sidebar-nav a').on('click', function(e){
+                $('.sidebar-nav a').on('click', function (e) {
                     e.preventDefault();
                     var loc = $(this).attr('href');
                     $(window).scrollTo(
@@ -451,6 +455,20 @@
                                 top: -100
                         }
                     });
+                });
+
+                // Slideout Menu
+                var slideout = new Slideout({
+                    'panel': document.getElementById('guide-main'),
+                    'menu': document.getElementById('guide-sidebar'),
+                    'padding': 256,
+                    'tolerance': 70,
+                    'side': 'right'
+                });
+
+                // Burger click
+                $('#menu-button').on('click', function (e) {
+                    slideout.toggle();
                 });
             });
         </script>
