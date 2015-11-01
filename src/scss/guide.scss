@@ -60,12 +60,6 @@
             opacity: .9;
         }
 
-        .Burger {
-            &, &:before, &:after {
-                background-color: #fff;
-            }
-        }
-
         @include media-breakpoint-up(md) {
             display: none;
         }
@@ -288,4 +282,40 @@
 
 .extra-bold {
     font-weight: $font-weight-extra-bold;
+}
+
+// Guide mobile nav
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#guide {
+    position: relative;
+    z-index: 1;
+}
+
+#guide-mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    background-color: $gray-lighter;
+
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden !important;
+}
+
+.slideout-open .slideout-menu {
+    display: block !important;
 }

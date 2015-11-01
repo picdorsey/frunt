@@ -7,8 +7,7 @@
 $burger-width: 30px;
 $burger-height: 5px;
 $burger-gutter: 3px;
-$burger-bg-color: $gray-dark;
-$burger-bg-color-mobile: $gray-dark;
+$burger-bg-color: #fff;
 $burger-border-radius: 0;
 $burger-transition-duration: .3s;
 
@@ -29,10 +28,6 @@ $burger-transition-duration: .3s;
         width: $burger-width;
         height: $burger-height;
         background-color: $burger-bg-color;
-
-        @include media-breakpoint-up(xs) {
-            background-color: $burger-bg-color-mobile;
-        }
 
         @if $burger-border-radius != 0 {
             border-radius: $burger-border-radius;
