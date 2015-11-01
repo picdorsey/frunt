@@ -60,11 +60,11 @@ var config = {
 };
 
 //
-// Site Styles
+// Styles
 //
 
-gulp.task('styles', function () {
-    gulp.src(config.src.scss + 'style.scss')
+function compileScss(src, dist, cb) {
+    gulp.src(src)
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.cssGlobbing({
@@ -78,30 +78,24 @@ gulp.task('styles', function () {
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
         .pipe(plugins.if(config.production, plugins.minifyCss({processImport: false})))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
-        .pipe(gulp.dest(config.dist.css))
-        .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'Site Styles Compiled!', onLast: true}));
+        .pipe(gulp.dest(dist))
+        .pipe(cb());
+}
+
+gulp.task('styles', function () {
+    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dist.css, function (gulp) {
+        return plugins.notify({message: 'Site Styles Compiled!', onLast: true});
+    });
 });
 
 //
 // Guide Styles
 //
 
-gulp.task('guide', function () {
-    gulp.src(config.src.scss + 'guide.scss')
-        .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
-        .pipe(plugins.cssGlobbing({
-            extensions: ['.scss']
-        }))
-        .pipe(plugins.sass({
-            outputStyle: 'expanded',
-            errLogToConsole: true,
-            sourceComments: false
-        }).on('error', plugins.sass.logError))
-        .pipe(plugins.autoprefixer(config.autoprefixerOptions))
-        .pipe(gulp.dest(config.guideDist.css))
-        .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'Guide Styles Compiled!', onLast: true}));
+gulp.task('guide', function (gulp) {
+    compileScss(config.src.scss + 'guide.scss', config.guideDist.css, function () {
+        return plugins.notify({message: 'Guide Styles Compiled!', onLast: true});
+    });
 });
 
 //
