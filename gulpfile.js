@@ -30,6 +30,7 @@ var plugins = require('gulp-load-plugins')();
 //
 
 var dist = './public/';
+var guideDist = './public/guide/';
 var src = './src/';
 
 var config = {
@@ -41,6 +42,10 @@ var config = {
     dist: {
         css: dist + 'assets/css/',
         js: dist + 'assets/js/'
+    },
+    guideDist: {
+        css: guideDist + 'assets/css/',
+        js: guideDist + 'assets/js/'
     },
     sourcemaps: ! plugins.util.env.production,
     autoprefix:   true,
@@ -55,11 +60,11 @@ var config = {
 };
 
 //
-// Sass
+// Site Styles
 //
 
 gulp.task('styles', function () {
-    gulp.src(config.src.scss + '*.scss')
+    gulp.src(config.src.scss + 'style.scss')
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.cssGlobbing({
@@ -75,7 +80,28 @@ gulp.task('styles', function () {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(gulp.dest(config.dist.css))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(plugins.notify({message: 'Stylesheets Compiled!', onLast: true}));
+        .pipe(plugins.notify({message: 'Site Styles Compiled!', onLast: true}));
+});
+
+//
+// Guide Styles
+//
+
+gulp.task('guide', function () {
+    gulp.src(config.src.scss + 'guide.scss')
+        .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
+        .pipe(plugins.cssGlobbing({
+            extensions: ['.scss']
+        }))
+        .pipe(plugins.sass({
+            outputStyle: 'expanded',
+            errLogToConsole: true,
+            sourceComments: false
+        }).on('error', plugins.sass.logError))
+        .pipe(plugins.autoprefixer(config.autoprefixerOptions))
+        .pipe(gulp.dest(config.guideDist.css))
+        .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
+        .pipe(plugins.notify({message: 'Guide Styles Compiled!', onLast: true}));
 });
 
 //
@@ -192,5 +218,5 @@ gulp.task('dev', function () {
 });
 
 gulp.task('default', function () {
-    gulp.start('styles', 'browserify', 'js');
+    gulp.start('styles', 'guide', 'browserify', 'js');
 });
