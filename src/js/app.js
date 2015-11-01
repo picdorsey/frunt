@@ -5,9 +5,7 @@
 
 'use strict';
 
-// import _ from 'underscore';
-
-var _ = require('underscore');
+import _ from 'underscore';
 
 var app = {
 
