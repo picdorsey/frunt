@@ -53,7 +53,12 @@ $csstyle-root-id: 'frunt' !default;
     $partIndex: 0 !default;
     $partIndex: $partIndex - 1;
 
+    // check if nested in a partial
+    $partialIndex: str-index(#{&}, "#");
+    $partialIndex: 0 !default;
+
     $component: str-slice(#{&}, 0, $optionIndex);
+    $partial: str-slice(#{&}, 2, str-length(#{&}));
 
     // part is nested in an option
     @if $optionIndex > 0 {
@@ -67,6 +72,14 @@ $csstyle-root-id: 'frunt' !default;
         #{_build_selector("& " + $component + $csstyle-part-symbol, $names)}{
           @content;
         }
+      }
+    }
+    // partial is nested in a partial
+    @else if $partialIndex > 0 {
+        @debug $component;
+        @debug $partial;
+      #{_build_selector("& ." + $partial + $csstyle-part-symbol, $names)}{
+        @content;
       }
     }
     @else {
