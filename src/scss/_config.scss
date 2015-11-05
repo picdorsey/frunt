@@ -1,6 +1,7 @@
 // Config // --------------------------------------------------
 
 $enable-flex: false;
+$enable-grid-classes: true;
 
 //
 // Grid
@@ -12,11 +13,11 @@ $enable-flex: false;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-    xs: 0,          // Extra small screen / phone
-    sm: 34em,       // Small screen / phone
-    md: 48em,       // Medium screen / tablet
-    lg: 62em,       // Large screen / desktop
-    xl: 75em        // Extra large screen / wide desktop
+    xs: 0,        // Extra small screen / phone
+    sm: 544px,    // Small screen / phone
+    md: 768px,    // Medium screen / tablet
+    lg: 992px,    // Large screen / desktop
+    xl: 1200px    // Extra large screen / wide desktop
 );
 
 
@@ -25,10 +26,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-    sm: 34rem,    // 480
-    md: 45rem,    // 720
-    lg: 60rem,    // 960
-    xl: 72.25rem  // 1140
+    sm: 576px,
+    md: 720px,
+    lg: 940px,
+    xl: 1140px
 );
 
 
@@ -37,7 +38,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12;
-$grid-gutter: 1.875rem; // 30px
+$grid-gutter-width: 1.875rem; // 30px
 
 //
 // Colors
@@ -208,3 +209,9 @@ $zIndex-7:   700;
 $zIndex-8:   800;
 $zIndex-9:   900; // sticky headers, etc.
 $zIndex-10: 1000; // overlays
+
+//
+// Miscellaneous
+// --------------------------------------------------
+
+$gutter: $grid-gutter-width;

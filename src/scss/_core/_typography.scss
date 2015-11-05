@@ -112,8 +112,8 @@ mark,
 
 // Horizontal description lists w/ grid classes
 .dl-horizontal {
-    margin-right: -$grid-gutter;
-    margin-left: -$grid-gutter;
+    margin-right: -$gutter;
+    margin-left: -$gutter;
     @include clearfix;
 }
 

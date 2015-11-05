@@ -83,11 +83,11 @@ All these things are possible outside flexbox, but typically require extra hacks
 
 **Sizes**
 
-* **xs** < 34 em (Extra small screen / phone)
-* **sm** > 34 em (Small screen / phone
-* **md** > 48 em (Medium screen / tablet)
-* **lg** >62 em (Large screen, desktop)
-* **xl** 75em (Extra large screen, wide desktop)
+* **xs** < 0  (Extra small screen / phone)
+* **sm** > 544px (Small screen / phone)
+* **md** > 768px (Medium screen / tablet)
+* **lg** > 992px (Large screen / desktop)
+* **xl** > 1200px (Extra large screen / wide desktop)
 
 **Mixins**
 
