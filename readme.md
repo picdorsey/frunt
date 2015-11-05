@@ -110,18 +110,18 @@ All these things are possible outside flexbox, but typically require extra hacks
 
 // Set a width (to be used in or out of media queries)
 @mixin make-col-span($columns) {
-  width: percentage(($columns / $grid-columns));
+    width: percentage(($columns / $grid-columns));
 }
 
 // Get fancy by offsetting, or changing the sort order
 @mixin make-col-offset($columns) {
-  margin-left: percentage(($columns / $grid-columns));
+    margin-left: percentage(($columns / $grid-columns));
 }
 @mixin make-col-push($columns) {
-  left: percentage(($columns / $grid-columns));
+    left: percentage(($columns / $grid-columns));
 }
 @mixin make-col-pull($columns) {
-  right: percentage(($columns / $grid-columns));
+    right: percentage(($columns / $grid-columns));
 }
 ```
 
@@ -129,7 +129,6 @@ Example
 
 ```scss
 .container {
-    max-width: 60em;
     @include make-container();
 }
 .row {
@@ -138,21 +137,22 @@ Example
 .content-main {
     @include make-col();
 
-    @media (max-width: 32em) {
+    @@include media-breakpoint-up(md) {
         @include make-col-span(6);
     }
-    @media (min-width: 32.1em) {
+    @include media-breakpoint-up(lg) {
       @include make-col-span(8);
     }
 }
 .content-secondary {
     @include make-col();
 
-    @media (max-width: 32em) {
-      @include make-col-span(6);
+    @include media-breakpoint-up(md) {
+        @include make-col-span(6);
     }
-    @media (min-width: 32.1em) {
-      @include make-col-span(4);
+
+    @include media-breakpoint-up(lg) {
+        @include make-col-span(4);
     }
 }
 ```
@@ -200,20 +200,17 @@ Scale Down (max-width)
 In Sass you can append a `&` to a selector or pseudo-selector to have it applied to the parent context. So for example to have a `part` react when the `component` gets hovered:
 
 ```scss
-@include component(capacitor){
+@include component(Capacitor) {
     background: red;
   
-    @include part(flux){
-      background: orange;
+    @include part(flux) {
+        background: orange;
     }
   
     &:hover & {
-      @include part(flux){
-        background: blue;
-      }
+        @include part(flux) {
+            background: blue;
+        }
     }
 }
 ```
-
-## Readings
-http://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm
