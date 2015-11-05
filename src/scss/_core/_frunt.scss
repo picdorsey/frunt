@@ -76,8 +76,6 @@ $csstyle-root-id: 'frunt' !default;
     }
     // partial is nested in a partial
     @else if $partialIndex > 0 {
-        @debug $component;
-        @debug $partial;
       #{_build_selector("& ." + $partial + $csstyle-part-symbol, $names)}{
         @content;
       }
