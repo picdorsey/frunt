@@ -1,12 +1,13 @@
-// Forms // --------------------------------------------------
+// Input // --------------------------------------------------
 
-@include component(Form-control) {
+@include component(Input) {
     width: 100%;
     height: auto;
+    padding: $spacer / 2;
 
     border-radius: $br-input;
     border: 1px solid $gray-lighter;
-    background: #fff;
+    background-color: #fff;
 
     transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
 
@@ -21,6 +22,14 @@
 
     @include option(small) {
         height: 41px;
+    }
+
+    @include option(disabled) {
+        background-color: $gray-lightest;
+    }
+
+    @include option(invalid) {
+        border-color: $red;
     }
 
 }

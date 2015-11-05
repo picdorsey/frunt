@@ -1,0 +1,10 @@
+// Label // --------------------------------------------------
+
+@include component(Label) {
+    display: block;
+    margin-bottom: $gutter;
+
+    font-size: $font-size-sm;
+
+    color: $gray-light;
+}
