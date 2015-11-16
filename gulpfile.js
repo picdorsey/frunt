@@ -188,7 +188,7 @@ gulp.task('browser-sync', function () {
 // Gulp Tasks
 //
 
-gulp.task('watch', function () {
+gulp.task('watch', ['default'], function () {
     plugins.watch(config.src.js + '**/*', function () {
         gulp.start(['lint', 'js', 'browserify']);
     });
@@ -202,7 +202,7 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('dev', function () {
+gulp.task('dev', ['default'], function () {
     gulp.start('watch');
 
     if (argv.livereload) {
