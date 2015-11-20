@@ -46,3 +46,8 @@ Thumbs.db
 bower_components
 node_modules
 .sass-cache
+
+# Craft
+craft/storage/backups/
+craft/storage/runtime/
+craft/storage/userphotos/
