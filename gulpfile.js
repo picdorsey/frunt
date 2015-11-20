@@ -22,7 +22,7 @@ var buffer = require('vinyl-buffer');
 var del = require('del');
 var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
-var stringify = require('stringify');
+var vueify = require('vueify')
 var plugins = require('gulp-load-plugins')();
 
 //
@@ -112,7 +112,7 @@ gulp.task('lint', function () {
 gulp.task('browserify', function () {
     return browserify({ entries: [config.src.js + 'app.js']})
         .transform(babelify, config.babelOptions)
-        .transform(stringify(['.html']))
+        .transform(vueify)
         .bundle()
         .on('error', function(e){
             console.log(e.message);
