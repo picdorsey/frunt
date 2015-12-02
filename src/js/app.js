@@ -5,8 +5,6 @@
 
 'use strict';
 
-import _ from 'underscore';
-
 var app = {
 
     init: function () {

@@ -1,6 +1,4 @@
 # Frunt
-[![Dependency Status](https://david-dm.org/picdorsey/frunt.svg)](https://david-dm.org/picdorsey/frunt)  [![devDependency Status](https://david-dm.org/picdorsey/frunt/dev-status.svg)](https://david-dm.org/picdorsey/frunt#info=devDependencies)
-
 Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 
 ### Installation

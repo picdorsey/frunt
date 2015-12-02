@@ -116,6 +116,7 @@ gulp.task('browserify', function () {
         .bundle()
         .on('error', function(e){
             console.log(e.message);
+            plugins.notify({message: 'Compilation Failed'})
             this.emit('end');
         })
         .pipe(source('bundle.js'))
