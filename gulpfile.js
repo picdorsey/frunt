@@ -29,8 +29,8 @@ var plugins = require('gulp-load-plugins')();
 // Assets Paths / Config
 //
 
-var dist = './public/';
-var guideDist = './public/guide/';
+var dest = './public/';
+var guidedest = './public/guide/';
 var src = './src/';
 
 var config = {
@@ -39,13 +39,13 @@ var config = {
         scss: src + 'scss/',
         js: src + 'js/'
     },
-    dist: {
-        css: dist + 'assets/css/',
-        js: dist + 'assets/js/'
+    dest: {
+        css: dest + 'assets/css/',
+        js: dest + 'assets/js/'
     },
-    guideDist: {
-        css: guideDist + 'assets/css/',
-        js: guideDist + 'assets/js/'
+    guidedest: {
+        css: guidedest + 'assets/css/',
+        js: guidedest + 'assets/js/'
     },
     sourcemaps: ! plugins.util.env.production,
     autoprefix:   true,
@@ -63,7 +63,7 @@ var config = {
 // Styles
 //
 
-function compileScss(src, dist, cb) {
+function compileScss(src, dest, cb) {
     gulp.src(src)
         .pipe(plugins.plumber({ errorHandler: function (err) {console.log(err);}}))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
@@ -78,13 +78,13 @@ function compileScss(src, dist, cb) {
         .pipe(plugins.autoprefixer(config.autoprefixerOptions))
         .pipe(plugins.if(config.production, plugins.minifyCss({processImport: false})))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
-        .pipe(gulp.dest(dist))
+        .pipe(gulp.dest(dest))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(cb());
 }
 
 gulp.task('styles', function () {
-    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dist.css, function () {
+    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dest.css, function () {
         return plugins.notify({message: 'Site Styles Compiled!', onLast: true});
     });
 });
@@ -94,7 +94,7 @@ gulp.task('styles', function () {
 //
 
 gulp.task('guide', function (gulp) {
-    compileScss(config.src.scss + 'guide.scss', config.guideDist.css, function () {
+    compileScss(config.src.scss + 'guide.scss', config.guidedest.css, function () {
         return plugins.notify({message: 'Guide Styles Compiled!', onLast: true});
     });
 });
@@ -125,7 +125,7 @@ gulp.task('browserify', function () {
         .pipe(plugins.if(config.production, plugins.uglify()))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
-        .pipe(gulp.dest(config.dist.js))
+        .pipe(gulp.dest(config.dest.js))
         .pipe(plugins.notify({message: 'Scripts Compiled!', onLast: true}));
 });
 
@@ -136,7 +136,7 @@ gulp.task('js', function() {
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.init()))
         .pipe(plugins.if(config.production, plugins.uglify()))
         .pipe(plugins.if(config.sourcemaps, plugins.sourcemaps.write('./')))
-        .pipe(gulp.dest(config.dist.js))
+        .pipe(gulp.dest(config.dest.js))
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})))
         .pipe(plugins.notify({message: 'Vendor Scripts Compiled!', onLast: true}));
 });
@@ -146,7 +146,7 @@ gulp.task('js', function() {
 //
 
 gulp.task('html', function () {
-    gulp.src(dist + '/**/*.html')
+    gulp.src(dest + '/**/*.html')
         .pipe(plugins.if(argv.livereload, plugins.livereload(), reload({stream: true})));
 });
 
@@ -180,7 +180,7 @@ gulp.task('browser-sync', function () {
             scroll: true
         },
         server: {
-            baseDir: dist
+            baseDir: dest
         }
     });
 });
@@ -198,7 +198,7 @@ gulp.task('watch', ['default'], function () {
         gulp.start('styles', 'guide');
     });
 
-    plugins.watch(dist + '/**/*.html', function () {
+    plugins.watch(dest + '/**/*.html', function () {
         gulp.start('html');
     });
 });
