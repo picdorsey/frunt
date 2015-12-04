@@ -84,7 +84,7 @@ function compileScss(src, dest, cb) {
 }
 
 gulp.task('styles', function () {
-    compileScss([config.src.scss + 'style.scss', '!' + config.src.scss + 'guide.scss'], config.dest.css, function () {
+    compileScss([*, '!' + config.src.scss + 'guide.scss'], config.dest.css, function () {
         return plugins.notify({message: 'Site Styles Compiled!', onLast: true});
     });
 });
@@ -191,7 +191,7 @@ gulp.task('browser-sync', function () {
 
 gulp.task('watch', ['default'], function () {
     plugins.watch(config.src.js + '**/*', function () {
-        gulp.start(['lint', 'js', 'browserify']);
+        gulp.start(['js', 'browserify']);
     });
 
     plugins.watch(config.src.scss + '**/*.scss', function () {
