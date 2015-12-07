@@ -25,21 +25,10 @@ Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
 ## Documentation
 
 ### Gulp
-`gulp` to build all the files.
 
-`gulp dev` to watch BrowserSync and to watch for changes.
+#### Flixir
 
-`gulp watch` to watch for changes (no server).
-
-`gulp clean` to remove build and guide files.
-
-#### Options
-`--livereload` to use livereload to watch for changes instead of browsersync.
-
-`--production` for production ready code (minify, no source maps)
-
-#### Config
-Make the `config.production` variable `true` to always minify the files.
+Please refer to the [Flixir Gulp Wrapper](https://github.com/picdorsey/flixir) package for documentation.
 
 ### SCSS (Quick Reference)
 
