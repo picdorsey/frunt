@@ -17,13 +17,13 @@
 // Core
 // --------------------------------------------------
 
-@import '_core/frunt';
 @import '_core/reboot';
 @import '_core/typography';
 @import '_core/grid';
 @import '_core/form';
+@import '_core/functions';
 @import '_core/print';
-@import '_core/tweaks';
+@import '_core/utilities';
 
 // Components
 // --------------------------------------------------
@@ -36,7 +36,7 @@
 // --------------------------------------------------
 
 // Header
-@include partial(guide-header) {
+#guide-header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -67,7 +67,7 @@
 }
 
 // Main
-@include partial(guide-main) {
+#guide-main {
     padding: 60px 0;
 
     // Content
@@ -122,7 +122,7 @@
 }
 
 // Footer
-@include partial(guide-footer) {
+#guide-footer {
     background-color: $gray-lighter;
     padding: 30px 0;
     margin: 60px 0 0 0;
@@ -149,13 +149,13 @@
 
 // Overrides
 // for the website style guide that conform to csstyle.
-@include layout(guide) {
+#guide {
     padding-top: 100px;
 
-    @include component(section) {
+    .Section {
         margin: 0 0 30px 0;
 
-        @include part(heading) {
+        &--heading {
             font-size: 20px;
             font-weight: 300;
             text-transform: uppercase;
@@ -200,9 +200,9 @@
     bottom: 0px;
 }
 
-// Color Tiles
+// Color c-tiles
 
-.Tiles {
+.c-tiles {
     &.color-swatches {
         li {
             height: 100px;
@@ -273,7 +273,7 @@
 }
 
 .semi-bold {
-    font-weight: $font-weight-semi-bold;
+    font-weight: $font-weight-medium;
 }
 
 .bold {
@@ -281,7 +281,7 @@
 }
 
 .extra-bold {
-    font-weight: $font-weight-extra-bold;
+    font-weight: $font-weight-ultra-bold;
 }
 
 // Guide mobile nav

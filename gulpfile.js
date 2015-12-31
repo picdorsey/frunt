@@ -22,7 +22,13 @@ flixir(function (mix) {
     mix.scriptsIn('src/js/vendor/', flixir.config.publicPath + '/js/vendor.js');
 
     // Browsersync (gulp watch only)
-    mix.browserSync();
+    mix.browserSync({
+        files: [
+            './public/assets/css/*.css',
+            './public/assets/js/*.js',
+            './public/**/*.html',
+        ]
+    });
 
 });
 

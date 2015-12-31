@@ -171,33 +171,28 @@ Scale Down (max-width)
 @include media-breakpoint-down(lg) { ... }
 ```
 
-#### Components
-```scss
-@include component(Foo) {
-
-    @include option(bar) { ... } // Foo --bar
-    
-    @include part(baz) { ... } // Foo__baz
-
-}
-
-```
-
-### How do parts react to component states like hover?
-In Sass you can append a `&` to a selector or pseudo-selector to have it applied to the parent context. So for example to have a `part` react when the `component` gets hovered:
+#### BEM
+http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 
 ```scss
-@include component(Capacitor) {
-    background: red;
-  
-    @include part(flux) {
-        background: orange;
-    }
-  
-    &:hover & {
-        @include part(flux) {
-            background: blue;
-        }
-    }
-}
+/**
+ * The top-level ‘Block’ of a component.
+ */
+.modal {}
+
+  /**
+   * An ‘Element’ that is a part of the larger Block.
+   */
+    .modal__title {}
+
+/**
+ * A ‘Modifier’ of the Block.
+ */
+.modal--large {}
 ```
+
+
+#### Namespaces
+http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+
+

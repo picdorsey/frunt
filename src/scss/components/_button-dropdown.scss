@@ -1,0 +1,113 @@
+//
+// Button Dropdown
+//
+
+// Config
+$button-default: $gray-lighter;
+$button-primary: $ui-primary;
+$button-secondary: $ui-secondary;
+$button-success: $ui-success;
+$button-info: $ui-info;
+$button-warning: $ui-warning;
+$button-danger: $ui-danger;
+
+// Mixin
+@mixin button-hover-state ($color, $darken-percent) {
+    background: #fff;
+    border-color: $color;
+    color: darken($color, $darken-percent);
+    @include shadow(1);
+}
+
+// Component
+.c-button-dropdown {
+    position: relative;
+    z-index: $zIndex-7;
+
+    @include clearfix;
+
+    // Button
+    .c-button {
+        position: relative;
+        z-index: $zIndex-8;
+    }
+
+    // Dropdown menu
+    &__dropdown {
+        @include reset-list;
+
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        float: left;
+        margin-top: -1px;
+        min-width: 200px;
+        max-width: 300px;
+        border: 1px solid darken($gray-lighter, 5%);
+        border-bottom: 2px solid darken($gray-lighter, 10%);
+        border-radius: $br-default;
+        background-color: #fff;
+
+        @include shadow(1);
+
+        li {
+            border-bottom: 1px solid darken($gray-lighter, 5%);
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            a {
+                display: block;
+                padding: 0.625rem 1.25rem;
+
+                &:hover {
+                    background-color: lighten($gray-lighter, 5%);
+                }
+            }
+        }
+
+        //
+        // States
+        //
+
+        // Dropdown is visible
+        .is-visible & {
+            display: inline-block;
+        }
+    }
+
+    // Button styles when dropdown is visible (button remains active)
+    // TODO: Move this into button component?
+    &.is-visible {
+
+        .c-button--default {
+            @include button-hover-state($button-default, 75%);
+        }
+
+        .c-button--primary {
+            @include button-hover-state($button-primary, 5%);
+        }
+
+        .c-button--secondary {
+            @include button-hover-state($button-secondary, 5%);
+        }
+
+        .c-button--success {
+            @include button-hover-state($button-success, 5%);
+        }
+
+        .c-button--info {
+            @include button-hover-state($button-info, 5%);
+        }
+
+        .c-button--warning {
+            @include button-hover-state($button-warning, 5%);
+        }
+
+        .c-button--danger {
+            @include button-hover-state($button-danger, 5%);
+        }
+    }
+}

@@ -1,11 +1,16 @@
-@include component(Embed) {
+//
+// Embed
+//
+
+// Component
+.c-embed {
     position: relative;
     display: block;
     height: 0;
-    padding: 0;
+    padding: 0 0 percentage(9 / 16) 0;
     overflow: hidden;
 
-    @include part(item) {
+    &__item {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -15,15 +20,15 @@
         border: 0;
     }
 
-    @include option(_21_by_9) {
-        padding-bottom: percentage(9 / 21);
-    }
-
-    @include option(_16_by_9) {
+     &--16_by_9 {
         padding-bottom: percentage(9 / 16);
     }
 
-    @include option(_4_by_3) {
+    &--_21_by_9 {
+        padding-bottom: percentage(9 / 21);
+    }
+
+    &--_4_by_3 {
         padding-bottom: percentage(3 / 4);
     }
 }

@@ -1,18 +1,17 @@
-// Hamburger Menu Icon // --------------------------------------------------
-// (---) top    -> &:before
-// [---] middle -> &
-// (---) bottom -> &:after
+//
+// Burger
+//
 
 // Config
 $burger-width: 30px;
 $burger-height: 5px;
 $burger-gutter: 3px;
-$burger-bg-color: #fff;
+$burger-bg-color: $gray-lighter;
 $burger-border-radius: 0;
 $burger-transition-duration: .3s;
 
-// Burger
-@include component(Burger) {
+// Component
+.c-burger {
     $burger-height: $burger-height !global;
     $burger-gutter: $burger-gutter !global;
 
@@ -49,10 +48,9 @@ $burger-transition-duration: .3s;
         margin-top: $burger-height + $burger-gutter;
     }
 
-    .active & {
-        & {
-            background-color: transparent;
-        }
+    .is-active & {
+        background-color: transparent;
+
         &:before {
             transform: translateY($burger-gutter + $burger-height) rotate(45deg);
         }

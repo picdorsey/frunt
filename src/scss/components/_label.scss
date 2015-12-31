@@ -1,10 +1,11 @@
-// Label // --------------------------------------------------
+//
+// Label
+//
 
-@include component(Label) {
+.c-label {
     display: block;
     margin-bottom: $gutter;
 
     font-size: $font-size-sm;
-
     color: $gray-light;
 }

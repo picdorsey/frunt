@@ -1,4 +1,6 @@
-// Tiles // --------------------------------------------------
+//
+// Tiles
+//
 
 // Config
 $tile-padding: 10px;
@@ -23,7 +25,7 @@ $tile-padding: 10px;
 }
 
 // Component
-@include component(Tiles) {
+.c-tiles {
     @include reset-list;
     overflow: hidden;
 
@@ -88,44 +90,44 @@ $tile-padding: 10px;
         }
     }
 
-    @include option(halves) {
+    &--halves {
         @include build(2);
     }
 
-    @include option(thirds) {
+    &--thirds {
         @include build(3);
     }
 
-    @include option(quarters) {
+    &--quarters {
         @include build(4);
     }
 
-    @include option(fifths) {
+    &--fifths {
         @include build(5);
     }
 
-    @include option(sixths) {
+    &--sixths {
         @include build(6);
     }
 
     // Padded
-    @include option(halves-padded) {
+    &--halves-padded {
         @include build(2, $tile-padding);
     }
 
-    @include option(thirds-padded) {
+    &--thirds-padded {
         @include build(3, $tile-padding);
     }
 
-    @include option(quarters-padded) {
+    &--quarters-padded {
         @include build(4, $tile-padding);
     }
 
-    @include option(fifths-padded) {
+    &--fifths-padded {
         @include build(5, $tile-padding);
     }
 
-    @include option(sixths-padded) {
+    &--sixths-padded {
         @include build(6, $tile-padding);
     }
 }

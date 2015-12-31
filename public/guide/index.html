@@ -18,7 +18,7 @@
         <![endif]-->
     </head>
 
-    <body class="@guide">
+    <body class="#guide">
 
         <header id="guide-header">
             <div class="container">
@@ -40,10 +40,10 @@
                             <h1 class="guide-heading">Design</h1>
 
                             <!-- Colors -->
-                            <section id="design-colors" class="Section">
-                                <h2 class="Section__heading">Colors</h2>
+                            <section id="design-colors" class="c-section">
+                                <h2 class="c-section__heading">Colors</h2>
 
-                                <ul class="color-swatches Tiles --fifths">
+                                <ul class="color-swatches c-tiles c-tiles--fifths">
                                     <li class="blue"></li>
                                     <li class="light-blue"></li>
                                     <li class="green"></li>
@@ -53,7 +53,7 @@
 
                                 <hr>
 
-                                <ul class="color-swatches Tiles --fifths">
+                                <ul class="color-swatches c-tiles c-tiles--fifths">
                                     <li class="gray-darker"></li>
                                     <li class="gray-dark"></li>
                                     <li class="gray"></li>
@@ -64,8 +64,8 @@
                             </section>
 
                             <!-- Fonts -->
-                            <section id="design-fonts" class="Section">
-                                <h2 class="Section__heading">Fonts</h2>
+                            <section id="design-fonts" class="c-section">
+                                <h2 class="c-section__heading">Fonts</h2>
 
                                 <h2 class="sans-serif light">Open Sans Light</h2>
 
@@ -100,8 +100,8 @@
                             <!-- Core -->
                             <h1 class="guide-heading">Core</h1>
 
-                            <section id="core-typography" class="Section">
-                                <h2 class="Section__heading">Typography</h2>
+                            <section id="core-typography" class="c-section">
+                                <h2 class="c-section__heading">Typography</h2>
 
                                 <h1>Heading 1</h1>
                                 <h2>Heading 2</h2>
@@ -121,8 +121,8 @@
 
                             </section>
 
-                            <section id="core-grid" class="Section">
-                                <h2 class="Section__heading">Grid</h2>
+                            <section id="core-grid" class="c-section">
+                                <h2 class="c-section__heading">Grid</h2>
 
                                 <p>For containers, rows and columns, Frunt uses the popular <a href="http://getbootstrap.com/css/#grid">bootstrap grid</a>, for now.</p>
 
@@ -132,71 +132,67 @@
                             <h1 class="guide-heading">Components</h1>
 
                             <!-- Button -->
-                            <section id="component-button" class="Section">
-                                <h2 class="Section__heading">Button</h2>
+                            <section id="component-button" class="c-section">
+                                <h2 class="c-section__heading">Button</h2>
 
                                 <p>This class can be used on anchors, buttons and inputs.</p>
 
-                                <button class="Button">Default</button>
-                                <button type="button" class="Button --primary">Primary</button>
-                                <button type="button" class="Button --success">Success</button>
-                                <button type="button" class="Button --info">Info</button>
-                                <button type="button" class="Button --warning">Warning</button>
-                                <button type="button" class="Button --danger">Danger</button>
-
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/22c73e992a11f885f559.js"></script>
-                                </div>
+                                <button class="c-button">Default</button>
+                                <button type="button" class="c-button c-button--primary">Primary</button>
+                                <button type="button" class="c-button c-button--success">Success</button>
+                                <button type="button" class="c-button c-button--info">Info</button>
+                                <button type="button" class="c-button c-button--warning">Warning</button>
+                                <button type="button" class="c-button c-button--danger">Danger</button>
 
                             </section>
 
                             <!-- Burger -->
-                            <section id="component-burger" class="Section">
-                                <h1 class="Section__heading">Burger</h1>
+                            <section id="component-burger" class="c-section">
+                                <h1 class="c-section__heading">Burger</h1>
 
                                 <table class="Table">
                                     <tr>
                                         <td>Burger</td>
                                         <td>
-                                            <span class="Burger"></span>
+                                            <span class="c-burger"></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Active</td>
                                         <td>
-                                            <span class="active"><span class="Burger"></span></span>
+                                            <span class="active"><span class="c-burger"></span></span>
                                         </td>
                                     </tr>
                                 </table>
                             </section>
 
                             <!-- Form -->
-                            <section id="component-form" class="Section">
-                                <h2 class="Section__heading">Form</h2>
+                            <section id="component-form" class="c-section">
+                                <h2 class="c-section__heading">Form</h2>
 
                                 <form>
-                                    <label class="Label">
+                                    <label class="c-label">
                                         Email Address
-                                        <input class="Input" type="text" placeholder="placeholder">
+                                        <input class="c-textinput" type="text" placeholder="placeholder">
                                     </label>
 
-                                    <label class="Label">
+                                    <label class="c-label">
                                         Disabled Input
-                                        <input class="Input --disabled" type="text" placeholder="Disabled" disabled>
+                                        <input class="c-textinput c-textinput--disabled" type="text" placeholder="Disabled" disabled>
                                     </label>
 
-                                    <label class="Label">
+                                    <label class="c-label">
                                         Invalid Input
-                                        <input class="Input --invalid" type="text" placeholder="Invalid">
+                                        <input class="c-textinput c-textinput--invalid" type="text" placeholder="Invalid">
                                     </label>
                                 </form>
                             </section>
 
                             <!-- Table -->
-                            <section id="component-table" class="Section">
-                                <h2 class="Section__heading">Table</h2>
+                            <section id="component-table" class="c-section">
+                                <h2 class="c-section__heading">Table</h2>
 
-                                <table class="Table --bordered --striped --hover --compact">
+                                <table class="c-table c-table--bordered c-table--striped c-table--hover c-table--compact">
                                     <thead>
                                     <tr>
                                         <th>Hero</th>
@@ -223,15 +219,11 @@
                                     </tbody>
                                 </table>
 
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/ba86e3789487847c303c.js"></script>
-                                </div>
-
                             </section>
 
                             <!-- Tiles -->
-                            <section id="component-tiles" class="Section">
-                                <h2 class="Section__heading">Tiles</h2>
+                            <section id="component-tiles" class="c-section">
+                                <h2 class="c-section__heading">Tiles</h2>
 
                                 <p>
                                     Tiles can have options: <strong>--halves</strong>, <strong>--thirds</strong>,
@@ -241,28 +233,20 @@
 
                                 <h4>Thirds:</h4>
 
-                                <ul class="Tiles --thirds">
+                                <ul class="c-tiles c-tiles--thirds">
                                     <li><img src="https://unsplash.it/500/300/?image=745"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=232"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=123"></li>
                                 </ul>
 
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/1d4d581125a05e13cb32.js"></script>
-                                </div>
-
                                 <h4>Quarters:</h4>
 
-                                <ul class="Tiles --quarters">
+                                <ul class="c-tiles c-tiles--quarters">
                                     <li><img src="https://unsplash.it/500/300/?image=723"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=693"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=660"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=256"></li>
                                 </ul>
-
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/640acdebbe3806eb4cf1.js"></script>
-                                </div>
 
                                 <h4>Quarters (padded):</h4>
 
@@ -270,7 +254,7 @@
                                     You can also add <em>-padded</em> to any of the options for spacing between tiles.
                                 </p>
 
-                                <ul class="Tiles --quarters-padded">
+                                <ul class="c-tiles c-tiles--quarters-padded">
                                     <li><img src="https://unsplash.it/500/300/?image=719"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=534"></li>
                                     <li><img src="https://unsplash.it/500/300/?image=667"></li>
@@ -279,17 +263,13 @@
                                     <li><img src="https://unsplash.it/500/300/?image=63"></li>
                                 </ul>
 
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/26350ac8ea1cd91a45a9.js"></script>
-                                </div>
-
                                 <h4>Overlays:</h4>
 
                                 <p>
                                     Tiles can display an overlay with content on hover or with an active state.
                                 </p>
 
-                                <ul class="Tiles --thirds">
+                                <ul class="c-tiles c-tiles--thirds">
                                     <li>
                                         <a class="tile" href="#">
                                             <img src="https://unsplash.it/500/300/?image=53">
@@ -327,59 +307,51 @@
                                     </li>
                                 </ul>
 
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/adamthebig/add008f3efd70860befa.js"></script>
-                                </div>
-
                             </section>
 
-                            <section id="responsive-embeds" class="Section">
-                                <h1 class="Section__heading">Responsive embeds</h1>
+                            <section id="responsive-embeds" class="c-section">
+                                <h1 class="c-section__heading">Responsive embeds</h1>
 
-                                <div class="Embed --_16_by_9">
-                                    <iframe class="Embed__item" src="https://www.youtube.com/embed/J-WqMj79uHM" allowfullscreen></iframe>
-                                </div>
-
-                                <div class="guide-gist">
-                                    <script src="https://gist.github.com/TylerODonnell/2931a5d19b113db9f243.js"></script>
+                                <div class="c-embed c-embed--16_by_9">
+                                    <iframe class="c-embed__item" src="https://www.youtube.com/embed/J-WqMj79uHM" allowfullscreen></iframe>
                                 </div>
                             </section>
 
                             <!-- Mixins -->
                             <h1 class="guide-heading">Mixins</h1>
 
-                            <section id="mixin-animation" class="Section">
-                                <h2 class="Section__heading">Animation</h2>
+                            <section id="mixin-animation" class="c-section">
+                                <h2 class="c-section__heading">Animation</h2>
 
                                 ...
                             </section>
 
-                            <section id="mixin-clearfix" class="Section">
-                                <h2 class="Section__heading">Clearfix</h2>
+                            <section id="mixin-clearfix" class="c-section">
+                                <h2 class="c-section__heading">Clearfix</h2>
 
                                 ...
                             </section>
 
-                            <section id="mixin-reset" class="Section">
-                                <h2 class="Section__heading">Reset</h2>
+                            <section id="mixin-reset" class="c-section">
+                                <h2 class="c-section__heading">Reset</h2>
 
                                 ...
                             </section>
 
-                            <section id="mixin-shadow" class="Section">
-                                <h2 class="Section__heading">Shadow</h2>
+                            <section id="mixin-shadow" class="c-section">
+                                <h2 class="c-section__heading">Shadow</h2>
 
                                 ...
                             </section>
 
-                            <section id="mixin-spacing" class="Section">
-                                <h2 class="Section__heading">Spacing</h2>
+                            <section id="mixin-spacing" class="c-section">
+                                <h2 class="c-section__heading">Spacing</h2>
 
                                 ...
                             </section>
 
-                            <section id="mixin-valign" class="Section">
-                                <h2 class="Section__heading">Vertically Align</h2>
+                            <section id="mixin-valign" class="c-section">
+                                <h2 class="c-section__heading">Vertically Align</h2>
 
                                 ...
                             </section>

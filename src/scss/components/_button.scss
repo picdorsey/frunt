@@ -1,70 +1,150 @@
-// Button // --------------------------------------------------
+//
+// Button
+//
 
 // Config
-$button-default:    $gray-lighter;
-$button-primary:    $ui-primary;
-$button-success:    $ui-success;
-$button-info:       $ui-info;
-$button-warning:    $ui-warning;
-$button-danger:     $ui-danger;
+$button-default: darken($gray-lighter, 5%);
+$button-primary: $ui-primary;
+$button-secondary: $ui-secondary;
+$button-success: $ui-success;
+$button-info: $ui-info;
+$button-warning: $ui-warning;
+$button-danger: $ui-danger;
 
-// Mixins
-@mixin button($background-color, $font-color, $hover-text-color: $background-color) {
+// Mixin
+@mixin button-color-variation ($color) {
+    color: text-color($color);
+    background-color: $color;
+    border-bottom: 2px solid darken($color, 7%);
+
+    &:hover {
+        border-color: $color;
+        color: darken($color, 15%);
+    }
+
+    &:active {
+        border-color: $color;
+        color: darken($color, 15%);
+    }
+
+    &:focus {
+        border: 2px solid darken($color, 5%);
+    }
+}
+
+// Component
+.c-button {
+    position: relative;
     display: inline-block;
     padding: 0.625rem 1.25rem;
 
-    color: $font-color;
+    color: darken($button-default, 60%);
     font-size: $font-size-sm;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
-    background-color: $background-color;
-    border: 1px solid transparent;
+    background-color: $button-default;
+    border: 2px solid transparent;
+    border-bottom: 2px solid darken($button-default, 7%);
     border-radius: $br-default;
 
     transition: background-color $animation-xshort linear, color $animation-xshort linear;
 
     &:hover {
-        background: transparent;
-        border-color: $background-color;
-        color: $hover-text-color;
+        background: #fff;
+        border-color: $button-default;
+        color: darken($button-default, 15%);
     }
 
     &:active {
-        background: transparent;
-        border-color: $background-color;
-        color: $hover-text-color;
+        background: #fff;
+        border-color: $button-default;
+        color: darken($button-default, 75%);
+        @include shadow(1);
     }
 
     &:focus {
-        outline: thin dotted;
-        outline: 5px auto -webkit-focus-ring-color;
-        outline-offset: -2px;
-    }
-}
-
-
-// Component
-@include component(Button) {
-    @include button($button-default, darken($button-default, 60%), darken($button-default, 75%));
-
-    @include option(primary) {
-        @include button($button-primary, #fff, darken($button-primary, 15%));
+        outline: 0;
+        border: 2px solid darken($button-default, 5%);
+        @include shadow(1);
     }
 
-    @include option(success) {
-        @include button($button-success, #fff, darken($button-success, 15%));
+    //
+    // Modifiers
+    //
+
+    &--default {
+        @include button-color-variation ($button-default);
     }
 
-    @include option(info) {
-        @include button($button-info, #fff, darken($button-info, 15%));
+    &--primary {
+        @include button-color-variation ($button-primary);
     }
 
-    @include option(warning) {
-        @include button($button-warning, #fff, darken($button-warning, 15%));
+    &--secondary {
+        @include button-color-variation ($button-secondary);
     }
 
-    @include option(danger) {
-        @include button($button-danger, #fff, darken($button-danger, 15%));
+    &--success {
+        @include button-color-variation ($button-success);
+    }
+
+    &--info {
+        @include button-color-variation ($button-info);
+    }
+
+    &--warning {
+        @include button-color-variation ($button-warning);
+    }
+
+    &--danger {
+        @include button-color-variation ($button-danger);
+    }
+
+    // Circle button
+    &--circular {
+        color: $gray;
+        border: 2px solid $gray-light;
+        border-bottom-color: $gray-light;
+        font-size: 20px;
+        padding: 14px 0 15px 0;
+        letter-spacing: 0;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        line-height: 1;
+        text-align: center;
+        background-color: #fff;
+
+        @include shadow(2);
+
+        //
+        // States
+        //
+
+        // Icon rotation (+ => x)
+        &.is-rotatable {
+            .icon {
+                transition: transform .5s ease;
+            }
+
+            &:hover {
+                .icon {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+
+        &.is-active {
+            .icon {
+                transform: rotate(45deg);
+            }
+
+            &:hover {
+                .icon {
+                    transform: rotate(45deg);
+                }
+            }
+        }
     }
 }

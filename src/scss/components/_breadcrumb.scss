@@ -1,0 +1,48 @@
+//
+// Breadcrumb
+//
+
+// Config
+$breadcrumb-active-color: $gray;
+$breadcrumb-padding: ($gutter / 2) $gutter !default;
+$breadcrumb-divider: "/" !default;
+
+// Component
+.c-breadcrumb {
+    @include reset-list;
+    padding: $breadcrumb-padding;
+    border-radius: $br-default;
+    background-color: $gray-lightest;
+    margin-bottom: $gutter;
+
+    font-size: 0.875rem;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: ($gutter * 2);
+    }
+
+    > li {
+        display: inline-block;
+
+        + li:before {
+            $nbsp: "\00a0";
+            padding-right: .5rem;
+            padding-left: .5rem;
+            color: $gray-light;
+            content: "#{$breadcrumb-divider}#{$nbsp}";
+        }
+
+        a {
+            color: $gray-light;
+
+            &:hover {
+                color: $ui-secondary;
+            }
+        }
+    }
+
+    > .is-active {
+        font-weight: $font-weight-medium;
+        color: $breadcrumb-active-color;
+    }
+}

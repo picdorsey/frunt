@@ -1,0 +1,135 @@
+//
+// Alert
+//
+
+// Config
+$alert-padding: 1rem 2rem;
+
+// Component
+.c-alert {
+    position: relative;
+    display: inline-block;
+    padding: $alert-padding;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: $font-weight-normal;
+    background-color: $gray-darker;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+
+    @include shadow(1);
+
+    transition: all 0.2s ease;
+
+    // Links
+   &__link {
+       font-weight: $font-weight-medium;
+       text-decoration: underline;
+       white-space: nowrap;
+   }
+
+    // Dismissible
+    // Be sure to include the close icon inside an anchor:
+    // <a href="#"><i class="icon icon-close"></i></a>
+    &--dismissible {
+        padding-right: 3.5rem;
+
+        &__link{
+            font-size: 1.2rem;
+            position: absolute;
+            right: 1.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            opacity: .3;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    // Block
+    &--block {
+        display: block;
+    }
+
+    // Primary
+    &--primary {
+        color: #fff;
+        background-color: $ui-primary;
+    }
+
+    // Secondary
+    &--secondary {
+        color: #fff;
+        background-color: $ui-secondary;
+    }
+
+    // Success
+    &--success {
+        color: #fff;
+        background-color: $ui-success;
+    }
+
+    // Info
+    &--info {
+        color: $gray-darker;
+        background-color: $ui-info;
+        a {
+            color: $gray-darker;
+        }
+    }
+
+    // Warning
+    &--warning {
+        color: #fff;
+        background-color: $ui-warning;
+    }
+
+    // Danger
+    &--danger {
+        color: #fff;
+        background-color: $ui-danger;
+    }
+}
+
+// Muted
+.c-alert--muted {
+    // Success
+    &--success {
+        color: darken($ui-success, 10%);
+        background-color: transparentize($ui-success, .8);
+        border: 1px solid transparentize($ui-success, .8);
+        a {
+            color: darken($ui-success, 10%);
+        }
+    }
+    // Info
+    &--info {
+        color: darken($ui-info, 10%);
+        background-color: transparentize($ui-info, .8);
+        border: 1px solid transparentize($ui-info, .8);
+        a {
+            color: darken($ui-info, 10%);
+        }
+    }
+    // Warning
+    &--warning {
+        color: darken($ui-warning, 10%);
+        background-color: transparentize($ui-warning, .8);
+        border: 1px solid transparentize($ui-warning, .8);
+        a {
+            color: darken($ui-warning, 10%);
+        }
+    }
+    // Danger
+    &--danger {
+        color: darken($ui-danger, 10%);
+        background-color: transparentize($ui-danger, .8);
+        border: 1px solid transparentize($ui-danger, .8);
+        a {
+            color: darken($ui-danger, 10%);
+        }
+    }
+}

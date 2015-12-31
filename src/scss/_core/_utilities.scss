@@ -1,0 +1,164 @@
+//
+// Utilities
+//
+
+// Signify that this class is a Utility class. It has a very specific
+// role (often providing only one declaration) and should not be bound
+// onto or changed. It can be reused and is not tied to any specific
+// piece of UI. You will probably recognise this namespace from
+// libraries and methodologies like SUIT.
+
+//
+// Alignment
+// --------------------------------------------------
+
+.u-left {
+    text-align: left;
+}
+
+.u-centered {
+    text-align: center;
+}
+
+.u-right {
+    text-align: center;
+}
+
+.u-vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.u-flex-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//
+// Float Alignment
+// --------------------------------------------------
+
+.u-pull-left {
+    float: left;
+}
+
+.u-pull-right {
+    float: right;
+}
+
+//
+// Clearing
+// --------------------------------------------------
+
+.u-clearing {
+    @include clearfix();
+}
+
+//
+// Pre-defined Heights
+// --------------------------------------------------
+
+.u-height-100 {
+    min-height: 100px !important;
+}
+
+.u-height-150 {
+    min-height: 150px !important;
+}
+
+.u-height-200 {
+    min-height: 200px !important;
+}
+
+.u-height-300 {
+    min-height: 300px !important;
+}
+
+.u-height-400 {
+    min-height: 400px !important;
+}
+
+.u-height-500 {
+    min-height: 500px !important;
+}
+
+//
+// Typography
+// --------------------------------------------------
+
+.u-italic {
+    font-style: italic;
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+//
+// Layout
+// --------------------------------------------------
+
+.u-wrapper {
+    position: relative;
+}
+
+//
+// Prevent Scrolling
+// --------------------------------------------------
+
+.u-locked {
+    overflow: hidden;
+}
+
+//
+// Responsive utilities
+// --------------------------------------------------
+
+@each $bp in map-keys($grid-breakpoints) {
+    .u-hidden-#{$bp}-up {
+        @include media-breakpoint-up($bp) {
+            display: none !important;
+        }
+    }
+    .u-hidden-#{$bp}-down {
+        @include media-breakpoint-down($bp) {
+            display: none !important;
+        }
+    }
+}
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+.u-visible-print-block {
+    display: none !important;
+
+    @media print {
+        display: block !important;
+    }
+}
+
+.u-visible-print-inline {
+    display: none !important;
+
+    @media print {
+        display: inline !important;
+    }
+}
+
+.u-visible-print-inline-block {
+    display: none !important;
+
+    @media print {
+        display: inline-block !important;
+    }
+}
+
+.u-hidden-print {
+    @media print {
+        display: none !important;
+    }
+}

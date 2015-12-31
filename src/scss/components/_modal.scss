@@ -1,0 +1,166 @@
+//
+// Modal
+//
+
+// Config
+$modal-content-bg: #fff;
+$modal-content-border-color: $gray-light;
+
+$modal-backdrop-bg: $gray-darker;
+$modal-backdrop-opacity: .65;
+
+$modal-header-background-color: $gray-lightest;
+$modal-header-border-color: $gray-lighter;
+
+$modal-footer-background-color: $gray-lightest;
+$modal-footer-border-color: $gray-lighter;
+
+$modal-padding: $gutter;
+$modal-padding-condensed: ($gutter / 2) $gutter;
+
+$modal-lg: 900px;
+$modal-md: 600px;
+$modal-sm: 300px;
+
+// Mixins
+@mixin center-modal () {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Component
+.c-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zIndex-12;
+    overflow: hidden;
+    outline: 0;
+    -webkit-overflow-scrolling: touch;
+
+    // Wrapper used for sizing
+    &__dialog {
+        width: 90%;
+        max-width: $modal-md;
+        max-height: 90%;
+        @include center-modal;
+
+        // Small modal
+        &--small {
+            max-width: $modal-sm;
+        }
+
+        // Large modal
+        &--large {
+            max-width: $modal-lg;
+        }
+    }
+
+    // Actual modal
+    &__content {
+        position: relative;
+        background-color: $modal-content-bg;
+        background-clip: padding-box;
+        border-radius: $br-default;
+        @include shadow(2);
+        outline: 0;
+
+        @include media-breakpoint-up(sm) {
+            @include shadow(2);
+        }
+    }
+
+    // Modal Header
+    &__header {
+        padding: $modal-padding-condensed;
+        border-bottom: 1px solid $modal-header-border-color;
+        background-color: $modal-header-background-color;
+        @include clearfix;
+
+        // Close icon
+        .close {
+            @include reset-button;
+            float: right;
+            font-size: 1.5rem;
+            color: $gray-light;
+            margin-top: 4px;
+
+            &:hover,
+            &:active {
+                color: $ui-secondary;
+                outline: 0;
+            }
+        }
+
+        // Title
+        .title {
+            margin: 0;
+            line-height: $line-height;
+        }
+    }
+
+    // Modal body
+    &__body {
+        position: relative;
+        padding: $modal-padding;
+    }
+
+    // Footer (for actions)
+    &__footer {
+        padding: $modal-padding-condensed;
+        text-align: right; // right align buttons
+        border-top: 1px solid $modal-footer-border-color;
+        @include clearfix; // clear it in case folks use .pull-* classes on buttons
+
+        // Properly space out buttons
+        .c-button + .c-button {
+            margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+            margin-left: 5px;
+        }
+        // but override that for button groups
+        .c-button-group .c-button + .c-button {
+            margin-left: -1px;
+        }
+        // and override it for block buttons as well
+        .c-button--block + .c-button--block {
+            margin-left: 0;
+        }
+    }
+}
+
+// Modal background
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: ($zIndex-12 - 1);
+    background-color: $modal-backdrop-bg;
+    opacity: 0;
+
+    &.in {
+        transition: opacity .5s ease;
+        opacity: $modal-backdrop-opacity;
+    }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+// Added to the body to prevent scrolling
+.modal-open {
+    overflow: hidden;
+    overflow-y: auto;
+}

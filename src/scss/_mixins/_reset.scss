@@ -1,18 +1,51 @@
-// Reset Mixins // --------------------------------------------------
+//
+// Reset Mixins
+//
+
+// Reset Button
+@mixin reset-button () {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    padding: 0;
+    overflow: visible;
+}
 
 // Reset List
-
-@mixin reset-list() {
+@mixin reset-list () {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-
 // Reset Heading
-
-@mixin reset-heading() {
+@mixin reset-heading () {
     margin: 0;
     padding: 0;
-    font-weight: 500;
+    font-weight: $font-weight-base;
+}
+
+// Reset Text
+@mixin reset-text () {
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: $font-weight-base;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: $line-height;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+}
+
+ul {
+    @include reset-list;
 }

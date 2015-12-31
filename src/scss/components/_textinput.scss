@@ -1,6 +1,8 @@
-// Input // --------------------------------------------------
+//
+// Text input
+//
 
-@include component(Input) {
+.c-textinput {
     width: 100%;
     height: auto;
     padding: $spacer / 2;
@@ -20,15 +22,15 @@
         border: 1px solid $ui-primary;
     }
 
-    @include option(small) {
+    &--small {
         height: 41px;
     }
 
-    @include option(disabled) {
+    &--disabled {
         background-color: $gray-lightest;
     }
 
-    @include option(invalid) {
+    &--invalid {
         border-color: $red;
     }
 

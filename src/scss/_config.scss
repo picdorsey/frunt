@@ -17,9 +17,9 @@ $grid-breakpoints: (
     sm: 544px,    // Small screen / phone
     md: 768px,    // Medium screen / tablet
     lg: 992px,    // Large screen / desktop
-    xl: 1200px    // Extra large screen / wide desktop
+    xl: 1200px,   // Extra large screen / wide desktop
+    xxl: 1400px   // Very large displays
 );
-
 
 // Grid containers
 //
@@ -29,9 +29,9 @@ $container-max-widths: (
     sm: 576px,
     md: 720px,
     lg: 940px,
-    xl: 1140px
+    xl: 1140px,
+    xxl: 1340px
 );
-
 
 // Grid columns
 //
@@ -41,9 +41,20 @@ $grid-columns: 12;
 $grid-gutter-width: 1.875rem; // 30px
 
 //
+// Menu panel widths
+// --------------------------------------------------
+
+$menu-widths: (
+    xs: 260px,
+    sm: 65px,
+    md: 260px
+);
+
+//
 // Colors
 // --------------------------------------------------
 
+$purple: #540042;
 $blue: #337ab7;
 $blue-light: #5bc0de;
 $green: #5cb85c;
@@ -52,7 +63,6 @@ $orange: #f89739;
 $red: #d9534f;
 
 // Grayscale and brand colors for use across Bootstrap.
-
 $gray-darker: #222222;
 $gray-dark: #373a3c;
 $gray: #55595c;
@@ -61,6 +71,7 @@ $gray-lighter: #eceeef;
 $gray-lightest: #f7f7f9;
 
 $ui-primary: $blue;
+$ui-secondary: $purple;
 $ui-success: $green;
 $ui-info: $blue-light;
 $ui-warning: $yellow;
@@ -81,7 +92,7 @@ $border-width: .0625rem;
 //
 // Settings for the `<body>` element.
 
-$body-bg: #fff;
+$body-bg: $gray-lighter;
 $body-color: $gray-dark;
 
 // Links
@@ -97,20 +108,22 @@ $link-hover-decoration: none;
 // Typography
 // --------------------------------------------------
 
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
 
-$font-url: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700';
+$primary-font-url: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,700,900';
+$secondary-font-url: 'https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700';
 
 // Font weights
 // NOTE: These will need to be tweaked based on the current font.
-$font-weight-light: 100;
+$font-weight-thin: 100;
+$font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-semi-bold: 600;
+$font-weight-medium: 500;
 $font-weight-bold: 700;
-$font-weight-extra-bold: 800;
+$font-weight-ultra-bold: 900;
 
 $font-weight-base: $font-weight-normal;
 
@@ -122,7 +135,7 @@ $font-size-lg: 1.25rem;
 $font-size-sm: .85rem;
 $font-size-xs: .75rem;
 
-$font-size-h1: 2.5rem;
+$font-size-h1: 1.8rem;
 $font-size-h2: 2rem;
 $font-size-h3: 1.75rem;
 $font-size-h4: 1.5rem;
@@ -187,13 +200,27 @@ $animation-long: 1s;
 $animation-xl: 2s;
 
 //
+// Code
+// --------------------------------------------------
+
+$code-color: $red !default;
+$code-bg: #f7f7f9 !default;
+$pre-bg: #f7f7f9 !default;
+$pre-color: $gray-dark !default;
+$pre-border-color: #ccc !default;
+
+//
 // Border Radiuses
 // --------------------------------------------------
 
-$br-default: 0;
-$br-button: $br-default;
-$br-input: $br-default;
-$br-table: $br-default;
+$br-default: 3px !default;
+$br-button: $br-default !default;
+$br-input: $br-default !default;
+$br-table: 0 !default;
+$br-toast: $br-default !default;
+$br-tooltip: $br-default !default;
+$br-code: $br-default !default;
+$br-card: $br-default !default;
 
 //
 // Z-Index Scale (private vars)
@@ -207,11 +234,13 @@ $zIndex-5:   500;
 $zIndex-6:   600;
 $zIndex-7:   700;
 $zIndex-8:   800;
-$zIndex-9:   900; // sticky headers, etc.
-$zIndex-10: 1000; // overlays
+$zIndex-9:   900; // #menu-panel
+$zIndex-10: 1000; // #main-header
+$zIndex-11: 2000; // toasts, alerts
+$zIndex-12: 3000; // modal
 
 //
-// Miscellaneous
+// Aliases
 // --------------------------------------------------
 
 $gutter: $grid-gutter-width;

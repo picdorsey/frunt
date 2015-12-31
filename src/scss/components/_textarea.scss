@@ -1,0 +1,39 @@
+//
+// Text area
+//
+
+// Config
+$area-height: 100px;
+$area-padding: 1rem;
+$area-background: #fff;
+
+// Component
+.c-textarea {
+    width: 100%;
+    min-height: $area-height;
+    padding: $area-padding;
+
+    border-radius: $br-input;
+    border: 2px solid $gray-lighter;
+    background: none $area-background;
+    -webkit-appearance: none;
+
+    font-size: 1rem;
+
+    transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
+
+    &:focus {
+        border: 2px solid $ui-secondary;
+        background-color: #fff;
+        outline: 0;
+    }
+
+    &--disabled {
+        background-color: $gray-lightest;
+    }
+
+    &--invalid {
+        border-color: $red;
+    }
+
+}

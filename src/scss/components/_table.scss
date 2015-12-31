@@ -1,8 +1,8 @@
 //
-// Basic Table Component
+// Table
 //
 
-@include component(Table) {
+.c-table {
     width: 100%;
     max-width: 100%;
     margin-bottom: $spacer;
@@ -43,7 +43,7 @@
         background-color: $body-bg;
     }
 
-    @include option(bordered) {
+    &--bordered {
         border: 1px solid $table-border-color;
 
         th,
@@ -59,13 +59,13 @@
         }
     }
 
-    @include option(striped) {
+    &--striped {
         tbody tr:nth-of-type(odd) {
             background-color: $table-bg-accent;
         }
     }
 
-    @include option(hover) {
+    &--hover {
         tbody tr {
             &:hover {
                 background-color: $table-bg-hover;
@@ -73,7 +73,7 @@
         }
     }
 
-    @include option(compact) {
+    &--compact {
         th,
         td {
             padding: $table-sm-cell-padding;
