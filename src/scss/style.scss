@@ -23,22 +23,19 @@
 @import '_core/print';
 @import '_core/utilities';
 
-// Partials
+// Objects (o-)
 // --------------------------------------------------
-// Reusable once per page partials, reference an id (e.g. #header, #sidebar)
+// Signify that something is an Object, and that it may be used in any number
+// of unrelated contexts to the one you can currently see it in. Making modifications
+// to these types of class could potentially have knock-on effects in a lot of other
+// unrelated places. Tread carefully.
 
-@import "partials/*";
+@import "objects/*";
 
-// Components
+// Components (c-)
 // --------------------------------------------------
-// Reusable components that make up a webpage.
-// Referenced in html with a 'c-' prefix (e.g. class="c-button")
+// Signify that something is a Component. This is a concrete, implementation-specific piece
+// of UI. All of the changes you make to its styles should be detectable in the context
+// you’re currently looking at. Modifying these styles should be safe and have no side effects.
 
 @import 'components/*';
-
-// Layouts
-// --------------------------------------------------
-// Layouts are specific to section and override any components, parts or tweaks.
-// Layouts are used is scss: @include layout(home) and in html: class="@home"
-
-@import 'layouts/*';
