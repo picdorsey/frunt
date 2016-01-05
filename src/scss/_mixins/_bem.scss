@@ -1,0 +1,15 @@
+//
+// Bem Style Mixins
+//
+
+@mixin element($element) {
+    @at-root #{&}__#{$element} {
+        @content;
+    }
+}
+
+@mixin modifier($modifier) {
+    @at-root #{&}--#{$modifier} {
+        @content;
+    }
+}
