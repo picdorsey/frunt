@@ -18,7 +18,7 @@ flixir(function (mix) {
     mix.sass('guide.scss', 'public/guide/assets/css');
 
     // Scripts
-    mix.browserify('app.js');
+    mix.browserify('app.js', flixir.config.publicPath + '/js/bundle.js');
     mix.scriptsIn('src/js/vendor/', flixir.config.publicPath + '/js/vendor.js');
 
     // Browsersync (gulp watch only)
