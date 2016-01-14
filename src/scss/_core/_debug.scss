@@ -12,26 +12,26 @@ body:before {
         top: 0;
         z-index: 100;
 
-        content: "xs";
+        content: "xs (Phone)";
 
         @include media-breakpoint-up(sm) {
-            content: "sm";
+            content: "sm (Small Phone)";
         }
 
         @include media-breakpoint-up(md) {
-            content: "md";
+            content: "md (Tablet)";
         }
 
         @include media-breakpoint-up(lg) {
-            content: "lg";
+            content: "lg (Desktop)";
         }
 
         @include media-breakpoint-up(xl) {
-            content: "xl";
+            content: "xl (Wide Desktop)";
         }
 
         @include media-breakpoint-up(xxl) {
-            content: "xxl";
+            content: "xxl (Very Large Screen)";
         }
     }
 }
