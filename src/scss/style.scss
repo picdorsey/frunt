@@ -1,6 +1,6 @@
 // @app // --------------------------------------------------
-// @author Piccirilli Dorsey
-// @copyright 2015
+// @author Piccirilli Dorsey (http://picdorsey.com)
+// @copyright 2016
 
 // Configuration
 // --------------------------------------------------
@@ -39,3 +39,11 @@
 // you’re currently looking at. Modifying these styles should be safe and have no side effects.
 
 @import 'components/*';
+
+// Themes (t-)
+// --------------------------------------------------
+// t-: Signify that a class is responsible for adding a
+// Theme to a view. It lets us know that UI Components’ current
+// cosmetic appearance may be due to the presence of a theme.
+
+@import 'themes/*';
