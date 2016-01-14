@@ -15,7 +15,7 @@ body:before {
         content: "xs (Phone)";
 
         @include media-breakpoint-up(sm) {
-            content: "sm (Small Phone)";
+            content: "sm (Larger Phone)";
         }
 
         @include media-breakpoint-up(md) {
