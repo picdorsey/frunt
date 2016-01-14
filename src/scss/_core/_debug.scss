@@ -1,0 +1,37 @@
+body:before {
+    @if $debug {
+        background-color: #FCF8E3;
+        border-bottom: 1px solid #FBEED5;
+        border-left: 1px solid #FBEED5;
+        color: #C09853;
+        font: small-caption;
+        padding: 3px 6px;
+        pointer-events: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 100;
+
+        content: "xs";
+
+        @include media-breakpoint-up(sm) {
+            content: "sm";
+        }
+
+        @include media-breakpoint-up(md) {
+            content: "md";
+        }
+
+        @include media-breakpoint-up(lg) {
+            content: "lg";
+        }
+
+        @include media-breakpoint-up(xl) {
+            content: "xl";
+        }
+
+        @include media-breakpoint-up(xxl) {
+            content: "xxl";
+        }
+    }
+}
