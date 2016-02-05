@@ -24,6 +24,14 @@
 @import '_core/utilities';
 @import '_core/debug';
 
+// Components (c-)
+// --------------------------------------------------
+// Signify that something is a Component. This is a concrete, implementation-specific piece
+// of UI. All of the changes you make to its styles should be detectable in the context
+// you’re currently looking at. Modifying these styles should be safe and have no side effects.
+
+@import 'components/*';
+
 // Objects (o-)
 // --------------------------------------------------
 // Signify that something is an Object, and that it may be used in any number
@@ -32,14 +40,6 @@
 // unrelated places. Tread carefully.
 
 @import "objects/*";
-
-// Components (c-)
-// --------------------------------------------------
-// Signify that something is a Component. This is a concrete, implementation-specific piece
-// of UI. All of the changes you make to its styles should be detectable in the context
-// you’re currently looking at. Modifying these styles should be safe and have no side effects.
-
-@import 'components/*';
 
 // Themes (t-)
 // --------------------------------------------------
