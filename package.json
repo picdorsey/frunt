@@ -11,7 +11,7 @@
   },
   "browser": {},
   "dependencies": {
-    "flixir": "^1.0.0"
+    "flixir": "^1.2.0"
   },
   "devDependencies": {
     "gulp": "^3.8.8"
