@@ -5,9 +5,9 @@
 
 'use strict';
 
-var app = {
+const app = {
 
-    init: function () {
+    init() {
         // Begin!
     }
 
