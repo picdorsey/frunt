@@ -14,4 +14,4 @@ const app = {
 };
 
 // Call the initialize function
-$(app.init);
+$(() => app.init);
