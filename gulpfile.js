@@ -15,7 +15,7 @@ flixir(function (mix) {
 
     // Styles
     mix.sass('style.scss');
-    mix.sass('guide.scss', 'public/guide/assets/css');
+    //mix.sass('guide.scss', 'public/guide/assets/css');
 
     // Scripts
     mix.browserify('app.js', flixir.config.publicPath + '/js/bundle.js');
