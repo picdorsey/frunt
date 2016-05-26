@@ -8,8 +8,8 @@ ul {
   top: 0;
   width: 100%;
   height: 80px;
-  background-color: #337ab7;
-  color: #55595c;
+  background-color: #2A9BD4;
+  color: #344452;
   z-index: 900; }
   #guide-header .logo {
     color: #fff;
@@ -31,7 +31,7 @@ ul {
   .c-section .c-section__heading {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 5px solid #eceeef; }
+    border-bottom: 5px solid #EAEDEE; }
 
 #guide-main {
   padding: 60px 0; }
@@ -77,16 +77,16 @@ ul {
             display: block;
             padding: 3px 10px; }
             #guide-main #guide-sidebar .guide-sidebar-nav ul li a:hover {
-              color: #222222;
-              background-color: #eceeef; }
+              color: #051720;
+              background-color: #EAEDEE; }
 
 #guide-footer {
-  background-color: #eceeef;
+  background-color: #EAEDEE;
   padding: 30px 0;
   margin: 60px 0 0 0;
   text-align: center;
   font-size: 14px;
-  color: #373a3c; }
+  color: #092736; }
 
 .guide-heading {
   font-size: 48px;
@@ -107,7 +107,7 @@ ul {
       font-weight: 300;
       text-transform: uppercase;
       padding-bottom: 10px;
-      border-bottom: 5px solid #eceeef;
+      border-bottom: 5px solid #EAEDEE;
       margin-bottom: 30px; }
 
 .sticky {
@@ -145,43 +145,43 @@ ul {
   font-size: 300%; }
 
 .c-tiles .primary {
-  background-color: #337ab7; }
+  background-color: #2A9BD4; }
 
 .c-tiles .secondary {
-  background-color: #5bc0de; }
+  background-color: #6CB9E0; }
 
 .c-tiles .tertiary {
-  background-color: #f89739; }
+  background-color: #FF9C00; }
 
 .c-tiles .blue {
-  background-color: #337ab7; }
+  background-color: #2A9BD4; }
 
 .c-tiles .green {
-  background-color: #5cb85c; }
+  background-color: #92C21E; }
 
 .c-tiles .light-blue {
-  background-color: #5bc0de; }
+  background-color: #6CB9E0; }
 
 .c-tiles .orange {
-  background-color: #f89739; }
+  background-color: #FF9C00; }
 
 .c-tiles .red {
-  background-color: #d9534f; }
+  background-color: #C35151; }
 
 .c-tiles .gray-darker {
-  background-color: #222222; }
+  background-color: #051720; }
 
 .c-tiles .gray-dark {
-  background-color: #373a3c; }
+  background-color: #092736; }
 
 .c-tiles .gray {
-  background-color: #55595c; }
+  background-color: #344452; }
 
 .c-tiles .gray-light {
-  background-color: #818a91; }
+  background-color: #9AA3A7; }
 
 .c-tiles .gray-lighter {
-  background-color: #eceeef; }
+  background-color: #EAEDEE; }
 
 .sans-serif {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }

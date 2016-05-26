@@ -57,29 +57,61 @@ $menu-widths: (
 // Colors
 // --------------------------------------------------
 
+// Main color palette
 $purple: #540042;
-$blue: #337ab7;
-$blue-light: #5bc0de;
-$green: #5cb85c;
+$blue: #2A9BD4;
+$blue-light: #6CB9E0;
+$green: #92C21E;
 $yellow: #f0ad4e;
-$orange: #f89739;
-$red: #d9534f;
+$orange: #FF9C00;
+$red: #C35151;
 
-// Grayscale and brand colors for use across Bootstrap.
-$gray-darker: #222222;
-$gray-dark: #373a3c;
-$gray: #55595c;
-$gray-light: #818a91;
-$gray-lighter: #eceeef;
-$gray-lightest: #f7f7f9;
+// Grayscale
+$gray-darker: #051720;
+$gray-dark: #092736;
+$gray: #344452;
+$gray-light: #9AA3A7;
+$gray-lighter: #EAEDEE;
+$gray-lightest: #f6f8f9;
 
+// UI aliases
 $ui-primary: $blue;
-$ui-secondary: $purple;
+$ui-secondary: $blue;
 $ui-success: $green;
 $ui-info: $blue-light;
-$ui-warning: $yellow;
+$ui-warning: $orange;
 $ui-danger: $red;
 $ui-gray: $gray;
+
+// Color map
+$colors: (
+    white: #fff,
+    primary: $purple,
+    secondary: $blue,
+    success: $green,
+    info: $blue-light,
+    warning: $orange,
+    danger: $red,
+    gray-darker: #051720,
+    gray-dark: #092736,
+    gray: #344452,
+    gray-light: #9AA3A7,
+    gray-lighter: #EAEDEE,
+    gray-lightest: #f6f8f9,
+);
+
+// UI color map
+$ui-colors: (
+    primary: $purple,
+    secondary: $blue,
+    success: $green,
+    info: $blue-light,
+    warning: $orange,
+    danger: $red,
+    gray-dark: #092736,
+    gray: #344452,
+    gray-light: #EAEDEE,
+);
 
 // Spacing
 //

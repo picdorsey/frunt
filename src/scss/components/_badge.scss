@@ -1,0 +1,63 @@
+//
+// Badge
+//
+
+// Config
+$badge-size: 40px;
+$badge-border-size: 2px;
+
+$badge-colors: (
+    default: #EAEDEE,
+    primary: $purple,
+    secondary: $blue,
+    success: $green,
+    info: $blue-light,
+    warning: $orange,
+    danger: $red,
+    gray-dark: #092736,
+    gray: #344452,
+    orange: $orange,
+    alert: $red,
+    update: $blue-light,
+    message: $gray-light,
+    note: #FFFAB0
+);
+
+
+// Mixin
+@mixin create-badge-variation ($bg) {
+    color: text-color($bg);
+    background-color: $bg;
+    border: 2px solid darken($bg, 5%);
+}
+
+// Component
+.c-badge {
+    display: inline-block;
+    text-align: center;
+    font-size: .875rem;
+    font-weight: $font-weight-normal;
+    border-radius: $br-default;
+    padding: .265rem .5rem;
+
+    // Variations
+
+    // Circle
+    &--circlular {
+        font-family: $font-family-serif;
+        font-size: 1rem;
+        width: $badge-size;
+        height: $badge-size;
+        line-height: ($badge-size - ($badge-border-size * 2));
+        border-radius: 50%;
+        padding: 0;
+        @include shadow(1);
+    }
+
+    // Color Variations
+    @each $key, $color in $badge-colors {
+        &--#{$key} {
+            @include create-badge-variation ($color);
+        }
+    }
+}
