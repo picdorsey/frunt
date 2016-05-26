@@ -6,6 +6,7 @@
 $area-height: 100px;
 $area-padding: 1rem;
 $area-background: #fff;
+$area-text-color: #656565;
 
 // Component
 .c-textarea {
@@ -19,6 +20,7 @@ $area-background: #fff;
     -webkit-appearance: none;
 
     font-size: 1rem;
+    color: $area-text-color;
 
     transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
 
@@ -34,6 +36,10 @@ $area-background: #fff;
 
     &--invalid {
         border-color: $red;
+    }
+
+    &--large {
+        min-height: ($area-height * 2.5);
     }
 
 }
