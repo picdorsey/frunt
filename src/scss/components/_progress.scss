@@ -1,0 +1,85 @@
+//
+// Progress bar
+//
+
+// Config
+$progress-bg:                 #f5f5f5 !default;
+$progress-bar-color:          #fff !default;
+$progress-border-radius:      $br-default !default;
+
+$progress-bar-bg:             $ui-primary !default;
+$progress-bar-success-bg:     $ui-success !default;
+$progress-bar-warning-bg:     $ui-warning !default;
+$progress-bar-danger-bg:      $ui-danger !default;
+$progress-bar-info-bg:        $ui-info !default;
+
+// Mixin
+@mixin progress-variant($color) {
+    &[value]::-webkit-progress-value {
+        background-color: $color;
+    }
+
+    &[value]::-moz-progress-bar {
+        background-color: $color;
+    }
+
+    @media screen and (min-width:0\0) {
+        .progress-bar {
+            background-color: $color;
+        }
+    }
+}
+
+// Component
+.c-progress {
+    display: block;
+    width: 100%;
+    height: $spacer;
+
+    &--small {
+        width: 300px;
+        max-width: 100%;
+    }
+}
+.c-progress[value] {
+    // IE10 uses `color` to set the bar background-color
+    color: $ui-secondary;
+    // Remove Firefox and Opera border
+    border: 0;
+    // Reset the default appearance
+    appearance: none;
+}
+.c-progress[value]::-webkit-progress-bar {
+    background-color: #fff;
+    border-radius: $progress-border-radius;
+    @include shadow(1);
+}
+.c-progress[value]::-webkit-progress-value::before {
+    content: attr(value);
+}
+.c-progress[value]::-webkit-progress-value {
+    background-color: $ui-secondary;
+    border-top-left-radius: $progress-border-radius;
+    border-bottom-left-radius: $progress-border-radius;
+}
+.c-progress[value="100"]::-webkit-progress-value {
+    border-top-right-radius: $progress-border-radius;
+    border-bottom-right-radius: $progress-border-radius;
+}
+
+//
+// Variations
+//
+
+.progress-success {
+    @include progress-variant($progress-bar-success-bg);
+}
+.progress-info {
+    @include progress-variant($progress-bar-info-bg);
+}
+.progress-warning {
+    @include progress-variant($progress-bar-warning-bg);
+}
+.progress-danger {
+    @include progress-variant($progress-bar-danger-bg);
+}
