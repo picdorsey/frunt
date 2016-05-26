@@ -1,5 +1,5 @@
 # Frunt
-A modern resposnive framework for rapid front-end development.
+A modern responsive framework for rapid front-end development.
 
 ### Installation
 * Make sure gulp is installed on your system `sudo npm install -g gulp`
