@@ -2,28 +2,37 @@
 // Text input
 //
 
+// Config in common/scss/_config.scss
+
+$text-color: #656565;
+
+// Component
 .c-textinput {
     width: 100%;
-    height: auto;
-    padding: $spacer / 2;
+    height: $input-height;
+    padding: $input-padding;
 
     border-radius: $br-input;
-    border: 1px solid $gray-lighter;
-    background-color: #fff;
+    border: 2px solid $gray-lighter;
+    background: none $input-background;
+    -webkit-appearance: none;
 
-    transition: background $animation-xshort ease-in-out, border-color $animation-xshort ease-in-out;
+    color: $text-color;
 
-    &:hover,
+    font-size: 1rem;
+
+    transition: background $animation-xshort ease-in-out,
+    border-color $animation-xshort ease-in-out;
+
     &:focus {
-       background: lighten($gray-lighter, 10%);
+        border: 2px solid $ui-secondary;
+        background-color: #fff;
+        outline: 0;
+        @include shadow(1);
     }
 
-    &:focus {
-        border: 1px solid $ui-primary;
-    }
-
-    &--small {
-        height: 41px;
+    &.has-error {
+        border-color: #cc0000;
     }
 
     &--disabled {
@@ -32,6 +41,60 @@
 
     &--invalid {
         border-color: $red;
+    }
+
+    &--small {
+        height: $input-small-height;
+        font-size: 1rem;
+    }
+
+    &--large {
+        height: $input-big-height;
+        font-size: 1.33rem;
+    }
+
+    &--invisible {
+        border-radius: 0;
+        border: none;
+        outline: 0;
+        padding: 0;
+        background: none;
+        height: 4rem;
+        font-family: $font-family-serif;
+        font-weight: $font-weight-bold;
+        font-size: 2rem;
+        color: $gray;
+
+        &:focus,
+        &:active {
+            border: none;
+            background: none;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+
+    // 2 columns
+    &--sm {
+        width: 16.666666667%;
+    }
+
+    // 4 columns
+    &--md {
+        width: 33.333333333%;
+    }
+
+    // 6 columns
+    &--lg {
+        width: 50%;
+    }
+
+    &--has-icon {
+        width: 85%;
+
+        + .icon {
+            width: 15%;
+        }
     }
 
 }
