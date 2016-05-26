@@ -4,6 +4,7 @@
 
 // Config
 $alert-padding: 1rem 2rem;
+$alert-padding-compact: .75rem 1.25rem;
 
 // Component
 .c-alert {
@@ -21,16 +22,34 @@ $alert-padding: 1rem 2rem;
 
     transition: all 0.2s ease;
 
+    // <p>, <ul> and <ol> tags inside of the alert
+    p, ul, ol {
+        font-size: 0.875rem;
+        margin-bottom: .75rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     // Links
-   &__link {
-       font-weight: $font-weight-medium;
-       text-decoration: underline;
-       white-space: nowrap;
-   }
+    &__link {
+        font-weight: $font-weight-medium;
+        text-decoration: underline;
+        white-space: nowrap;
+        color: #fff;
+        opacity: .75;
+
+        &:hover {
+            cursor: default;
+            color: #fff;
+            opacity: 1;
+        }
+    }
 
     // Dismissible
     // Be sure to include the close icon inside an anchor:
-    // <a href="#"><i class="icon icon-close"></i></a>
+    // <a class="c-alert--dismissible__link" href="#"><i class="icon icon-close"></i></a>
     &--dismissible {
         padding-right: 3.5rem;
 
@@ -44,9 +63,21 @@ $alert-padding: 1rem 2rem;
             opacity: .3;
 
             &:hover {
+                cursor: pointer;
+                color: #fff;
                 opacity: 1;
             }
         }
+    }
+
+    // Compact
+    &--compact {
+        padding: $alert-padding-compact;
+    }
+
+    // No margins
+    &--marginless {
+        margin-bottom: 0;
     }
 
     // Block
@@ -81,6 +112,15 @@ $alert-padding: 1rem 2rem;
         }
     }
 
+    // Note
+    &--note {
+        color: $gray-darker;
+        background-color: #fcffe4;
+        a {
+            color: $gray-darker;
+        }
+    }
+
     // Warning
     &--warning {
         color: #fff;
@@ -96,6 +136,7 @@ $alert-padding: 1rem 2rem;
 
 // Muted
 .c-alert--muted {
+
     // Success
     &--success {
         color: darken($ui-success, 10%);
@@ -103,6 +144,11 @@ $alert-padding: 1rem 2rem;
         border: 1px solid transparentize($ui-success, .8);
         a {
             color: darken($ui-success, 10%);
+
+            &:hover {
+                color: darken($ui-success, 15%);
+                text-decoration: none;
+            }
         }
     }
     // Info
@@ -112,6 +158,11 @@ $alert-padding: 1rem 2rem;
         border: 1px solid transparentize($ui-info, .8);
         a {
             color: darken($ui-info, 10%);
+
+            &:hover {
+                color: darken($ui-info, 15%);
+                text-decoration: none;
+            }
         }
     }
     // Warning
@@ -121,6 +172,11 @@ $alert-padding: 1rem 2rem;
         border: 1px solid transparentize($ui-warning, .8);
         a {
             color: darken($ui-warning, 10%);
+
+            &:hover {
+                color: darken($ui-warning, 15%);
+                text-decoration: none;
+            }
         }
     }
     // Danger
@@ -130,6 +186,21 @@ $alert-padding: 1rem 2rem;
         border: 1px solid transparentize($ui-danger, .8);
         a {
             color: darken($ui-danger, 10%);
+
+            &:hover {
+                color: darken($ui-danger, 15%);
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Note
+    &--note {
+        color: $gray;
+        border: 1px solid #f3efa9;
+        background-color: #fcffe4;
+        a {
+            color: $gray-darker;
         }
     }
 }
