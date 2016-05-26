@@ -1,5 +1,5 @@
 # Frunt
-Scaffolds out a gulp.js boilerplate for front-end development using Frunt.
+A modern resposnive framework for rapid front-end development.
 
 ### Installation
 * Make sure gulp is installed on your system `sudo npm install -g gulp`
