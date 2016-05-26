@@ -4,12 +4,6 @@ public/assets/css/*
 public/assets/js/*
 !public/assets/js/vendor/
 
-# Guide Files
-public/guide/assets/css/*
-!public/guide/assets/css/vendor/
-public/guide/assets/js/*
-!public/guide/assets/js/vendor/
-
 # Ignore docs files
 _gh_pages
 _site
