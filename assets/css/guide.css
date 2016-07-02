@@ -1,0 +1,238 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#guide-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #2A9BD4;
+  color: #344452;
+  z-index: 900; }
+  #guide-header .logo {
+    color: #fff;
+    line-height: 80px;
+    font-size: 30px;
+    font-weight: 300; }
+  #guide-header #menu-button {
+    float: right;
+    margin-top: 30px; }
+    #guide-header #menu-button:hover {
+      opacity: .9; }
+    @media (min-width: 768px) {
+      #guide-header #menu-button {
+        display: none; } }
+
+.c-section {
+  margin-bottom: 1.875rem;
+  overflow: hidden; }
+  .c-section .c-section__heading {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 5px solid #eaedee; }
+
+#guide-main {
+  padding: 60px 0; }
+  #guide-main #guide-content {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    width: 100%; }
+    @media (min-width: 768px) {
+      #guide-main #guide-content {
+        width: 75%;
+        padding-right: 60px; } }
+  #guide-main #guide-sidebar {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem; }
+    @media (min-width: 544px) {
+      #guide-main #guide-sidebar {
+        width: 25%; } }
+    @media (max-width: 767.9px) {
+      #guide-main #guide-sidebar {
+        display: none; } }
+    #guide-main #guide-sidebar .guide-sidebar-nav {
+      margin-bottom: 30px;
+      overflow: hidden; }
+      #guide-main #guide-sidebar .guide-sidebar-nav .guide-sidebar-nav-heading {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 22px;
+        margin-bottom: 10px; }
+      #guide-main #guide-sidebar .guide-sidebar-nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        #guide-main #guide-sidebar .guide-sidebar-nav ul li {
+          margin-bottom: 0; }
+          #guide-main #guide-sidebar .guide-sidebar-nav ul li a {
+            display: block;
+            padding: 3px 10px; }
+            #guide-main #guide-sidebar .guide-sidebar-nav ul li a:hover {
+              color: #051720;
+              background-color: #eaedee; }
+
+#guide-footer {
+  background-color: #eaedee;
+  padding: 30px 0;
+  margin: 60px 0 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #092736; }
+
+.guide-heading {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 80px 0 30px 0; }
+  .guide-heading:first-child {
+    margin: -10px 0 30px 0; }
+
+.guide-gist {
+  margin-top: 30px; }
+
+#guide {
+  padding-top: 100px; }
+  #guide .Section {
+    margin: 0 0 30px 0; }
+    #guide .Section--heading {
+      font-size: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 5px solid #eaedee;
+      margin-bottom: 30px; }
+
+.sticky {
+  position: static;
+  transition: none;
+  z-index: 800; }
+
+/* Bound */
+.sticky.bound {
+  position: absolute;
+  left: auto;
+  right: auto; }
+
+/* Fixed */
+.sticky.fixed {
+  position: fixed;
+  left: auto;
+  right: auto; }
+
+/* Bound/Fixed Position */
+.sticky.bound.top,
+.sticky.fixed.top {
+  top: 0px;
+  bottom: auto; }
+
+.sticky.bound.bottom,
+.sticky.fixed.bottom {
+  top: auto;
+  bottom: 0px; }
+
+.c-tiles.color-swatches li {
+  height: 100px; }
+
+.c-tiles .overlay-content .fa {
+  font-size: 300%; }
+
+.c-tiles .primary {
+  background-color: #2A9BD4; }
+
+.c-tiles .secondary {
+  background-color: #6CB9E0; }
+
+.c-tiles .tertiary {
+  background-color: #FF9C00; }
+
+.c-tiles .blue {
+  background-color: #2A9BD4; }
+
+.c-tiles .green {
+  background-color: #92C21E; }
+
+.c-tiles .light-blue {
+  background-color: #6CB9E0; }
+
+.c-tiles .orange {
+  background-color: #FF9C00; }
+
+.c-tiles .red {
+  background-color: #C35151; }
+
+.c-tiles .gray-darker {
+  background-color: #051720; }
+
+.c-tiles .gray-dark {
+  background-color: #092736; }
+
+.c-tiles .gray {
+  background-color: #344452; }
+
+.c-tiles .gray-light {
+  background-color: #9aa3a7; }
+
+.c-tiles .gray-lighter {
+  background-color: #eaedee; }
+
+.sans-serif {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.serif {
+  font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif; }
+
+.light {
+  font-weight: 300; }
+
+.normal {
+  font-weight: 400; }
+
+.semi-bold {
+  font-weight: 500; }
+
+.bold {
+  font-weight: 700; }
+
+.extra-bold {
+  font-weight: 900; }
+
+body {
+  width: 100%;
+  height: 100%; }
+
+#guide {
+  position: relative;
+  z-index: 1; }
+
+#guide-mobile-nav {
+  padding-top: 100px; }
+  #guide-mobile-nav .guide-sidebar-nav {
+    margin-bottom: 1.875rem; }
+  #guide-mobile-nav .guide-sidebar-nav-heading {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px; }
+  @media (min-width: 768px) {
+    #guide-mobile-nav {
+      display: none; } }
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden !important; }
+
+.slideout-open .slideout-menu {
+  display: block !important; }
+
+/*# sourceMappingURL=guide.css.map */
