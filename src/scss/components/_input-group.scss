@@ -1,0 +1,88 @@
+//
+// Input Group
+//
+
+.c-input-group {
+    margin-bottom: ($gutter / 1.5);
+
+    &--duel {
+        @include clearfix();
+
+        display: block;
+        width: 100%;
+
+        .c-textinput,
+        .c-button {
+            display: inline-block;
+            float: left;
+            height: 59px;
+        }
+
+        .c-textinput {
+            width: 75%;
+
+            @include media-breakpoint-up(md) {
+                width: 85%;
+            }
+        }
+
+        .c-button {
+            width: 25%;
+
+            @include media-breakpoint-up(md) {
+                width: 15%;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &--multiple {
+        @include clearfix();
+
+        > :first-child,
+        > :last-child {
+            display: inline-block;
+            width: 45%;
+            width: calc(50% - #{$gutter / 3});
+        }
+
+        > :first-child {
+            float: left;
+        }
+
+        > :last-child {
+            float: right;
+        }
+    }
+
+    &--address {
+        @include clearfix();
+
+        display: block;
+        width: 100%;
+
+        .c-input-group--address__city,
+        .c-input-group--address__state,
+        .c-input-group--address__zip {
+            display: inline-block;
+            float: left;
+        }
+
+        .c-input-group--address__city {
+            width: calc(45% - #{($gutter / 1.5)});
+            margin-right: ($gutter / 1.5);
+        }
+
+        .c-input-group--address__state {
+            width: calc(20% - #{($gutter / 1.5)});
+            margin-right: ($gutter / 1.5);
+        }
+
+        .c-input-group--address__zip {
+            width: calc(35%);
+        }
+    }
+}

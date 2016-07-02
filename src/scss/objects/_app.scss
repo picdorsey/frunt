@@ -2,8 +2,41 @@
 // App
 //
 
-// Object
 .o-app {
+    @include shadow(2);
+
+    display: block;
+
     width: 100%;
+    max-width: $body-max-width;
     height: 100%;
+
+    margin: 0 auto;
+
+    background-color: $body-container-color;
+}
+
+body,
+html,
+.o-app {
+    min-height: 100vh;
+}
+
+html {
+    background: $body-bg;
+
+    font-size: ($font-size-root * 0.85);
+
+    @include media-breakpoint-up(sm) {
+        font-size: ($font-size-root * 0.9);
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-root;
+    }
+}
+
+// VueJS Rendering
+[v-cloak] {
+    display: none !important;
 }

@@ -12,7 +12,7 @@ $alert-padding-compact: .75rem 1.25rem;
     display: inline-block;
     padding: $alert-padding;
     color: #fff;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     font-weight: $font-weight-normal;
     background-color: $gray-darker;
     border-radius: 3px;

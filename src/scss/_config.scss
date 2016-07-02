@@ -21,7 +21,7 @@ $grid-breakpoints: (
     md: 768px,    // Medium screen / tablet
     lg: 992px,    // Large screen / desktop
     xl: 1200px,   // Extra large screen / wide desktop
-    xxl: 1400px   // Very large displays
+    // xxl: 1400px   // Very large displays
 );
 
 // Grid containers
@@ -33,7 +33,6 @@ $container-max-widths: (
     md: 720px,
     lg: 940px,
     xl: 1140px,
-    xxl: 1340px
 );
 
 // Grid columns
@@ -42,16 +41,6 @@ $container-max-widths: (
 
 $grid-columns: 12;
 $grid-gutter-width: 1.875rem; // 30px
-
-//
-// Menu panel widths
-// --------------------------------------------------
-
-$menu-widths: (
-    xs: 260px,
-    sm: 65px,
-    md: 260px
-);
 
 //
 // Colors
@@ -83,35 +72,8 @@ $ui-warning: $orange;
 $ui-danger: $red;
 $ui-gray: $gray;
 
-// Color map
-$colors: (
-    white: #fff,
-    primary: $purple,
-    secondary: $blue,
-    success: $green,
-    info: $blue-light,
-    warning: $orange,
-    danger: $red,
-    gray-darker: #051720,
-    gray-dark: #092736,
-    gray: #344452,
-    gray-light: #9AA3A7,
-    gray-lighter: #EAEDEE,
-    gray-lightest: #f6f8f9,
-);
-
-// UI color map
-$ui-colors: (
-    primary: $purple,
-    secondary: $blue,
-    success: $green,
-    info: $blue-light,
-    warning: $orange,
-    danger: $red,
-    gray-dark: #092736,
-    gray: #344452,
-    gray-light: #EAEDEE,
-);
+$facebook: #3b5998;
+$twitter: #00aced;
 
 // Spacing
 //
@@ -127,8 +89,11 @@ $border-width: .0625rem;
 //
 // Settings for the `<body>` element.
 
-$body-bg: $gray-lighter;
+$body-bg: #cdcdcd;
 $body-color: $gray-dark;
+
+$body-max-width: 1400px;
+$body-container-color: #fff;
 
 // Links
 //
@@ -217,24 +182,24 @@ $animation-xl: 2s;
 // Code
 // --------------------------------------------------
 
-$code-color: $red !default;
-$code-bg: #f7f7f9 !default;
-$pre-bg: #f7f7f9 !default;
-$pre-color: $gray-dark !default;
-$pre-border-color: #ccc !default;
+$code-color: $red;
+$code-bg: #f7f7f9;
+$pre-bg: #f7f7f9;
+$pre-color: $gray-dark;
+$pre-border-color: #ccc;
 
 //
 // Border Radiuses
 // --------------------------------------------------
 
-$br-default: 3px !default;
-$br-button: $br-default !default;
-$br-input: $br-default !default;
-$br-table: 0 !default;
-$br-toast: $br-default !default;
-$br-tooltip: $br-default !default;
-$br-code: $br-default !default;
-$br-card: $br-default !default;
+$br-default: 3px;
+$br-button: $br-default;
+$br-input: $br-default;
+$br-table: 0;
+$br-toast: $br-default;
+$br-tooltip: $br-default;
+$br-code: $br-default;
+$br-card: $br-default;
 
 //
 // Z-Index Scale (private vars)
@@ -258,3 +223,4 @@ $zIndex-12: 3000; // modal
 // --------------------------------------------------
 
 $gutter: $grid-gutter-width;
+$gutter-fixed: 30px;

@@ -2,9 +2,11 @@
 // Text input
 //
 
-// Config in common/scss/_config.scss
-
-$text-color: #656565;
+$input-height: 45px;
+$input-padding: 1rem;
+$input-background: #fff;
+$input-small-height: $gutter;
+$input-big-height: $gutter * 2;
 
 // Component
 .c-textinput {
@@ -12,17 +14,19 @@ $text-color: #656565;
     height: $input-height;
     padding: $input-padding;
 
+    font-size: 1rem;
+
+    color: $body-color;
     border-radius: $br-input;
     border: 2px solid $gray-lighter;
     background: none $input-background;
-    -webkit-appearance: none;
-
-    color: $text-color;
-
-    font-size: 1rem;
+    border-color: $animation-xshort ease-in-out;
 
     transition: background $animation-xshort ease-in-out,
-    border-color $animation-xshort ease-in-out;
+                color $animation-xshort ease-in-out,
+                border $animation-xshort ease-in-out;
+
+    -webkit-appearance: none;
 
     &:focus {
         border: 2px solid $ui-secondary;
