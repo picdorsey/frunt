@@ -124,11 +124,12 @@ Example
 .content-main {
     @include make-col();
 
-    @@include media-breakpoint-up(md) {
+    @include media-breakpoint-up(md) {
         @include make-col-span(6);
     }
+
     @include media-breakpoint-up(lg) {
-      @include make-col-span(8);
+        @include make-col-span(8);
     }
 }
 .content-secondary {
