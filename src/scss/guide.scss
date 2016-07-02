@@ -4,15 +4,20 @@
 // @author Piccirilli Dorsey
 // @copyright 2015
 
-// Configuration
-// --------------------------------------------------
-
+// Frunt
 @import 'config';
-
-// Mixins
-// --------------------------------------------------
-
 @import '_mixins/*';
+@import '_core/reboot';
+@import '_core/typography';
+@import '_core/grid';
+@import '_core/form';
+@import '_core/functions';
+@import '_core/print';
+@import '_core/utilities';
+@import '_core/debug';
+@import 'components/*';
+@import "objects/*";
+@import 'themes/*';
 
 // Guide specific styles
 // --------------------------------------------------
