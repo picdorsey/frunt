@@ -417,7 +417,7 @@ body {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #9AA3A7; }
+  border-bottom: 1px dotted #9aa3a7; }
 
 address {
   margin-bottom: 1rem;
@@ -479,7 +479,7 @@ table {
 caption {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  color: #9AA3A7;
+  color: #9aa3a7;
   text-align: left;
   caption-side: bottom; }
 
@@ -643,8 +643,8 @@ blockquote {
   margin: 1.875rem 0;
   padding: 1.875rem;
   text-align: center;
-  border-top: 0.0625rem solid #EAEDEE;
-  border-bottom: 0.0625rem solid #EAEDEE; }
+  border-top: 0.0625rem solid #eaedee;
+  border-bottom: 0.0625rem solid #eaedee; }
   .blockquote p,
   blockquote p {
     font-size: 22px;
@@ -1319,7 +1319,7 @@ td {
 input,
 textarea,
 select {
-  border: 1px solid #9AA3A7;
+  border: 1px solid #9aa3a7;
   height: 36px;
   padding: 0.4rem 0.625rem;
   /* The 6px vertically centers text on FF, ignored by Webkit */
@@ -1717,9 +1717,9 @@ label > .label-body {
   border-radius: 3px;
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease; }
+  transition: all 125ms ease; }
   .c-alert p, .c-alert ul, .c-alert ol {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     margin-bottom: .75rem; }
     .c-alert p:last-child, .c-alert ul:last-child, .c-alert ol:last-child {
       margin-bottom: 0; }
@@ -1892,7 +1892,7 @@ label > .label-body {
     border: 2px solid #57afdc; }
   .c-badge--message {
     color: #fff;
-    background-color: #9AA3A7;
+    background-color: #9aa3a7;
     border: 2px solid #8c979b; }
   .c-badge--note {
     color: #092736;
@@ -1916,10 +1916,10 @@ label > .label-body {
     .c-breadcrumb > li + li:before {
       padding-right: .5rem;
       padding-left: .5rem;
-      color: #9AA3A7;
+      color: #9aa3a7;
       content: "/ "; }
     .c-breadcrumb > li a {
-      color: #9AA3A7; }
+      color: #9aa3a7; }
       .c-breadcrumb > li a:hover {
         color: #2A9BD4; }
   .c-breadcrumb > .is-active {
@@ -1939,7 +1939,7 @@ label > .label-body {
     display: block;
     width: 30px;
     height: 5px;
-    background-color: #EAEDEE;
+    background-color: #eaedee;
     transition-property: background-color, transform;
     transition-duration: 0.3s; }
   .c-burger:before, .c-burger:after {
@@ -1997,7 +1997,7 @@ label > .label-body {
       display: inline-block; }
   .c-button-dropdown.is-visible .c-button--default {
     background: #fff;
-    border-color: #EAEDEE;
+    border-color: #eaedee;
     color: #282f31;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05); }
   .c-button-dropdown.is-visible .c-button--primary {
@@ -2143,8 +2143,8 @@ label > .label-body {
       border: 2px solid #ba4040; }
   .c-button--circular {
     color: #344452;
-    border: 2px solid #9AA3A7;
-    border-bottom-color: #9AA3A7;
+    border: 2px solid #9aa3a7;
+    border-bottom-color: #9aa3a7;
     font-size: 20px;
     padding: 14px 0 15px 0;
     letter-spacing: 0;
@@ -2184,7 +2184,7 @@ label > .label-body {
     border-top-right-radius: 3px;
     padding: 0.75rem 0.9375rem;
     background-color: #f6f8f9;
-    border-bottom: 1px solid #EAEDEE; }
+    border-bottom: 1px solid #eaedee; }
     @media (min-width: 768px) {
       .c-card__header {
         padding: 0.9375rem 1.875rem; } }
@@ -2194,7 +2194,7 @@ label > .label-body {
       padding: 0;
       line-height: 1.2; }
     .c-card__header .caption {
-      color: #9AA3A7;
+      color: #9aa3a7;
       font-size: 0.875rem;
       margin: 0;
       padding: 0;
@@ -2222,7 +2222,7 @@ label > .label-body {
         padding: 1.875rem; } }
   .c-card__footer {
     padding: 0.46875rem 0.9375rem;
-    border-top: 1px solid #EAEDEE; }
+    border-top: 1px solid #eaedee; }
     @media (min-width: 768px) {
       .c-card__footer {
         padding: 1.875rem; } }
@@ -2358,7 +2358,7 @@ label > .label-body {
   display: block;
   margin-bottom: 1.875rem;
   font-size: 0.85rem;
-  color: #9AA3A7; }
+  color: #9aa3a7; }
 
 .c-modal {
   display: none;
@@ -2395,7 +2395,7 @@ label > .label-body {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.08); } }
   .c-modal__header {
     padding: 0.9375rem 1.875rem;
-    border-bottom: 1px solid #EAEDEE;
+    border-bottom: 1px solid #eaedee;
     background-color: #f6f8f9; }
     .c-modal__header:before, .c-modal__header:after {
       content: " ";
@@ -2412,7 +2412,7 @@ label > .label-body {
       overflow: visible;
       float: right;
       font-size: 1.5rem;
-      color: #9AA3A7;
+      color: #9aa3a7;
       margin-top: 4px; }
       .c-modal__header .close:hover, .c-modal__header .close:active {
         color: #2A9BD4;
@@ -2426,7 +2426,7 @@ label > .label-body {
   .c-modal__footer {
     padding: 0.9375rem 1.875rem;
     text-align: right;
-    border-top: 1px solid #EAEDEE; }
+    border-top: 1px solid #eaedee; }
     .c-modal__footer:before, .c-modal__footer:after {
       content: " ";
       display: table; }
@@ -2549,11 +2549,11 @@ label > .label-body {
     padding: 0.75rem;
     line-height: 1.5;
     vertical-align: top;
-    border-top: 1px solid #EAEDEE;
+    border-top: 1px solid #eaedee;
     word-wrap: break-word; }
   .c-table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #EAEDEE;
+    border-bottom: 2px solid #eaedee;
     background-color: #f6f8f9; }
     .c-table thead th h1, .c-table thead th h2, .c-table thead th h3, .c-table thead th h4, .c-table thead th h5 {
       font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2567,16 +2567,16 @@ label > .label-body {
     color: #fff;
     background: #2A9BD4; }
   .c-table tbody + tbody {
-    border-top: 2px solid #EAEDEE; }
+    border-top: 2px solid #eaedee; }
   .c-table .table {
     background-color: #cdcdcd; }
   .c-table .col-action {
     width: 10%; }
   .c-table--bordered {
-    border: 1px solid #EAEDEE; }
+    border: 1px solid #eaedee; }
     .c-table--bordered th,
     .c-table--bordered td {
-      border: 1px solid #EAEDEE; }
+      border: 1px solid #eaedee; }
     .c-table--bordered thead th,
     .c-table--bordered thead td {
       border-bottom-width: 2px; }
@@ -2610,7 +2610,7 @@ label > .label-body {
   min-height: 100px;
   padding: 1rem;
   border-radius: 3px;
-  border: 2px solid #EAEDEE;
+  border: 2px solid #eaedee;
   background: none #fff;
   -webkit-appearance: none;
   font-size: 1rem;
@@ -2634,7 +2634,7 @@ label > .label-body {
   font-size: 1rem;
   color: #092736;
   border-radius: 3px;
-  border: 2px solid #EAEDEE;
+  border: 2px solid #eaedee;
   background: none #fff;
   border-color: 125ms ease-in-out;
   transition: background 125ms ease-in-out, color 125ms ease-in-out, border 125ms ease-in-out;

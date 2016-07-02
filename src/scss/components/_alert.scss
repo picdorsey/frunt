@@ -20,11 +20,11 @@ $alert-padding-compact: .75rem 1.25rem;
 
     @include shadow(1);
 
-    transition: all 0.2s ease;
+    transition: all $animation-xshort ease;
 
     // <p>, <ul> and <ol> tags inside of the alert
     p, ul, ol {
-        font-size: 0.875rem;
+        font-size: $font-size-sm;
         margin-bottom: .75rem;
 
         &:last-child {
@@ -53,7 +53,7 @@ $alert-padding-compact: .75rem 1.25rem;
     &--dismissible {
         padding-right: 3.5rem;
 
-        &__link{
+        &__link {
             font-size: 1.2rem;
             position: absolute;
             right: 1.6rem;
