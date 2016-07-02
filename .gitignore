@@ -45,3 +45,6 @@ node_modules
 craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
+
+# Other
+.env
