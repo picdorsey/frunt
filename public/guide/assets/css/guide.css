@@ -2043,7 +2043,8 @@ label > .label-body {
   border: 2px solid transparent;
   border-bottom: 2px solid #c8d0d3;
   border-radius: 3px;
-  transition: background-color 125ms linear, color 125ms linear; }
+  transition: background-color 125ms linear, color 125ms linear, border 125ms linear;
+  cursor: pointer; }
   .c-button:hover {
     background: #fff;
     border-color: #dce1e3;

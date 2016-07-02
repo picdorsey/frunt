@@ -48,7 +48,11 @@ $button-danger: $ui-danger;
     border-bottom: 2px solid darken($button-default, 7%);
     border-radius: $br-default;
 
-    transition: background-color $animation-xshort linear, color $animation-xshort linear;
+    transition: background-color $animation-xshort linear,
+                color $animation-xshort linear,
+                border $animation-xshort linear;
+
+    cursor: pointer;
 
     &:hover {
         background: #fff;
