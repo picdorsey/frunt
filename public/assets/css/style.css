@@ -2497,44 +2497,44 @@ label > .label-body {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
 
-.progress-success[value]::-webkit-progress-value {
+.c-progress--success[value]::-webkit-progress-value {
   background-color: #92C21E; }
 
-.progress-success[value]::-moz-progress-bar {
+.c-progress--success[value]::-moz-progress-bar {
   background-color: #92C21E; }
 
 @media screen and (min-width: 0\0) {
-  .progress-success .progress-bar {
+  .c-progress--success .progress-bar {
     background-color: #92C21E; } }
 
-.progress-info[value]::-webkit-progress-value {
+.c-progress--info[value]::-webkit-progress-value {
   background-color: #6CB9E0; }
 
-.progress-info[value]::-moz-progress-bar {
+.c-progress--info[value]::-moz-progress-bar {
   background-color: #6CB9E0; }
 
 @media screen and (min-width: 0\0) {
-  .progress-info .progress-bar {
+  .c-progress--info .progress-bar {
     background-color: #6CB9E0; } }
 
-.progress-warning[value]::-webkit-progress-value {
+.c-progress--warning[value]::-webkit-progress-value {
   background-color: #FF9C00; }
 
-.progress-warning[value]::-moz-progress-bar {
+.c-progress--warning[value]::-moz-progress-bar {
   background-color: #FF9C00; }
 
 @media screen and (min-width: 0\0) {
-  .progress-warning .progress-bar {
+  .c-progress--warning .progress-bar {
     background-color: #FF9C00; } }
 
-.progress-danger[value]::-webkit-progress-value {
+.c-progress--danger[value]::-webkit-progress-value {
   background-color: #C35151; }
 
-.progress-danger[value]::-moz-progress-bar {
+.c-progress--danger[value]::-moz-progress-bar {
   background-color: #C35151; }
 
 @media screen and (min-width: 0\0) {
-  .progress-danger .progress-bar {
+  .c-progress--danger .progress-bar {
     background-color: #C35151; } }
 
 .c-table {

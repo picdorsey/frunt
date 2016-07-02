@@ -71,15 +71,15 @@ $progress-bar-info-bg:        $ui-info !default;
 // Variations
 //
 
-.progress--success {
+.c-progress--success {
     @include progress-variant($progress-bar-success-bg);
 }
-.progress--info {
+.c-progress--info {
     @include progress-variant($progress-bar-info-bg);
 }
-.progress--warning {
+.c-progress--warning {
     @include progress-variant($progress-bar-warning-bg);
 }
-.progress--danger {
+.c-progress--danger {
     @include progress-variant($progress-bar-danger-bg);
 }
