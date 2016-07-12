@@ -214,6 +214,8 @@ img[height] {
 table {
     // Reset for nesting within parents with `background-color`.
     background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 
 caption {
