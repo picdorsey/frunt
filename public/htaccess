@@ -52,7 +52,7 @@ RewriteRule "(^|/)\." - [F]
 # | Direct all traffic to index.php                                     |
 # ----------------------------------------------------------------------
 
-# RewriteCond $1 !\.(gif|jpe?g|png)$ [NC]
 # RewriteCond %{REQUEST_FILENAME} !-f
 # RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^(.*)$ /index.php?/$1 [L]
+# RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
+# RewriteRule (.+) index.php?p=$1 [QSA,L]
