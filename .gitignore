@@ -45,6 +45,7 @@ node_modules
 craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
+craft/config/license.key
 
 # Other
 .env
