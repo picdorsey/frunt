@@ -2,7 +2,7 @@
 A modern responsive framework for rapid front-end development.
 
 ### Installation
-* Make sure gulp is installed on your system `sudo npm install -g gulp`
+* Make sure gulp is installed on your system `sudo npm install gulp -g`
 * Then run `npm run build` to install the dependencies and to run gulp.
 
 ### Features
