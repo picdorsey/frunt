@@ -1,3 +1,7 @@
+//
+// Debug
+//
+
 body:before {
     @if $debug {
         background-color: #FCF8E3;

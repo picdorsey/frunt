@@ -2,6 +2,26 @@
 // App
 //
 
+html {
+    font-size: ($font-size-root * 0.85);
+
+    background: $body-bg;
+
+    @include media-breakpoint-up(sm) {
+        font-size: ($font-size-root * 0.9);
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-root;
+    }
+}
+
+body,
+html,
+.o-app {
+    min-height: 100vh;
+}
+
 .o-app {
     @include shadow(2);
 
@@ -14,29 +34,16 @@
     margin: 0 auto;
 
     background-color: $body-container-color;
-}
 
-body,
-html,
-.o-app {
-    min-height: 100vh;
-}
-
-html {
-    background: $body-bg;
-
-    font-size: ($font-size-root * 0.85);
-
-    @include media-breakpoint-up(sm) {
-        font-size: ($font-size-root * 0.9);
+    &[v-cloak] {
+        opacity: 0;
     }
 
-    @include media-breakpoint-up(lg) {
-        font-size: $font-size-root;
+    &:not([v-cloak]) {
+        animation: fadeIn $animation-xshort ease-in-out 0s 1 forwards;
     }
 }
 
-// VueJS Rendering
-[v-cloak] {
-    display: none !important;
-}
+// [v-cloak] {
+//     display: none !important;
+// }

@@ -2801,6 +2801,21 @@ label > .label-body {
     .c-tiles--sixths-padded li:nth-child(6) {
       padding-right: 0; }
 
+html {
+  font-size: 13.6px;
+  background: #cdcdcd; }
+  @media (min-width: 544px) {
+    html {
+      font-size: 14.4px; } }
+  @media (min-width: 992px) {
+    html {
+      font-size: 16px; } }
+
+body,
+html,
+.o-app {
+  min-height: 100vh; }
+
 .o-app {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.08);
   display: block;
@@ -2809,24 +2824,11 @@ label > .label-body {
   height: 100%;
   margin: 0 auto;
   background-color: #fff; }
-
-body,
-html,
-.o-app {
-  min-height: 100vh; }
-
-html {
-  background: #cdcdcd;
-  font-size: 13.6px; }
-  @media (min-width: 544px) {
-    html {
-      font-size: 14.4px; } }
-  @media (min-width: 992px) {
-    html {
-      font-size: 16px; } }
-
-[v-cloak] {
-  display: none !important; }
+  .o-app[v-cloak] {
+    opacity: 0; }
+  .o-app:not([v-cloak]) {
+    -webkit-animation: fadeIn 125ms ease-in-out 0s 1 forwards;
+    animation: fadeIn 125ms ease-in-out 0s 1 forwards; }
 
 .o-section {
   padding: 1rem 0; }
