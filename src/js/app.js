@@ -1,17 +1,24 @@
-/*
- * @app
- * @author Piccirilli Dorsey
- */
+ /**
+  * @Frunt
+  * @author Piccirilli Dorsey
+  *
+  * First we will load all of this project's JavaScript dependencies which
+  * include Vue and Vue Resource. This gives a great starting point for
+  * building robust, powerful web applications using Vue and Frunt.
+  */
 
-'use strict';
+import './bootstrap';
 
-const app = {
+const app = new Vue({
 
-    init() {
-        // Begin!
-    }
+    el: '.o-app',
 
-};
+    data: {},
 
-// Call the initialize function
-$(() => app.init());
+    mounted() {
+        //
+    },
+
+    methods: {}
+
+});
