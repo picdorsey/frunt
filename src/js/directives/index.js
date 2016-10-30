@@ -1,3 +1,3 @@
-const Directivese = {};
+const Directives = {};
 
-module.exports = Directivese;
+module.exports = Directives;
