@@ -1,0 +1,16 @@
+//
+// Rem Calc
+// Calculate rem value from supplied pixel value.
+//
+
+// Usage
+// @include rem(32px);
+
+// Output
+// font-size: 32px;
+// font-size: 2rem;
+
+@mixin rem($size) {
+    font-size: $size; // Pixel fallback
+    font-size: rem-calc($size);
+}

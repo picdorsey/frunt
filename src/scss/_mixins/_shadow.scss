@@ -26,8 +26,6 @@
 //         transform: translateY(-5px);
 //     }
 // }
-//
-//
 
 @mixin shadow($level: 1){
     @if $level == 1 {

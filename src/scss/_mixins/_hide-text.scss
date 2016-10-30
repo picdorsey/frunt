@@ -1,0 +1,25 @@
+//
+// Hide Text
+//
+// Hides the text in an element, commonly used to show an image. Some elements will need block-level styles applied.
+//
+// @link http://zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement
+//
+// @example scss - Usage
+//   .element {
+//       @include hide-text;
+//   }
+//
+// @example css - CSS Output
+//   .element {
+//       overflow: hidden;
+//       text-indent: 101%;
+//       white-space: nowrap;
+//   }
+//
+
+@mixin hide-text {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+}
