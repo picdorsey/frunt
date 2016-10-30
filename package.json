@@ -7,13 +7,13 @@
   "repository": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install && gulp --production"
+    "build": "yarn && gulp --production"
   },
   "browser": {},
   "dependencies": {
-    "flixir": "^2.0.0"
+    "flixir": "^3.0.0"
   },
   "devDependencies": {
-    "gulp": "^3.8.8"
+    "gulp": "^3.9.1"
   }
 }
