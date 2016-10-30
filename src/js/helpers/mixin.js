@@ -1,11 +1,7 @@
 export default {
 
-    computed: {
-        //
-    },
+    computed: {},
 
-    methods: {
-        //
-    }
+    methods: {}
 
 };
