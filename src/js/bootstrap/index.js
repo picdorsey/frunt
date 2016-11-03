@@ -27,7 +27,7 @@ Vue.mixin(mixin);
  */
 
 // axios.defaults.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
-vue.prototype.$http = axios;
+Vue.prototype.$http = axios;
 
 /**
  * We'll register all the application's Mixins, Components, and Directives
