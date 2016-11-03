@@ -1,6 +1,6 @@
 const flixir = require('flixir');
 
-flixir((mix) => {
+flixir(mix => {
 
     // Styles
     mix.sass('style.scss');

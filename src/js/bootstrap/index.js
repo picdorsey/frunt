@@ -1,9 +1,9 @@
+import vue from 'vue';
 import axios from 'axios';
 import lodash from 'lodash';
-import vue from 'vue';
 import mixin from '../helpers/mixin';
-import * as Components from '../components';
-import * as Directives from '../directives';
+import * as components from '../components';
+import * as directives from '../directives';
 
 /*
  * Load various JavaScript modules that assist Frunt.
@@ -37,10 +37,10 @@ Vue.prototype.$http = axios;
 
 const prefix = '';
 
- Object.keys(Directives).forEach(key => {
-     Vue.directive(prefix + _.kebabCase(key), Directives[key]);
+ Object.keys(components).forEach(key => {
+     Vue.component(prefix + _.kebabCase(key), components[key]);
  });
 
- Object.keys(Components).forEach(key => {
-     Vue.component(prefix + _.kebabCase(key), Components[key]);
+ Object.keys(directives).forEach(key => {
+     Vue.directive(prefix + _.kebabCase(key), directives[key]);
  });
