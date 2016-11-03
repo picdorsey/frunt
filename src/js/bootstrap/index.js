@@ -1,5 +1,7 @@
-import Resource from 'vue-resource';
-import Mixin from '../helpers/mixin';
+import axios from 'axios';
+import lodash from 'lodash';
+import vue from 'vue';
+import mixin from '../helpers/mixin';
 import * as Components from '../components';
 import * as Directives from '../directives';
 
@@ -7,7 +9,7 @@ import * as Directives from '../directives';
  * Load various JavaScript modules that assist Frunt.
  */
 
-window._ = require('lodash');
+window._ = lodash;
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -15,10 +17,8 @@ window._ = require('lodash');
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require('vue');
-
-Vue.use(Resource);
-Vue.mixin(Mixin);
+window.Vue = vue;
+Vue.mixin(mixin);
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -26,11 +26,8 @@ Vue.mixin(Mixin);
  * included with Laravel will automatically verify the header's value.
  */
 
-Vue.http.interceptors.push((request, next) => {
-    // request.headers.set('X-CSRF-TOKEN', App.csrfToken);
-
-    next();
-});
+// axios.defaults.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
+vue.prototype.$http = axios;
 
 /**
  * We'll register all the application's Mixins, Components, and Directives

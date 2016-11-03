@@ -4,17 +4,14 @@
 
 <script>
     export default {
-        props: {
-        },
+        props: {},
 
-        data:() => ({
-        }),
+        data:() => ({}),
 
         mounted() {
             //
         },
 
-        methods: {
-        }
+        methods: {}
     };
 </script>
