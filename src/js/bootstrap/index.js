@@ -21,13 +21,12 @@ window.Vue = vue;
 Vue.mixin(mixin);
 
 /**
- * We'll register a HTTP interceptor to attach the "CSRF" header to each of
- * the outgoing requests issued by this application. The CSRF middleware
- * included with Laravel will automatically verify the header's value.
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-// axios.defaults.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
-Vue.prototype.$http = axios;
+window.axios = Vue.prototype.$http = axios;
 
 /**
  * We'll register all the application's Mixins, Components, and Directives
