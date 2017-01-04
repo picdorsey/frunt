@@ -1,6 +1,8 @@
 let mix = require('laravel-mix').mix;
 
 mix.setPublicPath('public');
+mix.setCachePath('.cache');
+
 mix.sourceMaps();
 
 mix.js('src/js/app.js', 'public/assets/js/bundle.js')
