@@ -28,6 +28,10 @@ Vue.mixin(mixin);
 
 window.axios = Vue.prototype.$http = axios;
 
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest'
+};
+
 /**
  * We'll register all the application's Mixins, Components, and Directives
  * automatically by attaching each one to the global Vue object. Register a
