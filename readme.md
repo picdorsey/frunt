@@ -2,33 +2,40 @@
 A modern responsive framework for rapid front-end development.
 
 ### Installation
-* Make sure gulp is installed on your system `sudo npm install -g gulp`
-* Then run `npm run build` to install the dependencies and to run gulp.
 
-### Features
+* Make sure you have webpack installed `npm install -g webpack`
+* Run `npm install` to install the dependencies.
 
-* Development Environment
-   * browser-sync
-   * gulp-livereload
-   * gulp-watch
-* Javascript Tools
-    * [Browserify](http://browserify.org/)
-    * ES6 Support
-    * gulp-jshint
-    * gulp-concat
-    * gulp-uglify
-* Sass Tools
-    * gulp-autoprefixer
-    * gulp-minify-css
-    * Bootstrap V4 (Alpha)
+### Compilation
+
+Frunt is build using webpack powered by [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
+
+Go ahead and compile these down.
+
+```bash
+node_modules/.bin/webpack
+```
+
+Alternatively, if you have the NPM script within your `package.json`, you may do:
+
+```bash
+npm run webpack
+```
+
+Once that finishes, you should now see:
+
+* `./public/js/app.js`
+* `./public/css/app.css`
+
+Excellent! Next, let's get to work. To watch your JavaScript for changes, run:
+
+```bash
+npm run dev
+```
+
+
 
 ## Documentation
-
-### Gulp
-
-#### Flixir
-
-Please refer to the [Flixir Gulp Wrapper](https://github.com/picdorsey/flixir) package for documentation.
 
 ### SCSS (Quick Reference)
 

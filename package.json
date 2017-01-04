@@ -6,17 +6,17 @@
   "author": "Piccirilli Dorsey, inc",
   "repository": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn && gulp --production"
+    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "browser": {},
-  "dependencies": {
+  "devDependencies": {
     "axios": "^0.15.2",
-    "flixir": "^3.0.1",
+    "import-glob-loader": "^1.1.0",
+    "laravel-mix": "^0.2.8",
     "lodash": "^4.16.4",
     "vue": "^2.1.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
   }
 }

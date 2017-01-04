@@ -51,4 +51,3 @@
         return elementExists;
     };
 }));
-//# sourceMappingURL=vendor.js.map

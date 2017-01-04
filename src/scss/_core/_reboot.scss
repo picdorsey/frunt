@@ -15,60 +15,38 @@
 //
 // Heads up! This reset may cause conflicts with some third-party widgets. For
 // recommendations on resolving such conflicts, see
-// http://getbootstrap.com/getting-started/#third-box-sizing.
+// https://getbootstrap.com/getting-started/#third-box-sizing.
 //
 // Credit: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 
 // Make viewport responsive
 //
 // @viewport is needed because IE 10+ doesn't honor <meta name="viewport"> in
-// some cases. See http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
-// Eventually @viewport will replace <meta name="viewport">. It's been manually
-// prefixed for forward-compatibility.
+// some cases. See https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
+// Eventually @viewport will replace <meta name="viewport">.
 //
 // However, `device-width` is broken on IE 10 on Windows (Phone) 8,
-// (see http://timkadlec.com/2013/01/windows-phone-8-and-device-width/ and https://github.com/twbs/bootstrap/issues/10497)
+// (see https://timkadlec.com/2013/01/windows-phone-8-and-device-width/ and https://github.com/twbs/bootstrap/issues/10497)
 // and the fix for that involves a snippet of JavaScript to sniff the user agent
 // and apply some conditional CSS.
 //
-// See http://getbootstrap.com/getting-started/#support-ie10-width for the relevant hack.
-
-:root {
-    box-sizing: border-box;
-    overflow-y: scroll;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-     -webkit-font-smoothing: antialiased;
-}
-
+// See https://getbootstrap.com/getting-started/#support-ie10-width for the relevant hack.
+//
 // Wrap `@viewport` with `@at-root` for when folks do a nested import (e.g.,
 // `.class-name { @import "bootstrap"; }`).
 @at-root {
-    @-moz-viewport      { width: device-width; }
-    @-ms-viewport       { width: device-width; }
-    @-o-viewport        { width: device-width; }
-    @-webkit-viewport   { width: device-width; }
-    @viewport           { width: device-width; }
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.25),
-only screen and ( min-device-pixel-ratio: 1.25),
-only screen and ( min-resolution: 200dpi),
-only screen and ( min-resolution: 1.25dppx)
-{
-    -webkit-font-smoothing: subpixel-antialiased;
+    @-ms-viewport { width: device-width; }
 }
 
 //
@@ -76,14 +54,22 @@ only screen and ( min-resolution: 1.25dppx)
 //
 
 html {
-    // Sets a specific default `font-size` for user with `rem` type scales.
     font-size: $font-size-root;
+
+    // As a side-effect of setting the @viewport above,
+    // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
+    // Unfortunately, the auto-showing of the scrollbar is sometimes too sensitive,
+    // thus making it hard to click on stuff near the right edge of the page.
+    // So we add this style to force IE11 & Edge to use a "normal", non-overlapping, non-auto-hiding scrollbar.
+    // See https://github.com/twbs/bootstrap/issues/18543
+    // and https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7165383/
+    -ms-overflow-style: scrollbar;
+
     // Changes the default tap highlight to be completely transparent in iOS.
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
-    // Make the `body` use the `font-size-root`
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
@@ -163,6 +149,8 @@ pre {
     margin-top: 0;
     // Reset browser default of `1em` to use `rem`s
     margin-bottom: 1rem;
+    // Normalize v4 removed this property, causing `<pre>` content to break out of wrapping code snippets
+    overflow: auto;
 }
 
 
@@ -207,6 +195,28 @@ img[height] {
     cursor: pointer;
 }
 
+// Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+//
+// In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+// DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+// However, they DO support removing the click delay via `touch-action: manipulation`.
+// See:
+// * https://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+// * http://caniuse.com/#feat=css-touch-action
+// * https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+    touch-action: manipulation;
+}
+
 //
 // Tables
 //
@@ -240,6 +250,38 @@ label {
     // Allow labels can use `margin` for spacing.
     display: inline-block;
     margin-bottom: .5rem;
+}
+
+// Work around a Firefox/IE bug where the transparent `button` background
+// results in a loss of the default `button` focus styles.
+//
+// Credit: https://github.com/suitcss/base/
+button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    // Apply a disabled cursor for radios and checkboxes.
+    //
+    // Note: Neither radios nor checkboxes can be readonly.
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+    // bug where setting a custom line-height prevents text from being vertically
+    // centered within the input.
+    // See https://bugs.webkit.org/show_bug.cgi?id=139848
+    // and https://github.com/twbs/bootstrap/issues/11266
+    -webkit-appearance: listbox;
 }
 
 input,
@@ -278,7 +320,6 @@ legend {
     margin-bottom: .5rem;
     font-size: 1.5rem;
     line-height: inherit;
-    //  border: 0;
 }
 
 input[type="search"] {
@@ -296,4 +337,9 @@ output {
     //  font-size: $font-size-base;
     //  line-height: $line-height;
     //  color: $input-color;
+}
+
+// Always hide an element with the `hidden` HTML attribute (from PureCSS).
+[hidden] {
+    display: none !important;
 }
