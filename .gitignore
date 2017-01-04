@@ -49,4 +49,5 @@ craft/config/license.key
 
 # Other
 .env
+hot
 github.sh
