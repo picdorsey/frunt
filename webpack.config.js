@@ -29,7 +29,7 @@ Mix.initialize();
  |
  */
 
-module.exports.context = Mix.paths.root();
+module.exports.context = Mix.Paths.root();
 
 
 /*
@@ -45,11 +45,6 @@ module.exports.context = Mix.paths.root();
 
 module.exports.entry = Mix.entry();
 
-if (Mix.js.vendor) {
-    module.exports.entry.vendor = Mix.js.vendor;
-}
-
-
 
 /*
  |--------------------------------------------------------------------------
@@ -63,7 +58,6 @@ if (Mix.js.vendor) {
  */
 
 module.exports.output = Mix.output();
-
 
 
 /*
@@ -102,44 +96,56 @@ module.exports.module = {
         },
 
         {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader']
+        },
+
+        {
             test: /\.(png|jpg|gif)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]?[hash]'
+                name: 'images/[name].[ext]?[hash]',
+                publicPath: '/'
             }
         },
 
         {
-            test: /\.(woff2?|ttf|eot|svg)$/,
+            test: /\.(woff2?|ttf|eot|svg|otf)$/,
             loader: 'file-loader',
             options: {
-                name: '/fonts/[name].[ext]?[hash]'
+                name: 'fonts/[name].[ext]?[hash]',
+                publicPath: '/'
             }
         }
     ]
 };
 
 
-if (Mix.cssPreprocessor) {
-    Mix[Mix.cssPreprocessor].forEach(toCompile => {
+if (Mix.preprocessors) {
+    Mix.preprocessors.forEach(toCompile => {
         let extractPlugin = new plugins.ExtractTextPlugin(
             Mix.cssOutput(toCompile)
         );
 
+        let sourceMap = Mix.sourcemaps ? '?sourceMap' : '';
+
         module.exports.module.rules.push({
-                enforce: 'pre',
-                test: /\.s[ac]ss$/,
-                loader: 'import-glob-loader'
-            },{
-            test: new RegExp(toCompile.src.file),
+            enforce: 'pre',
+            test: /\.s[ac]ss$/,
+            loader: 'import-glob-loader'
+        },{
+            test: new RegExp(toCompile.src.path.replace(/\\/g, '\\\\') + '$'),
             loader: extractPlugin.extract({
                 fallbackLoader: 'style-loader',
                 loader: [
-                    'css-loader',
-                    'postcss-loader',
-                    'resolve-url-loader',
-                    (Mix.cssPreprocessor == 'sass') ? 'sass-loader?sourceMap' : 'less-loader'
-                ]
+                    'css-loader' + sourceMap,
+                    'postcss-loader' + sourceMap
+                ].concat(toCompile.type == 'sass' ? [
+                    'resolve-url-loader' + sourceMap,
+                    'sass-loader?sourceMap&precision=8'
+                ] : [
+                    'less-loader' + sourceMap
+                ])
             })
         });
 
@@ -238,15 +244,19 @@ module.exports.devServer = {
  */
 
 module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.ProvidePlugin({
+    new webpack.ProvidePlugin(Mix.autoload || {
         jQuery: 'jquery',
         $: 'jquery',
-        jquery: 'jquery'
+        jquery: 'jquery',
+        'window.jQuery': 'jquery'
     }),
 
     new plugins.FriendlyErrorsWebpackPlugin(),
 
-    new plugins.ManifestPlugin(),
+    new plugins.StatsWriterPlugin({
+        filename: 'mix-manifest.json',
+        transform: Mix.manifest.transform,
+    }),
 
     new plugins.WebpackMd5HashPlugin(),
 
@@ -269,10 +279,17 @@ if (Mix.notifications) {
         new plugins.WebpackNotifierPlugin({
             title: 'Laravel Mix',
             alwaysNotify: true,
-            contentImage: 'node_modules/laravel-mix/icons/laravel.png'
+            contentImage: Mix.Paths.root('node_modules/laravel-mix/icons/laravel.png')
         })
     );
 }
+
+
+module.exports.plugins.push(
+    new plugins.WebpackOnBuildPlugin(
+        stats => Mix.events.fire('build', stats)
+    )
+);
 
 
 if (Mix.versioning) {
@@ -304,10 +321,13 @@ if (Mix.copy) {
 }
 
 
-if (Mix.js.vendor) {
+if (Mix.extract) {
     module.exports.plugins.push(
         new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
+            names: Mix.entryBuilder.extractions.concat([
+                path.join(Mix.js.base, 'manifest')
+            ]),
+            minChunks: Infinity
         })
     );
 }

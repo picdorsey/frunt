@@ -7,9 +7,9 @@
   "repository": {},
   "scripts": {
     "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "browsersync": "browser-sync start --server 'public' --files=public",
     "dev": "cross-env NODE_ENV=development concurrently --kill-others --raw \"npm run watch\" \"npm run browsersync\""
   },
@@ -18,7 +18,7 @@
     "axios": "^0.15.2",
     "concurrently": "^3.1.0",
     "import-glob-loader": "^1.1.0",
-    "laravel-mix": "^0.4.0",
+    "laravel-mix": "^0.6.0",
     "lodash": "^4.16.4",
     "vue": "^2.1.0"
   }

@@ -1,1 +1,0 @@
-!function(e){"function"==typeof define&&define.amd?define(["jquery"],e):e(jQuery)}(function(e){"use strict";var n=e(window)[0],t=e(document)[0],i=e("html")[0];e.fn.exists=function(e){var f,r,o=this.length,s=!1;for(e="string"==typeof e?e:"html";o--;)if(f=this.eq(o),r=f[0],r!==t&&r!==n&&r!==i){if(!(f.parents(e).length>0)){s=!1;break}s=!0}else s=!0;return s}});
