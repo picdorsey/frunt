@@ -77,7 +77,7 @@ module.exports.module = {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
-                loaders:{
+                loaders: {
                     js: 'babel-loader' + Mix.babelConfig(),
                     scss: 'vue-style-loader!css-loader!sass-loader',
                     sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
