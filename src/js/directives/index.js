@@ -1,3 +1,3 @@
-const Directives = {};
+export {
 
-module.exports = Directives;
+};

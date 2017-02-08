@@ -1,7 +1,5 @@
 import Example from './Example.vue';
 
-const Components = {
+export {
     Example
 };
-
-module.exports = Components;

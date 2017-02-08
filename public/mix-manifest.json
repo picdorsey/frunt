@@ -1,5 +1,6 @@
 {
   "/assets/js/bundle.js": "/assets/js/bundle.js",
   "/assets/css/style.css": "/assets/css/style.css",
-  "/guide/assets/css/guide.css": "/guide/assets/css/guide.css"
+  "/guide/assets/css/guide.css": "/guide/assets/css/guide.css",
+  "/assets/js/vendor.js": "/assets/js/vendor.js"
 }

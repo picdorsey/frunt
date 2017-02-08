@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var Mix = require('laravel-mix').config;
-var plugins = require('laravel-mix').plugins;
+let path = require('path');
+let webpack = require('webpack');
+let Mix = require('laravel-mix').config;
+let plugins = require('laravel-mix').plugins;
 
 
 /*
@@ -90,7 +90,7 @@ module.exports.module = {
         },
 
         {
-            test: /\.js$/,
+            test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'babel-loader' + Mix.babelConfig()
         },
@@ -98,6 +98,11 @@ module.exports.module = {
         {
             test: /\.css$/,
             loaders: ['style-loader', 'css-loader']
+        },
+
+        {
+            test: /\.html$/,
+            loaders: ['html-loader']
         },
 
         {
@@ -135,17 +140,28 @@ if (Mix.preprocessors) {
             loader: 'import-glob-loader'
         },{
             test: new RegExp(toCompile.src.path.replace(/\\/g, '\\\\') + '$'),
-            loader: extractPlugin.extract({
-                fallbackLoader: 'style-loader',
-                loader: [
-                    'css-loader' + sourceMap,
-                    'postcss-loader' + sourceMap
-                ].concat(toCompile.type == 'sass' ? [
-                    'resolve-url-loader' + sourceMap,
-                    'sass-loader?sourceMap&precision=8'
-                ] : [
-                    'less-loader' + sourceMap
-                ])
+            use: extractPlugin.extract({
+                fallback: 'style-loader',
+                use: [
+                    { loader: 'css-loader' + sourceMap },
+                    { loader: 'postcss-loader' + sourceMap }
+                ].concat(
+                    toCompile.type == 'sass' ? [
+                        { loader: 'resolve-url-loader' + sourceMap },
+                        {
+                            loader: 'sass-loader',
+                            options: Object.assign({
+                                precision: 8,
+                                outputStyle: 'expanded'
+                            }, toCompile.pluginOptions, { sourceMap: true })
+                        }
+                    ] : [
+                        {
+                            loader: 'less-loader' + sourceMap,
+                            options: toCompile.pluginOptions
+                        }
+                    ]
+                )
             })
         });
 
@@ -227,7 +243,8 @@ module.exports.devtool = Mix.sourcemaps;
 module.exports.devServer = {
     historyApiFallback: true,
     noInfo: true,
-    compress: true
+    compress: true,
+    quiet: true
 };
 
 
@@ -255,7 +272,7 @@ module.exports.plugins = (module.exports.plugins || []).concat([
 
     new plugins.StatsWriterPlugin({
         filename: 'mix-manifest.json',
-        transform: Mix.manifest.transform,
+        transform: Mix.manifest.transform.bind(Mix.manifest),
     }),
 
     new plugins.WebpackMd5HashPlugin(),
@@ -271,7 +288,6 @@ module.exports.plugins = (module.exports.plugins || []).concat([
         }
     })
 ]);
-
 
 
 if (Mix.notifications) {
@@ -292,26 +308,6 @@ module.exports.plugins.push(
 );
 
 
-if (Mix.versioning) {
-    Mix.versioning.record();
-
-    module.exports.plugins.push(
-        new plugins.WebpackOnBuildPlugin(() => {
-            Mix.versioning.prune(Mix.publicPath);
-        })
-    );
-}
-
-
-if (Mix.combine || Mix.minify) {
-    module.exports.plugins.push(
-        new plugins.WebpackOnBuildPlugin(() => {
-            Mix.concatenateAll().minifyAll();
-        })
-    );
-}
-
-
 if (Mix.copy) {
     Mix.copy.forEach(copy => {
         module.exports.plugins.push(
@@ -325,7 +321,7 @@ if (Mix.extract) {
     module.exports.plugins.push(
         new webpack.optimize.CommonsChunkPlugin({
             names: Mix.entryBuilder.extractions.concat([
-                path.join(Mix.js.base, 'manifest')
+                path.join(Mix.js.base, 'manifest').replace(/\\/g, '/')
             ]),
             minChunks: Infinity
         })
@@ -344,7 +340,8 @@ if (Mix.inProduction) {
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compress: {
-                warnings: false
+                warnings: false,
+                drop_console: true
             }
         })
     ]);
