@@ -77,7 +77,21 @@ module.exports.module = {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
-                loaders: {
+                loaders: Mix.options.extractVueStyles ? {
+                    js: 'babel-loader' + Mix.babelConfig(),
+                    scss: plugins.ExtractTextPlugin.extract({
+                        use: 'css-loader!sass-loader',
+                        fallback: 'vue-style-loader'
+                    }),
+                    sass: plugins.ExtractTextPlugin.extract({
+                        use: 'css-loader!sass-loader?indentedSyntax',
+                        fallback: 'vue-style-loader'
+                    }),
+                    css: plugins.ExtractTextPlugin.extract({
+                        use: 'css-loader',
+                        fallback: 'vue-style-loader'
+                    })
+                }: {
                     js: 'babel-loader' + Mix.babelConfig(),
                     scss: 'vue-style-loader!css-loader!sass-loader',
                     sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
@@ -167,6 +181,10 @@ if (Mix.preprocessors) {
 
         module.exports.plugins = (module.exports.plugins || []).concat(extractPlugin);
     });
+} else if (Mix.options.extractVueStyles) {
+    module.exports.plugins = (module.exports.plugins || []).concat(
+        new plugins.ExtractTextPlugin(path.join(Mix.js.base, 'vue-styles.css'))
+    );
 }
 
 
@@ -290,13 +308,22 @@ module.exports.plugins = (module.exports.plugins || []).concat([
 ]);
 
 
-if (Mix.notifications) {
+if (Mix.browserSync) {
     module.exports.plugins.push(
-        new plugins.WebpackNotifierPlugin({
-            title: 'Laravel Mix',
-            alwaysNotify: true,
-            contentImage: Mix.Paths.root('node_modules/laravel-mix/icons/laravel.png')
-        })
+        new plugins.BrowserSyncPlugin(Object.assign({
+            host: 'localhost',
+            port: 3000,
+            files: [
+                'app/**/*.php',
+                'resources/views/**/*.php',
+                'public/mix-manifest.json',
+                'public/assets/css/**/*.css',
+                'public/assets/js/**/*.js'
+            ],
+            server: {
+                baseDir: 'public',
+            }
+        }, Mix.browserSync))
     );
 }
 
@@ -306,6 +333,17 @@ module.exports.plugins.push(
         stats => Mix.events.fire('build', stats)
     )
 );
+
+
+if (Mix.notifications) {
+    module.exports.plugins.push(
+        new plugins.WebpackNotifierPlugin({
+            title: 'Laravel Mix',
+            alwaysNotify: true,
+            contentImage: Mix.Paths.root('node_modules/laravel-mix/icons/laravel.png')
+        })
+    );
+}
 
 
 if (Mix.copy) {
