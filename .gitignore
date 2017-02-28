@@ -4,12 +4,7 @@
 # public/assets/js/*
 # !public/assets/js/vendor/
 
-# Ignore docs files
-_gh_pages
-_site
-.ruby-version
-
-# Numerous always-ignore extensions
+## Numerous always-ignore extensions
 *.diff
 *.err
 *.log
@@ -21,7 +16,7 @@ _site
 *.zip
 *~
 
-# OS or Editor folders
+## OS or Editor folders
 ._*
 .DS_Store
 .idea
@@ -35,15 +30,20 @@ _site
 nbproject
 Thumbs.db
 
-# Folders to ignore
+## Directories to ignore
 bower_components
 node_modules
 .sass-cache
 
-# Craft
+## Craft
 craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
+craft/config/license.key
+
+## Other
+.env
+github.sh
 craft/config/license.key
 
 # Other
