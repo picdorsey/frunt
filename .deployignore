@@ -1,0 +1,9 @@
+## Directories to ignore
+src/**
+
+## Files to ignore
+.editorconfig
+.jshintrc
+gulpfile.js
+package.json
+yarn.lock
