@@ -340,6 +340,8 @@ if (Mix.browserSync) {
                     'resources/views/**/*.php',
                     'public/js/**/*.js',
                     'public/css/**/*.css'
+                    'public/**/*.html',
+                    'public/**/*.php',
                 ],
                 server: {
                     baseDir: 'public',
