@@ -12,15 +12,12 @@ Frunt is build using webpack powered by [Laravel Mix](https://github.com/Jeffrey
 
 Go ahead and compile these down.
 
-```bash
-node_modules/.bin/webpack
-```
+`npm run dev` : Run webpack
 
-Alternatively, if you have the NPM script within your `package.json`, you may do:
+`npm run watch` : Run webpack and browsersync
 
-```bash
-npm run webpack
-```
+`npm run production` :  Run wepback in production mode (minification)
+
 
 Once that finishes, you should now see:
 

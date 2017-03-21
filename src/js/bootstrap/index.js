@@ -1,15 +1,6 @@
-import vue from 'vue';
-import axios from 'axios';
-import lodash from 'lodash';
 import mixin from '../helpers/mixin';
 import * as components from '../components';
 import * as directives from '../directives';
-
-/*
- * Load various JavaScript modules that assist Frunt.
- */
-
-window._ = lodash;
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -17,7 +8,6 @@ window._ = lodash;
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = vue;
 Vue.mixin(mixin);
 
 /**
@@ -26,9 +16,8 @@ Vue.mixin(mixin);
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = Vue.prototype.$http = axios;
-
-window.axios.defaults.headers.common = {
+axios.defaults.headers.common = {
+    // 'X-CSRF-TOKEN': window.Laravel.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
 

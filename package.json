@@ -6,17 +6,18 @@
   "author": "Piccirilli Dorsey, inc",
   "repository": {},
   "scripts": {
-    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-    "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules",
+    "watch-poll": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules"
   },
   "browser": {},
   "devDependencies": {
     "axios": "^0.15.3",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.1.1",
-    "laravel-mix": "^0.8.2",
+    "laravel-mix": "^0.8.3",
     "lodash": "^4.17.4",
     "vue": "^2.2.1"
   }
