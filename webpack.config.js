@@ -268,7 +268,7 @@ module.exports.performance = { hints: false };
  |
  */
 
-module.exports.devtool = Mix.sourcemaps;
+module.exports.devtool = Mix.options.sourcemaps;
 
 
 
@@ -340,8 +340,6 @@ if (Mix.browserSync) {
                     'resources/views/**/*.php',
                     'public/js/**/*.js',
                     'public/css/**/*.css'
-                    'public/**/*.html',
-                    'public/**/*.php',
                 ],
                 server: {
                     baseDir: 'public',
@@ -391,11 +389,16 @@ if (Mix.options.versioning) {
 if (Mix.options.purifyCss) {
     let PurifyCSSPlugin = require('purifycss-webpack');
 
-    plugins.push(
-        new PurifyCSSPlugin(Object.assign({
-          paths: glob.sync(Mix.Paths.root('resources/views/**/*.blade.php')),
-        }, Mix.options.purifyCss, { minimize: Mix.inProduction }))
+    // By default, we'll scan all Blade and Vue files in our project.
+    let paths = glob.sync(Mix.Paths.root('resources/views/**/*.blade.php')).concat(
+        Mix.js.reduce((carry, js) => {
+            return carry.concat(glob.sync(js.entry.map(entry => entry.base) + '/**/*.vue'));
+        }, [])
     );
+
+    plugins.push(new PurifyCSSPlugin(
+        Object.assign({ paths }, Mix.options.purifyCss, { minimize: Mix.inProduction })
+    ));
 }
 
 if (Mix.inProduction) {
@@ -404,10 +407,14 @@ if (Mix.inProduction) {
             'process.env': {
                 NODE_ENV: '"production"'
             }
-        }),
-
-        new webpack.optimize.UglifyJsPlugin(Mix.options.uglify)
+        })
     );
+
+    if (Mix.options.uglify) {
+        plugins.push(
+            new webpack.optimize.UglifyJsPlugin(Mix.options.uglify)
+        );
+    }
 }
 
 plugins.push(
