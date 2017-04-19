@@ -1,9 +1,7 @@
-//
-// Functions
-//
-
-// Determine what text color should be
-// based on background color provided
+/**
+ * Determine what text color should be
+ * based on background color provided
+ */
 @function text-color($color) {
     @if (lightness($color) > 70) {
         @return $gray-dark;
