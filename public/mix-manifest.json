@@ -1,4 +1,6 @@
 {
+  "/public/js/bundle.js": "/public/js/bundle.js",
+  "/public/css/style.css": "/public/css/style.css",
   "/js/bundle.js": "/js/bundle.js",
   "/css/style.css": "/css/style.css"
 }
