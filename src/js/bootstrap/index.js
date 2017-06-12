@@ -2,6 +2,13 @@ import mixin from '../helpers/mixin';
 import * as components from '../components';
 import * as directives from '../directives';
 
+window._ = require('lodash');
+
+try {
+    window.$ = window.jQuery = require('jquery');
+    window.Vue = require('vue');
+} catch (e) {}
+
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean
@@ -16,8 +23,12 @@ Vue.mixin(mixin);
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+window.axios = require('axios');
+
+// let token = document.head.querySelector('meta[name="csrf-token"]');
+
 axios.defaults.headers.common = {
-    // 'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    // 'X-CSRF-TOKEN': token,
     'X-Requested-With': 'XMLHttpRequest'
 };
 
