@@ -17,7 +17,7 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
+let app = new Vue({
     el: '.o-app',
 
     data: {},
