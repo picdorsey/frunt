@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+let { mix } = require('laravel-mix');
 
 // Globbing
 mix.webpackConfig({module:{rules:[{enforce:'pre',test:/\.s[ac]ss$/,loader:'import-glob-loader'}]}});
