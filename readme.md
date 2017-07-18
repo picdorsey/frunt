@@ -12,11 +12,11 @@ Frunt is build using webpack powered by [Laravel Mix](https://github.com/Jeffrey
 
 Go ahead and compile these down.
 
-`npm run dev` : Run webpack
+`yarn run dev` : Run webpack
 
-`npm run watch` : Run webpack and browsersync
+`yarn run watch` : Run webpack and browsersync
 
-`npm run production` :  Run wepback in production mode (minification)
+`yarn run production` :  Run wepback in production mode (minification)
 
 
 Once that finishes, you should now see:
@@ -27,7 +27,7 @@ Once that finishes, you should now see:
 Excellent! Next, let's get to work. To watch your JavaScript for changes, run:
 
 ```bash
-npm run dev
+yarn run watch
 ```
 
 

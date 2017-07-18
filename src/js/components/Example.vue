@@ -1,5 +1,7 @@
 <template>
-    <p>Example Component</p>
+    <div>
+        Component...
+    </div>
 </template>
 
 <script>
@@ -15,3 +17,7 @@
         methods: {}
     };
 </script>
+
+<style scoped>
+
+</style>
