@@ -25,7 +25,7 @@ Vue.mixin(mixin);
 
 window.axios = require('axios');
 
-// let token = document.head.querySelector('meta[name="csrf-token"]');
+// let token = document.head.querySelector('meta[name="csrf-token"]').content;
 
 axios.defaults.headers.common = {
     // 'X-CSRF-TOKEN': token,
