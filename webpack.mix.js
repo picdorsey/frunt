@@ -8,8 +8,8 @@ mix.setPublicPath('public');
 mix.autoload({
     jquery: ['window.jquery', 'window.jQuery', '$'],
     vue: 'Vue',
-    axios: 'axios'
-    lodash: '_',
+    axios: 'axios',
+    lodash: '_'
 });
 
 // Mix
